@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2018 at 10:53 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Dec 12, 2018 at 06:53 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -58,12 +60,13 @@ INSERT INTO `application` (`application_no`, `application_type`, `application_na
 (34, 'FSEC', 'Alvin Mananquil', 'Printing', 'Bacolod City', '0', 'Barangay 39', 'NA', 'December 3, 2018 6:53 pm', 'alvinmis', 'alvinmis', 'Alvin Mananquil', '1', '1', 'Complete', 'Endorsement from building Official,Set of Building Plans (3),Bill of Materials and Cost Estimate (1),FALAR-1 (3),', 'Assessed', 'Dec', '2018'),
 (35, 'FSEC', 'Arianne Torres', 'Printing', 'Bacolod City', '0', 'Barangay 39', 'NA', 'December 3, 2018 6:54 pm', 'arianne', 'arianne', 'Arianne Torres', '1', '1', 'Complete', 'Endorsement from building Official,Set of Building Plans (3),Bill of Materials and Cost Estimate (1),FALAR-1 (3),', 'Unassessed', 'Dec', '2018'),
 (36, 'FSIC', 'Rommel Adricula ', 'CISCO', 'Bacolod City', '1', 'Barangay 39', 'Building', 'December 3, 2018 10:16 pm', 'rommel', 'rommel', 'Rommel Adricula', '2', '10', 'Pending', 'Endorsement from building Official,Set of Building Plans (3),Bill of Materials and Cost Estimate (1),', 'Unassessed', 'Dec', '2018'),
-(37, 'FSIC', 'Rogy Acosta', 'Falcon', 'Bacolod City', '1', 'Barangay 39', 'Building', 'December 3, 2018 10:17 pm', 'rogy', 'rogy', 'Rogy Acosta', '1', '1', 'Complete', 'Endorsement from building Official,Set of Building Plans (3),Bill of Materials and Cost Estimate (1),FALAR-1 (3),', 'Unassessed', 'Dec', '2018'),
+(37, 'FSIC', 'Rogy Acosta', 'Falcon', 'Bacolod City', '1', 'Barangay 39', 'Building', 'December 3, 2018 10:17 pm', 'rogy', 'rogy', 'Rogy Acosta', '1', '1', 'Complete', 'Endorsement from building Official,Set of Building Plans (3),Bill of Materials and Cost Estimate (1),FALAR-1 (3),', 'Inspected', 'Dec', '2018'),
 (38, 'FSEC', 'Juan Dela Cruz', 'Printing', 'Bacolod City', '1', 'Barangay 39', 'NA', 'December 4, 2018 5:13 pm', 'juan', 'juan', 'Juan Dela Cruz', '3', '3', 'Complete', 'Endorsement from building Official,Set of Building Plans (3),Bill of Materials and Cost Estimate (1),FALAR-1 (3),', 'Unassessed', 'Dec', '2018'),
 (39, 'FSEC', 'Kent Adrian', 'Security Firm', 'San Luis', 'Business-Office', 'Barangay 22', 'NA', 'December 7, 2018 9:54 pm', 'clarkcan2018', '8080', 'Kent Adrian', '3', '442', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Assessed', 'Dec', '2018'),
 (40, 'FSEC', 'John Dale', 'Engineering Firm', 'Tabunan', 'Mercantile', 'Barangay 15', 'NA', 'December 7, 2018 10:43 pm', 'clarkcan2018', '8080', 'John Dale', '55', '99', 'Complete', 'IniReq2,IniReq3,', 'Unassessed', 'Dec', '2018'),
-(41, 'FSIC', 'Ildefonso Obligado', 'Tricycle Tire and Parts', 'Cegasco', 'Storage', 'Barangay 30', 'Occupancy', 'December 7, 2018 11:07 pm', 'clarkcan2018', '8080', ' ', '21', '32', 'Complete', 'IniReq8,', 'Unassessed', 'Dec', '2018'),
-(42, 'FSIC', 'Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'Mercantile', 'Barangay 1', 'Occupancy', 'December 7, 2018 11:13 pm', 'clarkcan2018', '8080', ' Kent Adrian', '77', '77', 'Complete', 'IniReq6,IniReq7,', 'Inspected', 'Dec', '2018');
+(41, 'FSIC', 'Ildefonso Obligado', 'Tricycle Tire and Parts', 'Cegasco', 'Storage', 'Barangay 30', 'Occupancy', 'December 7, 2018 11:07 pm', 'clarkcan2018', '8080', ' ', '21', '32', 'Complete', 'IniReq8,', 'Inspected', 'Dec', '2018'),
+(42, 'FSIC', 'Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'Mercantile', 'Barangay 1', 'Occupancy', 'December 7, 2018 11:13 pm', 'clarkcan2018', '8080', ' Kent Adrian', '77', '77', 'Complete', 'IniReq6,IniReq7,', 'Inspected', 'Dec', '2018'),
+(43, 'FSIC', 'John Doe', 'Law Enforcement', 'Mansilingan', 'Small-Business', 'Barangay 36', 'Occupancy', 'December 12, 2018 10:49 pm', 'clarkcan2018', '8080', ' Jane Doe', '22', '44', 'Complete', 'IniReq5,IniReq6,IniReq7,', 'Inspected', 'Dec', '2018');
 
 -- --------------------------------------------------------
 
@@ -121,7 +124,10 @@ INSERT INTO `assessment` (`ops_no`, `application_no`, `application_name`, `locat
 (22, '2018-12-42', 'Kent Adrian', 'Kent Adrian', 'Complete', 'Kent Adrian', 'FSIC', '1.2000000000000002', '0.23', '0.68', '1.12', '15.56', '0.9', '56', '564', '545', '45', '1229.69', 13000, 11770.31, 'Dec', '2018', 'December 7, 2018 11:43 pm'),
 (23, '2018-12-42', 'Kent Adrian', 'Kent Adrian', 'Complete', 'Kent Adrian', 'FSIC', '11.100000000000001', '11.11', '2.22', '0.22', '2.22', '11.100000000000001', '11', '11', '1', '1', '61.97', 200, 138.03, 'Dec', '2018', 'December 7, 2018 11:49 pm'),
 (24, '2018-12-40', 'John Dale', 'Tabunan', 'Complete', 'Engineering Firm', 'FSEC', '1.2000000000000002', '1.23', '2.46', '2.46', '2.46', '13.100000000000001', '123', '123', '123', '123', '514.91', 600, 85.09000000000003, 'Dec', '2018', 'December 7, 2018 11:50 pm'),
-(25, '42', 'Kent Adrian', 'Kent Adrian', 'Complete', 'Kent Adrian', 'FSIC', '0.2', '0.22', '42.62', '1.76', '0.44', '312.3', '66', '43', '34', '434', '934.54', 2000, 1065.46, 'Dec', '2018', 'December 7, 2018 11:54 pm');
+(25, '42', 'Kent Adrian', 'Kent Adrian', 'Complete', 'Kent Adrian', 'FSIC', '0.2', '0.22', '42.62', '1.76', '0.44', '312.3', '66', '43', '34', '434', '934.54', 2000, 1065.46, 'Dec', '2018', 'December 7, 2018 11:54 pm'),
+(26, '41', 'Ildefonso Obligado', 'Cegasco', 'Complete', 'Tricycle Tire and Parts', 'FSIC', '0.1', '0.21', '426.28000000000003', '0.88', '0.88', '1242.1000000000001', '43', '434', '434', '344', '2925.4500000000003', 30000, 27074.55, 'Dec', '2018', 'December 11, 2018 11:09 pm'),
+(27, '37', 'Rogy Acosta', 'Bacolod City', 'Complete', 'Falcon', 'FSIC', '0.2', '0.04', '8248.24', '0.08', '0.08', '0.4', '4', '5', '4', '6', '8268.039999999999', 90000, 81731.96, 'Dec', '2018', 'December 12, 2018 10:35 pm'),
+(28, '43', 'John Doe', 'Mansilingan', 'Complete', 'Law Enforcement', 'FSIC', '50', '5', '10', '10', '10', '50', '500', '500', '500', '500', '2135', 3000, 865, 'Dec', '2018', 'December 12, 2018 10:49 pm');
 
 -- --------------------------------------------------------
 
@@ -230,7 +236,8 @@ CREATE TABLE `bldg_construct` (
 --
 
 INSERT INTO `bldg_construct` (`bc_no`, `ir_no`, `beams`, `columns`, `floor`, `exterior`, `corridor`, `partition_no`, `stair`, `windows`, `ceiling`, `door`, `trusses`, `roof`, `date_applied`) VALUES
-(1, 'IR-2018-12-1', '1312', '3123123', '21313', '12312312312', '312312', '3123123123123', '1231', '321', '32133123', '213213', '3123123213', '213123', 'December 9, 2018 5:52 pm');
+(1, 'IR-2018-12-1', '1312', '3123123', '21313', '12312312312', '312312', '3123123123123', '1231', '321', '32133123', '213213', '3123123213', '213123', 'December 9, 2018 5:52 pm'),
+(2, 'IR-2018-12-1', '321', '313', '13213', '131', '31231223312', '123213', '123123', '12312', '313123123123', '21321321', '3123', '312321', 'December 12, 2018 6:29 pm');
 
 -- --------------------------------------------------------
 
@@ -263,62 +270,25 @@ INSERT INTO `employee` (`id`, `officer_type`, `rank`, `officer_fname`, `officer_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inspection`
+-- Table structure for table `evaluation_checklist`
 --
 
-CREATE TABLE `inspection` (
-  `io_no` int(11) NOT NULL,
-  `application_no` varchar(100) NOT NULL,
-  `inspector_name` varchar(100) NOT NULL,
+CREATE TABLE `evaluation_checklist` (
+  `evalChecklist_no` int(100) NOT NULL,
+  `plan_evaluator` varchar(100) NOT NULL,
   `owner_name` varchar(100) NOT NULL,
   `business_name` varchar(100) NOT NULL,
-  `establishment_address` varchar(100) NOT NULL,
-  `date_applied` varchar(100) NOT NULL,
-  `month` varchar(50) NOT NULL,
-  `year` varchar(100) NOT NULL,
-  `inspection_status` varchar(50) NOT NULL
+  `project_title` varchar(100) NOT NULL,
+  `location_of_construction` varchar(100) NOT NULL,
+  `occupancy_classification` varchar(100) NOT NULL,
+  `date_received` varchar(100) NOT NULL,
+  `means_of_egress` varchar(100) NOT NULL,
+  `warning_systems` varchar(100) NOT NULL,
+  `compartmentation` varchar(100) NOT NULL,
+  `fire_protection` varchar(100) NOT NULL,
+  `walls` varchar(100) NOT NULL,
+  `misc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `inspection`
---
-
-INSERT INTO `inspection` (`io_no`, `application_no`, `inspector_name`, `owner_name`, `business_name`, `establishment_address`, `date_applied`, `month`, `year`, `inspection_status`) VALUES
-(1, '2018-12-42', 'Select', ' Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'December 11, 2018 2:15 pm', 'Dec', '2018', 'Inspection Order'),
-(2, '2018-12-42', 'Select', ' Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'December 11, 2018 2:21 pm', 'Dec', '2018', 'Inspection Order'),
-(3, '2018-12-42', 'Select', ' Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'December 11, 2018 2:22 pm', 'Dec', '2018', 'Inspection Order'),
-(4, '2018-12-42', 'Select', ' Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'December 11, 2018 5:43 pm', 'Dec', '2018', 'Inspection Order'),
-(5, '2018-12-42', 'Select', ' Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'December 11, 2018 5:49 pm', 'Dec', '2018', 'Inspection Order'),
-(6, '2018-12-42', 'Select', ' Kent Adrian', 'Kent Adrian', 'Kent Adrian', 'December 11, 2018 5:53 pm', 'Dec', '2018', 'Inspection Order');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `inspection_order`
---
-
-CREATE TABLE `inspection_order` (
-  `inspection_order_no` int(10) NOT NULL,
-  `inspection_report_no` varchar(20) NOT NULL,
-  `application_no` varchar(20) NOT NULL,
-  `building_construction_no` varchar(20) NOT NULL,
-  `boc_no` varchar(20) NOT NULL,
-  `date` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL,
-  `month` varchar(10) NOT NULL,
-  `year` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `inspection_order`
---
-
-INSERT INTO `inspection_order` (`inspection_order_no`, `inspection_report_no`, `application_no`, `building_construction_no`, `boc_no`, `date`, `status`, `month`, `year`) VALUES
-(1, '0001', '2018-11-30', '110', '110', 'November 30, 2018', 'Complete', 'Nov', '2018'),
-(2, '0002', '2018-11-31', '111', '111', 'November 30, 2018', 'Complete', 'Nov', '2018'),
-(3, '0003', '2018-11-32', '112', '112', 'November 30, 2018', 'Complete', 'Nov', '2018'),
-(4, '0004', '2018-11-33', '113', '113', 'November 30, 2018', 'Complete', 'Nov', '2018'),
-(5, '0005', '2018-11-34', '114', '114', 'November 30, 2018', 'Complete', 'Nov', '2018');
 
 -- --------------------------------------------------------
 
@@ -332,8 +302,8 @@ CREATE TABLE `inspection_report` (
   `application_no` varchar(100) NOT NULL,
   `owner_name` varchar(100) NOT NULL,
   `owner_address` varchar(100) NOT NULL,
-  `building_name` varchar(100) NOT NULL,
-  `building_address` varchar(100) NOT NULL,
+  `business_name` varchar(100) NOT NULL,
+  `establishment_address` varchar(100) NOT NULL,
   `bldg_height` varchar(100) NOT NULL,
   `lot_size` varchar(100) NOT NULL,
   `number_of_floors` varchar(100) NOT NULL,
@@ -343,19 +313,16 @@ CREATE TABLE `inspection_report` (
   `inspection_status` varchar(50) NOT NULL,
   `ir_checklist` varchar(50) NOT NULL,
   `recommendation` varchar(100) NOT NULL,
-  `deficiency` varchar(100) NOT NULL,
-  `type_of_notice` varchar(50) NOT NULL
+  `deficiency` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inspection_report`
 --
 
-INSERT INTO `inspection_report` (`ir_no`, `io_no`, `application_no`, `owner_name`, `owner_address`, `building_name`, `building_address`, `bldg_height`, `lot_size`, `number_of_floors`, `date_applied`, `month`, `year`, `inspection_status`, `ir_checklist`, `recommendation`, `deficiency`, `type_of_notice`) VALUES
-(1, 'IO-2018-12-1', '2018-12-42', ' Kent Adrian', 'Sample', 'Sample', 'Sample', 'Sample', '12', '12', 'December 11, 2018 2:22 pm', 'Dec', '2018', 'Inspection Report', 'Lightings and Signs', 'Sample', '$`deficiency', 'Correct Violation'),
-(2, 'IO-2018-12-1', '2018-12-42', ' Kent Adrian', 'Sample', 'Sample', 'Sample', 'Sample', '15', '15', 'December 11, 2018 5:43 pm', 'Dec', '2018', 'Inspection Report', 'Exit Details', 'Sample', 'Sample', 'Comply'),
-(3, 'IO-2018-12-1', '2018-12-42', ' Kent Adrian', 'Test', 'Test', 'Test', 'Test', 'Test', 'Test', 'December 11, 2018 5:49 pm', 'Dec', '2018', 'Inspection Report', 'Exit Details', 'Test', 'Sample', 'Correct Violation'),
-(4, 'IO-2018-12-1', '2018-12-42', ' Kent Adrian', 'Test', 'Test', 'Test', 'Test', 'Test', '12', 'December 11, 2018 5:53 pm', 'Dec', '2018', 'Inspection Report', 'Lightings and Signs', 'Test', 'Test', 'Comply');
+INSERT INTO `inspection_report` (`ir_no`, `io_no`, `application_no`, `owner_name`, `owner_address`, `business_name`, `establishment_address`, `bldg_height`, `lot_size`, `number_of_floors`, `date_applied`, `month`, `year`, `inspection_status`, `ir_checklist`, `recommendation`, `deficiency`) VALUES
+(1, 'IO-2018-12-1', '2018-12-37', 'Rogy Acosta', 'San Enrique', '', 'Lopez Jaena', '67', '1', '1', '', '', '', 'Inspection Report', 'Hazardous Areas', 'HELP PLEASE', 'Danger'),
+(2, 'IO-2018-12-1', '2018-12-43', ' Jane Doe', 'San Enrique', 'Law Enforcement', 'Mansilingan', '88', '44', '22', '18-12-12', 'Dec', '2018', 'Inspection Report', 'Hazardous Areas', 'HELP@', 'DANGER@');
 
 -- --------------------------------------------------------
 
@@ -387,6 +354,30 @@ INSERT INTO `inspection_schedule` (`io_schedule`, `io_no`, `inspectors`, `inspec
 (6, 'IO-2018-12-1', 'Jagonoy', '2018-11-26', '12:58', 'December 9, 2018 4:26 pm', 'Dec', '2018'),
 (7, 'IO-2018-12-1', 'Dalusay', '2018-12-10', '5:05 pm', 'December 9, 2018 5:30 pm', 'Dec', '2018'),
 (8, 'IO-2018-12-1', 'Inspector Dalisay', '2018-12-12', '9:45 am', 'December 9, 2018 11:16 pm', 'Dec', '2018');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `issue_notice`
+--
+
+CREATE TABLE `issue_notice` (
+  `issue_notice_no` int(100) NOT NULL,
+  `type_of_notice` varchar(100) NOT NULL,
+  `amount` varchar(100) NOT NULL,
+  `owner_name` varchar(100) NOT NULL,
+  `inspector_name` varchar(100) NOT NULL,
+  `deficiency` varchar(100) NOT NULL,
+  `date_issued` varchar(100) NOT NULL,
+  `IR_date_applied` varchar(100) NOT NULL,
+  `application_no` varchar(100) NOT NULL,
+  `inspection_order` varchar(100) NOT NULL,
+  `business_address` varchar(100) NOT NULL,
+  `grace_period_from` varchar(100) NOT NULL,
+  `grace_period_to` varchar(100) NOT NULL,
+  `month` varchar(100) NOT NULL,
+  `year` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -466,16 +457,10 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `inspection`
+-- Indexes for table `evaluation_checklist`
 --
-ALTER TABLE `inspection`
-  ADD PRIMARY KEY (`io_no`);
-
---
--- Indexes for table `inspection_order`
---
-ALTER TABLE `inspection_order`
-  ADD PRIMARY KEY (`inspection_order_no`);
+ALTER TABLE `evaluation_checklist`
+  ADD PRIMARY KEY (`evalChecklist_no`);
 
 --
 -- Indexes for table `inspection_report`
@@ -488,6 +473,12 @@ ALTER TABLE `inspection_report`
 --
 ALTER TABLE `inspection_schedule`
   ADD PRIMARY KEY (`io_schedule`);
+
+--
+-- Indexes for table `issue_notice`
+--
+ALTER TABLE `issue_notice`
+  ADD PRIMARY KEY (`issue_notice_no`);
 
 --
 -- Indexes for table `user`
@@ -511,57 +502,69 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `application_no` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `application_no` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
 --
 -- AUTO_INCREMENT for table `assessment`
 --
 ALTER TABLE `assessment`
-  MODIFY `ops_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `ops_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT for table `barangay`
 --
 ALTER TABLE `barangay`
   MODIFY `barangay_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
 --
 -- AUTO_INCREMENT for table `bldg_construct`
 --
 ALTER TABLE `bldg_construct`
-  MODIFY `bc_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `bc_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- AUTO_INCREMENT for table `inspection`
+-- AUTO_INCREMENT for table `evaluation_checklist`
 --
-ALTER TABLE `inspection`
-  MODIFY `io_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `inspection_order`
---
-ALTER TABLE `inspection_order`
-  MODIFY `inspection_order_no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `evaluation_checklist`
+  MODIFY `evalChecklist_no` int(100) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `inspection_report`
 --
 ALTER TABLE `inspection_report`
-  MODIFY `ir_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ir_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `inspection_schedule`
 --
 ALTER TABLE `inspection_schedule`
   MODIFY `io_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `issue_notice`
+--
+ALTER TABLE `issue_notice`
+  MODIFY `issue_notice_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
