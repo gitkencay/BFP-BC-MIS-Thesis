@@ -9,6 +9,8 @@ if(isset($_POST['submit'])){
     $type_of_permit = $_POST['type_of_permit'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $cpnumb = $_POST['cpnumb'];
+    $croname = $_POST['croname'];
     $owner_name = $_POST['owner_name'];
     $number_of_floors = $_POST['number_of_floors'];
     $lot_size = $_POST['lot_size'];
@@ -42,7 +44,7 @@ if(isset($_POST['submit'])){
     require '../require/databaseconnection.php';
 
     // blank ang sa first field kay auto increment ang id followed sang application name, business name ... .. 
-    $conn->query("INSERT INTO `application` VALUES('', 'FSIC', '$application_name', '$business_name', '$establishment_address', '$building_type', '$barangay_name', '$type_of_permit', '$date_applied', '$username', '$password', '$owner_name', '$number_of_floors', '$lot_size', '$status', '$new', 'Unassessed', '$month', '$year')") or die(mysqli_error());
+    $conn->query("INSERT INTO `application` VALUES('', 'FSIC', '$application_name', '$business_name', '$establishment_address', '$building_type', '$barangay_name', '$type_of_permit', 'cpnumb', 'croname', '$date_applied', '$username', '$password', '$owner_name', '$number_of_floors', '$lot_size', '$status', '$new', 'Unassessed', '$month', '$year')") or die(mysqli_error());
     $conn->close();
     echo "<script type='text/javascript'>alert('Successfully added new FSIC application!');</script>";
     echo "<script>document.location='../DataEntry-AppReg.php'</script>";

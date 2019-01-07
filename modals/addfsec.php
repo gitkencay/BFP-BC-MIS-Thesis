@@ -75,11 +75,23 @@
                             </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="date" class="col-sm-4 control-label">Date Applied</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control datepicker"  name="date_applied" required/>
+                                <div class="form-group">
+                                    <label for="user-id" class="col-sm-12 control-label">&nbsp; Phone Number </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="cpnumb" name="cpnumb" required>
+                                    </div>                                                                                            
                                 </div>
+                                <div class="form-group">
+                                    <label for="user-id" class="col-sm-12 control-label">&nbsp; Name of CRO </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="croname" name="croname" required>
+                                    </div>                                                                                            
+                                </div>
+                                <div class="form-group">
+                                    <label for="date" class="col-sm-4 control-label">&nbsp;Date Applied</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control datepicker"  name="date_applied" required/>
+                                        </div>
                                 </div>
                                 </div>
                             <div class="col-md-6">

@@ -113,6 +113,7 @@ while ($fetch = $query->fetch_array()) {
                                                         <td><?php echo $fetch['date_applied'] ?></td>
                                                         <td>
                                                             <a href="Transaction-ViewAssessment.php?ops_no=<?php echo $fetch['ops_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                                            <a href="Reports/receipt.php?id=<?php echo $fetch['ops_no']?>"class="btn btn-sm btn-info"> <i class="fa fa-print"></i> Receipt </a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -182,6 +183,7 @@ while ($fetch = $query->fetch_array()) {
                                                         <td><?php echo $fetch['date_applied'] ?></td>
                                                         <td>
                                                             <a href="Transaction-ViewAssessment.php?ops_no=<?php echo $fetch['ops_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                                            <a href="Reports/receipt.php?id=<?php echo $fetch['ops_no']?>"  class="btn btn-sm btn-info"> <i class="fa fa-print"></i> Receipt </a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -196,9 +198,7 @@ $conn->close();
 
                                         </div>
                                     </div>
-                                    <div class="panel-footer">
-                                        <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
-                                    </div>
+                                   
                                 </div>
 
                             </form>

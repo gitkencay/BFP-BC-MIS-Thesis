@@ -79,6 +79,18 @@ while($fetch = $query->fetch_array()){
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                    <label for="user-id" class="col-sm-12 control-label">&nbsp; Phone Number </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="cpnumb" name="cpnumb" value="<?php echo $fetch['cpnumb']?>"required>
+                                    </div>                                                                                            
+                            </div>
+                            <div class="form-group">
+                                    <label for="user-id" class="col-sm-12 control-label">&nbsp; Name of CRO </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="croname" name="croname" value="<?php echo $fetch['croname']?>" readonly>
+                                    </div>                                                                                            
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <!--

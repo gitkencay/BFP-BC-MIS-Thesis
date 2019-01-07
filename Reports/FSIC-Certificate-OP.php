@@ -16,178 +16,191 @@
 <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
 <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
 <style>
-			@media print{
-				body, page[size="letter"] {
-                    margin: 0;
-					box-shadow: 0;
-                  }
-
-			}
-			#print{
-				width:80%;
-				height:100%;
-				margin:auto;
-				border:3px solid #000;
-				overflow: hidden;
-			}
-
-            .left-1{
-                position: relative;
-                float:left;
-                top: 50px;
-                left: 110px;
-            }
-
-            .right-1{
-                position: relative;
-                float:right;
-                top: 15px;
-                right: 110px;
-            }
-
-			.center-1{
-				text-align: center;
-				position: relative;
-				top: -55px;
-
-			}
-
-			.center-2{
-				text-align: center;
-				position: relative;
-				top: -65px;
-			}
-
-			.IDno{
-				color: red;
-				text-align: left;
-				position: relative;
-				top: -65px;
-				left: 140px;
-			}
-
-			.BFP-title{
-				color:darkblue;
-
-			}
-
-			.FSECtitle{
-				color: darkblue;
-				text-align: center;
-				position: relative;
-				left: 20px;
-				bottom: 45px;
-            }
-            
-            .typeofpermit{
-				color: darkblue;
-				text-align: center;
-				position: relative;
-				left: 20px;
-				bottom: 64px;
-            }
-
-			.today{
-				text-align: right;
-				position: relative;
-				right: 140px;
-				bottom: 45px;
-			}
-
-			.date{
-				text-align: right;
-				position: relative;
-				right: 156px;
-				bottom: 100px;
-			}
-
-			.line-1{
-				text-align: right;
-				position: relative;
-				right: 117px;
-				bottom: 82px;
-			}
-
-			.twimyc{
-				text-align: left;
-				position: relative;
-				left: 140px;
-				bottom: 105px;
-			}
-
-			.text-justify{
-				text-align: justify;
-				position: relative;
-				bottom: 115px;
-				text-indent: 80px;
-				margin: 0px 113px 0px 140px;
-			}
-
-			.text-justify-2{
-				text-align: justify;
-				position: relative;
-				bottom: 115px;
-				text-indent: 80px;
-				margin: 0px 113px 0px 140px;
-			}
-
-			.text-justify-3{
-				text-align: justify;
-				position: relative;
-				bottom: 115px;
-				text-indent: 80px;
-				margin: 0px 113px 0px 140px;
-			}
-
-			.fcfees{
-				text-align: justify;
-				position: relative;
-				bottom: 115px;
-				left: 140px;
-			}
+						@media print{
+							body, page[size="letter"] {
+								margin-bottom:100px;
+								padding: 0;
+							  }
+						}
 			
-			.autho-1{
-				text-align: right;
-				position: relative;
-				bottom: 185px;
-				right: 160px;
-			}
+						#print{
+							width: 80%;
+							margin: auto;
+							border: 10px double #000;
+						}
+			
+						.left-1{
+							position: relative;
+							float:left;
+							top: 50px;
+							left: 110px;
+						}
+			
+						.right-1{
+							position: relative;
+							float:right;
+							top: 15px;
+							right: 110px;
+						}
+			
+						.center-1{
+							text-align: center;
+							position: relative;
+							top: -55px;
+						}
+			
+						.center-2-1{
+							text-align: center;
+							position: relative;
+							top: -60px;
+						}
+			
+						.center-2-2{
+							text-align: center;
+							position: relative;
+							top: -75px;
+						}
+			
+						.center-2-3{
+							text-align: center;
+							position: relative;
+							top: -87px;
+						}
+			
+						.center-2-4{
+							text-align: center;
+							position: relative;
+							top: -100px;
+						}
+						.IDno{
+							color: red;
+							text-align: left;
+							position: relative;
+							top: -120px;
+							left: 140px;
+						}
+			
+						.BFP-title{
+							color:darkblue;
+			
+						}
+			
+						.FSECtitle{
+							color: darkblue;
+							text-align: center;
+							position: relative;
+							left: 20px;
+							bottom: 110px;
+						}
 
-			.autho-2{
-				text-align: right;
-				position: relative;
-				bottom: 205px;
-				right: 180px;
-			}
-
-			.autho-3{
-				text-align: right;
-				position: relative;
-				bottom: 200px;
-				right: 273px;
-			}
-
-			.autho-4{
-				text-align: right;
-				position: relative;
-				bottom: 177px;
-				right: 111px;
-			}
-
-			.line-2{
-				text-align: right;
-				position: relative;
-				right: 117px;
-				bottom: 325px;
-			}
-
-			.line-3{
-				text-align: right;
-				position: relative;
-				right: 117px;
-				bottom: 265px;
-			}
-
+						.typeofpermit{
+							color: darkblue;
+							text-align: center;
+							position: relative;
+							left: 20px;
+							bottom: 130px;
+						}
+			
+						.today{
+							text-align: right;
+							position: relative;
+							right: 140px;
+							bottom: 110px;
+						}
+			
+						.date{
+							text-align: right;
+							position: relative;
+							right: 165px;
+							bottom: 165px;
+						}
+			
+						.line-1{
+							text-align: right;
+							position: relative;
+							right: 120px;
+							bottom: 145px;
+						}
+			
+						.twimyc{
+							text-align: left;
+							position: relative;
+							left: 140px;
+							bottom: 155px;
+						}
+			
+						.text-justify{
+							text-align: justify;
+							position: relative;
+							bottom: 170px;
+							text-indent: 80px;
+							margin: 0px 113px 0px 140px;
+						}
+			
+						.text-justify-2{
+							text-align: justify;
+							position: relative;
+							bottom: 170px;
+							text-indent: 80px;
+							margin: 0px 113px 0px 140px;
+						}
+			
+						.text-justify-3{
+							text-align: justify;
+							position: relative;
+							bottom: 170px;
+							text-indent: 80px;
+							margin: 0px 113px 0px 140px;
+						}
+			
+						.fcfees{
+							text-align: justify;
+							position: relative;
+							bottom: 170px;
+							left: 140px;
+						}
+						
+						.autho-1{
+							text-align: right;
+							position: relative;
+							bottom: 250px;
+							right: 160px;
+						}
+			
+						.autho-2{
+							text-align: right;
+							position: relative;
+							bottom: 270px;
+							right: 180px;
+						}
+			
+						.autho-3{
+							text-align: right;
+							position: relative;
+							bottom: 260px;
+							right: 273px;
+						}
+			
+						.autho-4{
+							text-align: right;
+							position: relative;
+							bottom: 245px;
+							right: 111px;
+						}
+			
+						.line-2{
+							text-align: right;
+							position: relative;
+							right: 117px;
+							bottom: 392px;
+						}
+			
+						.line-3{
+							text-align: right;
+							position: relative;
+							right: 117px;
+							bottom: 333px;
+						}
 </style>
 <!-- EOF CSS INCLUDE -->
 </head>
@@ -207,7 +220,6 @@
 							</div>
 						</div>
 						<div id="print">
-							<div class="panel-body">
                             <?php
 require '../require/databaseconnection.php';
 $query = $conn->query("SELECT * FROM `application` WHERE `application_no` = '$_GET[id]'") or die(mysqli_error());
@@ -218,6 +230,9 @@ $month = date("m", strtotime($fetch['month']));
 
 $query2 = $conn->query("SELECT * FROM `assessment` WHERE `application_no` = '$_GET[id]'") or die(mysqli_error());
 $fetch2 = $query2->fetch_array();
+$month2 = date("m", strtotime($fetch2['month']));
+$total = number_format($fetch2['total_amount'], 2, '.', ',');
+$orno = $fetch2['ops_no'];
 ?>
                                 <div class = "clearfix">
                                     <img class="left-1" style="height:120px;width:120px;" src="../assets/images/DILG.png"> <br> <br>
@@ -229,12 +244,10 @@ $fetch2 = $query2->fetch_array();
 								<h3 class="BFP-title">BUREAU OF FIRE PROTECTION</h3>
 								</center>
 
-								<center class="center-2">
-								<p>_______________________________</p>
-								<p>___________________________________</p>
-								<p>_______________________________________</p>
-								<p>___________________________________________</p>
-								</center>
+								<p class="center-2-1">_______________________________</p>
+								<p class="center-2-2">___________________________________</p>
+								<p class="center-2-3">_______________________________________</p>
+								<p class="center-2-4">___________________________________________</p>
 
 								</br>
 								<h3 class="IDno">FSIC NO. R : <?php echo $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?> </h3>
@@ -280,8 +293,8 @@ $fetch2 = $query2->fetch_array();
 								</br>							
 								<p class="fcfees">
 								<strong> Fire Code Fees: </strong> </br>
-								Amount Paid: <strong> P  <?php echo $fetch2['total_amount']?> </strong> </br>
-								O.R Number: </br>
+								Amount Paid: <strong> ₱  <?php echo $total?> </strong> </br>
+								O.R Number: <strong> <?php echo 'OPS'. '-' .$fetch2['year']. '-'. $month2.'-'.$orno?></br> </strong>
 								Date: <strong> <?php echo $today?> </strong> </br> 
 								</p>
 
@@ -305,7 +318,6 @@ $fetch2 = $query2->fetch_array();
 								<p class="line-2">______________________________</p>
 								<p class="line-3">______________________________</p>
 
-                            </div>
 						</div>
 					</div>
 				</div>
