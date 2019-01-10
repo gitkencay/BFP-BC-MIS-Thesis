@@ -26,14 +26,14 @@
                                     <div class="logo text-center"><img style="height:100px;width:100px;" src="assets/images/bc.png" alt="BC Logo"></div>
                                     <p class="lead">Login to your account</p>
                                 </div>
-                                <form class="form-auth-small" action="login.php" method="POST">
+                                <form method="post" action="login-code.php"  >
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                        <input class="form-control" name="username" placeholder="Username" type="text" required autofocus>
+                                        <input class="form-control" name="username" id="username" placeholder="Username" type="text" required autofocus>
                                     </div> <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                        <input class="form-control" name="password" placeholder="Password" type="password" required>
+                                        <input class="form-control" name="password" id="password"placeholder="Password" type="password" required>
                                     </div>
                                     <button type="submit" name="login" class="btn btn-primary btn-lg btn-block"><span class="fa fa-sign-in"></span> LOGIN</button>
                                     <div class="bottom">

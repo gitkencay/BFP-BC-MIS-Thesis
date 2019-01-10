@@ -71,11 +71,12 @@ $ops_no = $fetch2['ops_no'] + 1;
                                                 </div>
                                             </th>
                                         </tr>
-                                        <tr>                                                <th>
-                                        <input type="hidden" class="form-control" id="application_no" name="application_no"  value="<?php echo $fetch['application_no']?>">
+                                        <tr>
+                                        <th>
+                                        <input type="hidden" class="form-control" id="application_no" name="application_no"  value="<?php echo $fetch['application_no'] ?>">
                                         <label for="app-name" class="col-sm-5 control-label">Applicant Name&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="applicant_name" name="application_name" value="<?php echo $fetch['application_name']?>" readonly>  
+                                                <input type="text" class="form-control" id="applicant_name" name="application_name" value="<?php echo $fetch['application_name'] ?>" readonly>
                                             </div>
                                         </th>
                                             <th>

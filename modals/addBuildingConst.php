@@ -21,79 +21,80 @@ $io_schedule = $fetch2['io_schedule'] + 1;
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                            <input type="hidden" name="application_number" value="<?php echo $fetch['application_no']?>"/>
                             <input type="hidden" class="form-control" id="ir_no" name="ir_no" readonly value="<?php echo $io_schedule?>"/>
                                 <input type="hidden" class="form-control" id="ir_no" name="ir_no" readonly value="<?php echo 'IR' . '-' . $year . '-' . $month . '-' .$ir_no ?>"/>
-                                 <label for="beams" class="col-md-3 control-label">Beams</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="beams" name="beams">
+                                 <label for="beams" class="col-md-5 control-label">Beams</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="beams" name="beams" require>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="columns" class="col-md-3 control-label">Columns</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="columns" name="columns">
+                                <label for="columns" class="col-md-5 control-label">Columns</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="columns" name="columns" require>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="flooring" class="col-md-3 control-label">Flooring</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="floor" name="floor">
+                                <label for="flooring" class="col-md-5 control-label">Flooring</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="floor" name="floor" require>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="ex_walls" class="col-md-3 control-label">Exterior Walls</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="exterior" name="exterior">
+                                <label for="ex_walls" class="col-md-5 control-label">Exterior Walls</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="exterior" name="exterior" require>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="cor_walls" class="col-md-3 control-label">Corridor Walls</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="corridor" name="corridor">
+                                <label for="cor_walls" class="col-md-5 control-label">Corridor Walls</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="corridor" name="corridor" require>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="room_part" class="col-md-3 control-label">Room Partitions</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="partition_no" name="partition_no" >
+                                <label for="room_part" class="col-md-5 control-label">Room Partitions</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="partition_no" name="partition_no" require>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="main_stair" class="col-md-3 control-label">Main Stair</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="stair" name="stair" >
+                                <label for="main_stair" class="col-md-5 control-label">Main Stair</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="stair" name="stair" require>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="windows" class="col-md-3 control-label">Windows</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="windows" name="windows" >
+                                <label for="windows" class="col-md-5 control-label">Windows</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="windows" name="windows" require >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="ceiling" class="col-md-3 control-label">Ceiling</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="ceiling" name="ceiling" >
+                                <label for="ceiling" class="col-md-5 control-label">Ceiling</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="ceiling" name="ceiling" require >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="main_door" class="col-md-3 control-label">Main Door</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="door" name="door" >
+                                <label for="main_door" class="col-md-5 control-label">Main Door</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="door" name="door" require >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="trusses" class="col-md-3 control-label">Trusses</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="trusses" name="trusses" >
+                                <label for="trusses" class="col-md-5 control-label">Trusses</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="trusses" name="trusses" require >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="roof" class="col-md-3 control-label">Roof</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" id="roof" name="roof" >
+                                <label for="roof" class="col-md-5 control-label">Roof</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="roof" name="roof" require >
                                 </div>
                             </div>
                         </div>

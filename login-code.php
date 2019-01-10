@@ -1,20 +1,18 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "login";
 
-$conn = new mysqli($host, $user, $password, $dbname) or die(mysqli_error());
+require 'require/databaseconnection.php';
 
-if(isset($_POST['username'])) {
+if(isset($_POST['login'])) {
     $username=$_POST['username'];
     $password=$_POST['password'];
 
     $query = $conn->query("SELECT * FROM `user` WHERE `name` = '$username' && `password` = '$password'") or die(mysqli_error());
     $fetch = $query->fetch_array();
-    $valid = $query->num_rows;
     
-    if($valid ==1){
+    $correct_user = $fetch['name'];
+    $correct_pass = $fetch['password'];
+    
+    if($username == $correct_user){
         echo "<script>alert('You have successfully logged in')</script>";
         echo '<meta http-equiv="refresh" content="2;url=index.php">';
     } else {

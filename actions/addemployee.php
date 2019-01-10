@@ -18,7 +18,10 @@ if(isset($_POST['add_new_employ'])){
 
     // blank ang sa first field kay auto increment ang id followed sang application name, business name ... .. 
     $conn->query("INSERT INTO `employee` VALUES('', '$officer_type', '$rank', '$officer_fname', '$officer_mname', '$officer_lname', '$username', '$password', '$confirm_password', '$firestation', '$date_applied')") or die(mysqli_error());
+    $conn->query("INSERT INTO `user` VALUES('', '$username', '$password')") or die(mysqli_error());
+
     $conn->close();
+    
 
     echo "<script type='text/javascript'>alert('Successfully added new Employee record!');</script>";
     echo "<script>document.location='../DataEntry-EmpProf.php'</script>";

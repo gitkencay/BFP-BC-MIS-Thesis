@@ -89,7 +89,7 @@ while ($fetch = $query->fetch_array()) {
     $month = date("m", strtotime($fetch['month']));
     ?>
                                                     <tr>
-                                                        <td><?php echo "OPS-" . $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?></td>
+                                                        <td><?php echo "OPS-" . $fetch['year'] . '-' . $month . '-' . $fetch['ops_no'] ?></td>
                                                         <td><?php echo $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?></td>
                                                         <td><?php echo $fetch['application_name'] ?></td>
                                                         <td><?php echo $fetch['business_name'] ?></td>
@@ -112,7 +112,8 @@ while ($fetch = $query->fetch_array()) {
     ?></td>
                                                         <td><?php echo $fetch['date_applied'] ?></td>
                                                         <td>
-                                                            <a href="#updatefsec<?php echo $fetch['application_no']; ?>" data-target="#updatefsec<?php echo $fetch['application_no']; ?>" data-toggle="modal" class="btn btn-info btn-sm">Edit</a>
+                                                            <a href="Transaction-ViewAssessment.php?ops_no=<?php echo $fetch['ops_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                                            <a href="Reports/receipt.php?id=<?php echo $fetch['ops_no']?>"class="btn btn-sm btn-info"> <i class="fa fa-print"></i> Receipt </a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -158,7 +159,7 @@ while ($fetch = $query->fetch_array()) {
     $month = date("m", strtotime($fetch['month']));
     ?>
                                                     <tr>
-                                                        <td><?php echo "OPS-" . $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?></td>
+                                                        <td><?php echo "OPS-" . $fetch['year'] . '-' . $month . '-' . $fetch['ops_no'] ?></td>
                                                         <td><?php echo $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?></td>
                                                         <td><?php echo $fetch['application_name'] ?></td>
                                                         <td><?php echo $fetch['business_name'] ?></td>
@@ -181,7 +182,8 @@ while ($fetch = $query->fetch_array()) {
     ?></td>
                                                         <td><?php echo $fetch['date_applied'] ?></td>
                                                         <td>
-                                                            <a href="#updatefsic<?php echo $fetch['application_no']; ?>" data-target="#updatefsic<?php echo $fetch['application_no']; ?>" data-toggle="modal" class="btn btn-info btn-sm">Edit</a>
+                                                            <a href="Transaction-ViewAssessment.php?ops_no=<?php echo $fetch['ops_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                                            <a href="Reports/receipt.php?id=<?php echo $fetch['ops_no']?>"  class="btn btn-sm btn-info"> <i class="fa fa-print"></i> Receipt </a>
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -196,9 +198,7 @@ $conn->close();
 
                                         </div>
                                     </div>
-                                    <div class="panel-footer">
-                                        <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
-                                    </div>
+                                   
                                 </div>
 
                             </form>

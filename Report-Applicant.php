@@ -47,93 +47,135 @@
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
 
-                     <div class="row">
-                        <div class="col-md-12">
-
-                                           <!--Start Default Table-->
-                                             <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <!--<ul class="panel-controls">
-                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#buildModal"><i class="fa fa-plus"></i>Evaluation Checklist</button>   
-                                                    </ul>-->                                 
-                                                 </div>
-                                             </div>
-                                                <div class="panel-body">
-                                                    <table class="table datatable" id="dataTables-inspection">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Applicant No.</th>
-                                                                <th>Owner Name</th>
-                                                                <th>Business Name</th>
-                                                                <th>Location</th>
-                                                                <th>Date Applied</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>11-22-33</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Kenneth Salon</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>2018/1/1</td>
-                                                                <td><a href="Report-AppRecView.html"><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>22-33-44</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Puatu Bar</td>
-                                                                <td>Golden Field</td>
-                                                                <td>2018/1/1</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>33-44-55</td>
-                                                                <td>Lito Lapid</td>
-                                                                <td>Maximus</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>2018/1/1</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>11-22-33</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Kenneth Salon</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>2018/1/1</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>22-33-44</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Puatu Bar</td>
-                                                                <td>Golden Field</td>
-                                                                <td>2018/1/1</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>33-44-55</td>
-                                                                <td>Lito Lapid</td>
-                                                                <td>Maximus</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>2018/1/1</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                <div class="row">
+                                            <div class="col-md-12">
+                                                <form class="form-horizontal">
+                                                    <div class="panel panel-default tabs">                            
+                                                        <ul class="nav nav-tabs" role="tablist">
+                                                            <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">FSEC</a></li>
+                                                            <li><a href="#tab-second" role="tab" data-toggle="tab">FSIC</a></li>
+                                                        </ul>
+                                                        <div class="panel-body tab-content">
+                                                            <div class="tab-pane active" id="tab-first">
+                    
+                                                               <!--Start Default Table-->
+                                                                 <div class="panel panel-default">
+                                                                    <div class="panel-body">
+                                                                        <table class="table datatable" id="CertificationDatTable">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Applicant No</th>
+                                                                                    <th>Owner Name</th>
+                                                                                    <th>Business Name</th>
+                                                                                    <th>Location</th>
+                                                                                    <th>Date Applied</th>
+                                                                                    <th>Action</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                <?php
+require 'require/databaseconnection.php';
+$query3 = $conn->query("select * from `application` where assessment_status = 'Evaluated' && application_type = 'FSEC' ") or die(mysqli_error());
+while ($fetch3 = $query3->fetch_array()) {
+    $month = date("m", strtotime($fetch3['month']));
+    $date = date("F j, Y", strtotime($fetch3['date_applied']));
+    ?>
+                                <tr>
+                                    <td><?php echo $fetch3['year'] . '-' . $month . '-' . $fetch3['application_no'] ?></td>
+                                    <td><?php echo $fetch3['owner_name'] ?></td>
+                                    <td><?php echo $fetch3['business_name'] ?></td>
+                                    <td><?php echo $fetch3['establishment_address'] ?></td>
+                                    <td><?php echo $date?></td>
+                                    <td>
+                                        <a href="Report-AppRecView.php?id=<?php echo $fetch3['application_no']?>"> <i class="fa fa-eye"></i>  Preview</a> </br>
+                                        <a href=""> <i class="fa fa-eye"></i>  Evaluation Checklist</a>
+                                    </td>
+                                </tr>
+                                <?php
+}
+$conn->close();
+?>
+                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- END DEFAULT DATATABLE -->
+                    
+                                                            </div>
+                                                            <div class="tab-pane" id="tab-second">
+                                                                 <!--Start Default Table-->
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-body">
+                                                                        <table class="table datatable" id="dataTables-example">
+                                                                        <thead>
+                                                                                <tr>
+                                                                                    <th>Applicant No</th>
+                                                                                    <th>Owner Name</th>
+                                                                                    <th>Business Name</th>
+                                                                                    <th>Location</th>
+                                                                                    <th>Date Applied</th>
+                                                                                    <th>Action</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                <?php
+require 'require/databaseconnection.php';
+$query2 = $conn->query("select * from `application` where assessment_status = 'Inspected' && application_type = 'FSIC' ") or die(mysqli_error());
+while ($fetch2 = $query2->fetch_array()) {
+    $month = date("m", strtotime($fetch2['month']));
+    $date = date("F j, Y", strtotime($fetch2['date_applied']));
+    $appno = $fetch2['application_no'];
+    $app =  $fetch2['year'] . '-' . $month . '-' . $fetch2['application_no'];
+    
+?>
+                                <tr>
+                                    <td><?php echo $app ?></td>
+                                    <td><?php echo $fetch2['owner_name'] ?></td>
+                                    <td><?php echo $fetch2['business_name'] ?></td>
+                                    <td><?php echo $fetch2['establishment_address'] ?></td>
+                                    <td><?php echo $date?></td>
+                                    <td>
+                                        <a href="Report-AppRecView.php?id=<?php echo $fetch2['application_no']?>"> <i class="fa fa-eye"></i>  Preview</a> </br>
+                                        <a href="Reports/inspection-form.php?id=<?php echo $app?>"> <i class="fa fa-eye"></i> Inspection Order</a>
+                                        <?php 
+    $query3 = $conn->query("select * from `issue_notice` where application_no = '$appno' ") or die(mysqli_error());
+    $fetch3 = $query3->fetch_array();
+    if ($fetch3['type_of_notice'] == 'Comply') {
+        $type = 'comply';
+    }
+    else if ($fetch3['type_of_notice'] == 'Correct Violation') {
+        $type = 'cv';
+    }
+    ?>
+                                        </br>
+                                        <a href="Reports/issue-notice-<?php echo $type?>.php?id=<?php echo $fetch3['issue_notice_no']?>"> <i class="fa fa-eye"></i> Issue Notice</a>
+                                    </td>
+                                </tr>
+                                <?php
+}
+$conn->close();
+?>
+                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- END DEFAULT DATATABLE -->
+                    
+                                                            </div>                                        
+                                                            
+                                                        </div>
+                                                        </div>                                
+                    
+                                                </form>
+                    
                                             </div>
-                                            <!-- END DEFAULT DATATABLE -->
-
-                                        </div>
+                                        </div>   
                                        
 
                                         </div>                                        
                                         
                                     </div>
-                                    <div class="panel-footer">                                                                        
-                                        <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
-                                    </div>
+                                    
                                 </div>                                
 
                             </form>

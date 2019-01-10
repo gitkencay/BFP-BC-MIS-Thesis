@@ -32,7 +32,6 @@
                     <li><a href="Transaction-Assessment.php"> Assessments & Payments</a></li>
                     <li><a href="Transaction-Inspection.php"> Inspection & Compliance</a></li>
                     <li><a href="Transaction-BuildEval.php">Building Evaluation</a></li>
-                    <li><a href="#">Status Monitoring</a></li>
                     <li><a href="Transaction-Scheduling.php">Scheduling</a></li>                            
                 </ul>
             </li>

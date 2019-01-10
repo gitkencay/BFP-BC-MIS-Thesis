@@ -79,6 +79,18 @@ while($fetch = $query->fetch_array()){
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                    <label for="user-id" class="col-sm-12 control-label">&nbsp; Phone Number </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="cpnumb" name="cpnumb" value="<?php echo $fetch['cpnumb']?>"required>
+                                    </div>                                                                                            
+                            </div>
+                            <div class="form-group">
+                                    <label for="user-id" class="col-sm-12 control-label">&nbsp; Name of CRO </label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="croname" name="croname" value="<?php echo $fetch['croname']?>"readonly>
+                                    </div>                                                                                            
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <!--
@@ -125,43 +137,46 @@ while($fetch = $query->fetch_array()){
                                 <label for="status" class="col-sm-12 control-label"><br>Initial Requirements</label>
                                 <div class="col-sm-12">
                                     <?php
-                                        $initial_requirements = $fetch['initial_requirements'];
-                                        $check = explode(",", $initial_requirements);
-                                    ?>
-                                    <label><input type="checkbox" class="icheckbox" value="IniReq1" name="initial_requirements[]"
-                                    <?php 
-                                    if (in_array("IniReq1", $check)){
-                                        echo "checked";
-                                    }
-                                    ?>
-                                    >Endorsement from Building Official (BO) / Business Permit Licensing Office (BPLO)</label> <br>
-                                  
+$initial_requirements = $fetch['initial_requirements'];
+$check = explode(",", $initial_requirements);
+?>
+                                    <label>
+                                        <input type="checkbox" class="icheckbox" value="IniReq1" name="initial_requirements[]"
+                                    <?php
+if (in_array("IniReq1", $check)) {
+    echo "checked";
+}
+?>
+                                    >Endorsement from Building Official (BO) / Business Permit Licensing Office (BPLO)
+                                    </label> 
+                                    <br>
 
-                                    <label><input type="checkbox" class="icheckbox" value="IniReq2" name="initial_requirements[]" <?php 
-                                    if (in_array("IniReq2", $check)){
-                                        echo "checked";
-                                    }
-                                    ?>
+
+                                    <label><input type="checkbox" class="icheckbox" value="IniReq2" name="initial_requirements[]" <?php
+if (in_array("IniReq2", $check)) {
+    echo "checked";
+}
+?>
                                     >&nbsp;Three (3) Sets of Building Plans and Specifications</label> <br>
                                     <label><input type="checkbox" class="icheckbox" value="IniReq3" name="initial_requirements[]"
-                                    <?php 
-                                    if (in_array("IniReq3", $check)){
-                                        echo "checked";
-                                    }
-                                    ?>
+                                    <?php
+if (in_array("IniReq3", $check)) {
+    echo "checked";
+}
+?>
                                     >&nbsp;One (1) Set of Bills of Materials and Cost Estimate</label> <br>
                                     <label><input type="checkbox" class="icheckbox" value="IniReq4" name="initial_requirements[]"
-                                    <?php 
-                                    if (in_array("IniReq4", $check)){
-                                        echo "checked";
-                                    }
-                                    ?>
-                                    >&nbsp;Three (3) Sets  of Detailes Fire Safety Plans and Specifications or &emsp;&emsp; (FALAR-1) for Occupancy of at least 50 persons</label>
-                                    
                                     <?php
-                                        $initial_requirements = $fetch['initial_requirements'];
-                                        $check = explode(",", $initial_requirements);
-                                    ?>
+if (in_array("IniReq4", $check)) {
+    echo "checked";
+}
+?>
+                                    >&nbsp;Three (3) Sets  of Detailes Fire Safety Plans and Specifications or &emsp;&emsp; (FALAR-1) for Occupancy of at least 50 persons</label>
+
+                                    <?php
+$initial_requirements = $fetch['initial_requirements'];
+$check = explode(",", $initial_requirements);
+?>
                                     
                                   
                                 </div>

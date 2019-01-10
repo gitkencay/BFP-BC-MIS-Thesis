@@ -40,7 +40,7 @@
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Transaction</a></li>                    
-                    <li class="active"><a href="Transaction-BuildEval">Building Evaluation</a></li>
+                    <li class="active"><a href="Transaction-BuildEval.php">Building Evaluation</a></li>
                 </ul>
                 <!-- END BREADCRUMB -->                       
 
@@ -54,7 +54,7 @@
                                              <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <ul class="panel-controls">
-                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#buildModal"><i class="fa fa-plus"></i>Evaluation Checklist</button>   
+                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#PendingEvalModal"><i class="fa fa-plus"></i>Evaluation Checklist</button>   
                                                     </ul>                                 
                                                  </div>
                                              </div>
@@ -66,59 +66,33 @@
                                                                 <th>Evaluator</th>
                                                                 <th>Business Name</th>
                                                                 <th>Location</th>
-                                                                <th>Status</th>
+                                                                <th>Date</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td>11-22-33</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Kenneth Salon</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>Approved</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>22-33-44</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Puatu Bar</td>
-                                                                <td>Golden Field</td>
-                                                                <td>Disapproved</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>33-44-55</td>
-                                                                <td>Lito Lapid</td>
-                                                                <td>Maximus</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>Disapproved</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>11-22-33</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Kenneth Salon</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>Inspection Order</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>22-33-44</td>
-                                                                <td>Cardo Dalisay</td>
-                                                                <td>Puatu Bar</td>
-                                                                <td>Golden Field</td>
-                                                                <td>Approved</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>33-44-55</td>
-                                                                <td>Lito Lapid</td>
-                                                                <td>Maximus</td>
-                                                                <td>Araneta Street</td>
-                                                                <td>Approved</td>
-                                                                <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                            </tr>
+                                                        <?php
+require 'require/databaseconnection.php';
+$query = $conn->query("select * from `evaluation_checklist` ") or die(mysqli_error());
+while ($fetch = $query->fetch_array()) {
+    $month = date("m", strtotime($fetch['month']));
+    $checklist_no = $fetch['checklist_no'];
+    ?>
+                                                        <tr>
+                                                            
+                                                            <td><?php echo 'ECN' . '-' . $fetch['year'] . '-' . $month . '-' . $checklist_no ?></td>
+                                                            <td><?php echo $fetch['plan_evaluator'] ?></td>
+                                                            <td><?php echo $fetch['business_name'] ?></td>
+                                                            <td><?php echo $fetch['location'] ?></td>
+                                                            <td><?php echo $fetch['date_received'] ?></td>
+                                                            <td>
+                                                                <a href="Transaction-ViewChecklist.php?checklist_no=<?php echo $fetch['checklist_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+}
+$conn->close();
+?>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -131,9 +105,7 @@
                                         </div>                                        
                                         
                                     </div>
-                                    <div class="panel-footer">                                                                        
-                                        <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
-                                    </div>
+                                    
                                 </div>                                
 
                             </form>
@@ -149,67 +121,8 @@
         <!-- END PAGE CONTAINER -->
 
         <!--Start MODAL-->
-            <div class="modal fade" id="buildModal" role="dialog">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                              <h3 class="modal-title">Pending List(Evaluation Checklist)</h3>
-                                                    </div>
-
-                                                    <div class="modal-body">
-                                                     <div class="row">
-                                                       <div class="col-lg-12">
-                                                        <div class="form-group">
-                                                            <div class=col-md-4>
-                                                            <input type="text" class="form-control" id="assessSearch" placeholder="Search">
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                        <br>
-                                                               <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Application No.</th>
-                                                                        <th>Date Applied</th>
-                                                                        <th>Time-In</th>
-                                                                        <th>Action</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>2018-1-1</td>
-                                                                        <td>1-2-2018</td>
-                                                                        <td>1-3-18/11:30am</td>
-                                                                        <td><a href="Transaction-EvalChecklist.html"><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2018-1-1</td>
-                                                                        <td>1-2-2018</td>
-                                                                        <td>1-3-18/11:30am</td>
-                                                                        <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2018-1-1</td>
-                                                                        <td>1-2-2018</td>
-                                                                        <td>1-3-18/11:30am</td>
-                                                                        <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>2018-1-1</td>
-                                                                        <td>1-2-2018</td>
-                                                                        <td>1-3-18/11:30am</td>
-                                                                        <td><button class="btn btn-info"><i class="glyphicon glyphicon-user"></i></button></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                               </table>                      
-                                                            <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
-                                                            </div>
-                                                            </div>                                                              
-                                                        </div>                                                            
-                                                    </div> 
-                                                </div>
+        <?php require 'modals/PendingEvalCheck.php'?>
+        <!--End MODAL-->
         <!--End MODAL-->
         <!-- MESSAGE BOX-->
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">

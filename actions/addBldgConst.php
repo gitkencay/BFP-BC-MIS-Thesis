@@ -16,6 +16,7 @@ if(isset($_POST['save_bldgconstruction'])){
     $roof = $_POST['roof'];
     date_default_timezone_set('Asia/Manila');
     $date_applied=date("F j, Y g:i a");
+    $application_no = $_POST['application_number'];
 
 
     require '../require/databaseconnection.php';
@@ -24,6 +25,6 @@ if(isset($_POST['save_bldgconstruction'])){
     $conn->query("INSERT INTO `bldg_construct` VALUES('', '$ir_no', '$beams', '$columns', '$floor', '$exterior', '$corridor', '$partition_no', '$stair', '$windows', '$ceiling', '$door', '$trusses', '$roof', '$date_applied')") or die(mysqli_error());
     $conn->close();
     echo "<script type='text/javascript'>alert('Successfully added new Building Construction!');</script>";
-    echo "<script>document.location='../inspection-orderCopy.php'</script>";
+    echo "<script>document.location='../inspection-order.php?application_no=$application_no'</script>";
 }
 ?>

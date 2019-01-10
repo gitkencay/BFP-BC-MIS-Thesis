@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>        
+    <head>
         <!-- META SECTION -->
-        <title>BFP BACOLOD MIS</title>            
+        <title>BFP BACOLOD MIS</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,10 +10,10 @@
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <!-- END META SECTION -->
 
-        <!-- CSS INCLUDE -->      
+        <!-- CSS INCLUDE -->
         <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->                                    
+        <!-- EOF CSS INCLUDE -->
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
@@ -31,18 +31,18 @@
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
                         <a href="pages-login.html" class="mb-control" data-box="#mb-signout"><span class="glyphicon glyphicon-off"></span></a>
-                    </li> 
+                    </li>
                     <!-- END SIGN OUT -->
                 </ul>
-                <!-- END X-NAVIGATION VERTICAL -->                     
+                <!-- END X-NAVIGATION VERTICAL -->
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Transaction</a></li>                    
-                    <li class="active"><a href="Transaction-Inspection.html">Inspection & Compliance</a></li>
+                    <li><a href="#">Transaction</a></li>
+                    <li class="active"><a href="Transaction-Inspection.php">Inspection & Compliance</a></li>
                 </ul>
-                <!-- END BREADCRUMB -->                       
+                <!-- END BREADCRUMB -->
 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
@@ -55,8 +55,8 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <ul class="panel-controls">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#inspModal"><i class="fa fa-plus"></i>Inpection Order Form</button>   
-                                    </ul>                             
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#inspModal"><i class="fa fa-plus"></i>Inpection Order Form</button>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="panel-body">
@@ -66,34 +66,39 @@
                                             <th>Inspection Order No</th>
                                             <th>Inspection Report No</th>
                                             <th>Application No</th>
-                                            <th>Building Construction No</th>
-                                            <th>Status</th>
+                                            <th>Owner Name</th>
                                             <th>Action</th>
+                                            <th>Type of Notice</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-    require 'require/databaseconnection.php';
-            $query = $conn->query("select * from `inspection_order` order by inspection_report_no DESC") or die(mysqli_error());
-            while($fetch = $query->fetch_array()){
-                $month = date("m", strtotime($fetch['month']));
-                                        ?>                                      
+require 'require/databaseconnection.php';
+
+$query = $conn->query("select * from `inspection_report`") or die(mysqli_error());
+
+while ($fetch = $query->fetch_array()) {
+    $month = date("m", strtotime($fetch['month']));
+    $io_no2 = $fetch['io_no'];
+    ?>
                                         <tr>
-                                            <td><?php echo $fetch['year']. '-' . $month. '-' .$fetch['inspection_order_no']?></td>
-                                            <td><?php echo $fetch['inspection_report_no']?></td>
-                                            <td><?php echo $fetch['application_no']?></td>
-                                            <td><?php echo $fetch['building_construction_no']?></td>
-                                            <td><?php echo $fetch['status']?></td>
+                                            <td><?php echo 'IO'.'-'.$fetch['year'] . '-' . $month . '-' . $fetch['ir_no'] ?></td>
+                                            <td><?php echo 'IR'.'-'.$fetch['year'] . '-' . $month . '-' . $fetch['ir_no'] ?></td>
+                                            <td><?php echo $fetch['application_no'] ?></td>
+                                            <td><?php echo $fetch['owner_name'] ?></td>
                                             <td>
-                                                <a href="transaction-viewinspection.php?inspection_order_no=<?php echo $fetch['application_no']?>" class="btn btn-sm btn-info">View</a>
+                                                <a href="inspection-orderView.php?ir_no=<?php echo $fetch['ir_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                            </td>
+                                            <td>
+                                            <a href="#view_notice<?php echo $io_no2 ?>" data-target="#view_notice<?php echo $io_no2 ?>" data-toggle="modal" class="btn btn-info btn-sm"> <i class="fa fa-edit"></i> Issue Notice</a>
                                             </td>
                                         </tr>
                                         <?php
-            }
-            $conn->close();
-                                        ?>
+}
+$conn->close();
+?>
                                     </tbody>
-                                </table>         
+                                </table>
                             </div>
                         </div>
                         <!-- END DEFAULT DATATABLE -->
@@ -101,25 +106,27 @@
                     </div>
 
 
-                </div>                                        
+                </div>
+
 
             </div>
-            <div class="panel-footer">                                                                        
-                <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
+            <div class="panel-footer">
+               
             </div>
-        </div>                                
+        </div>
 
         </form>
 
     </div>
-</div>       
+</div>
 
 </div>
-<!-- END PAGE CONTENT WRAPPER -->                                
-</div>            
+<!-- END PAGE CONTENT WRAPPER -->
+</div>
 <!-- END PAGE CONTENT -->
 </div>
 <!-- END PAGE CONTAINER -->
+<?php require 'modals/ViewIssueNotice.php'?>
 
 <!--Start MODAL-->
 <div class="modal fade" id="inspModal" role="dialog">
@@ -151,31 +158,31 @@
                             </thead>
                             <tbody>
                                 <?php
-                                require 'require/databaseconnection.php';
-                                $query = $conn->query("select * from `application` where assessment_status = 'Assessed'") or die(mysqli_error());
-                                while($fetch = $query->fetch_array()){
-                                    $month = date("m", strtotime($fetch['month']));
-                                ?>                                      
+require 'require/databaseconnection.php';
+$query3 = $conn->query("select * from `application` where assessment_status = 'Assessed' && application_type = 'FSIC' ") or die(mysqli_error());
+while ($fetch3 = $query3->fetch_array()) {
+    $month2 = date("m", strtotime($fetch3['month']));
+    ?>
                                 <tr>
-                                    <td><?php echo $fetch['application_name']?></td>
-                                    <td><?php echo $fetch['year']. '-' . $month. '-' .$fetch['application_no']?></td>
-                                    <td><?php echo $fetch['date_applied']?></td>
+                                    <td><?php echo $fetch3['year'] . '-' . $month2 . '-' . $fetch3['application_no'] ?></td>
+                                    <td><?php echo $fetch3['application_name'] ?></td>
+                                    <td><?php echo $fetch3['date_applied'] ?></td>
                                     <td>
-                                        <a href="inspection-order.php?application_no=<?php echo $fetch['application_no']?>" class="btn btn-sm btn-info">Proceed</a>
+                                    <a href="inspection-order.php?application_no=<?php echo $fetch3['application_no'] ?>" class="btn btn-sm btn-info">Inspect</a>
                                     </td>
+                                    <?php
+}
+$conn->close();
+?>
                                 </tr>
-                                <?php
-                                }
-                                $conn->close();
-                                ?>
                             </tbody>
-                        </table>                      
+                        </table>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
                         </div>
-                    </div>                                                              
-                </div>                                                            
-            </div> 
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--End MODAL-->
@@ -185,7 +192,7 @@
                 <div class="mb-middle">
                     <div class="mb-title"><span class="glyphicon glyphicon-off"></span> Log <strong>Out</strong> ?</div>
                     <div class="mb-content">
-                        <p>Are you sure you want to log out?</p>                    
+                        <p>Are you sure you want to log out?</p>
                         <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
                     </div>
                     <div class="mb-footer">
@@ -202,16 +209,16 @@
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->                  
+        <!-- END PRELOADS -->
 
         <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
         <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>        
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
         <!-- END PLUGINS -->
 
-        <!-- START THIS PAGE PLUGINS-->        
+        <!-- START THIS PAGE PLUGINS-->
         <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
         <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -225,18 +232,18 @@
             });
         </script>
 
-        <!-- END THIS PAGE PLUGINS-->        
+        <!-- END THIS PAGE PLUGINS-->
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/settings.js"></script>
-
-        <script type="text/javascript" src="js/plugins.js"></script>        
+        <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/actions.js"></script>
 
         <script type="text/javascript" src="js/demo_dashboard.js"></script>
         <!-- END TEMPLATE -->
 
-        <!-- END SCRIPTS -->         
+        <!-- END SCRIPTS -->
         </body>
     </html>
 

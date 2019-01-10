@@ -62,150 +62,32 @@
                                                                                     <th>Applicant No</th>
                                                                                     <th>Owner Name</th>
                                                                                     <th>Business Name</th>
-                                                                                    <th>Status</th>
                                                                                     <th>Date Applied</th>
                                                                                     <th>Action</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><a href="index.html"><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></a></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>    
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                               
-                                                                            </tbody>
+                                <?php
+require 'require/databaseconnection.php';
+$query3 = $conn->query("select * from `application` where assessment_status = 'Evaluated' && application_type = 'FSEC' ") or die(mysqli_error());
+while ($fetch3 = $query3->fetch_array()) {
+    $month = date("m", strtotime($fetch3['month']));
+    $date = date("F j, Y", strtotime($fetch3['date_applied']));
+    ?>
+                                <tr>
+                                    <td><?php echo $fetch3['year'] . '-' . $month . '-' . $fetch3['application_no'] ?></td>
+                                    <td><?php echo $fetch3['owner_name'] ?></td>
+                                    <td><?php echo $fetch3['business_name'] ?></td>
+                                    <td><?php echo $date?></td>
+                                    <td>
+                                        <a href="Reports/FSEC-Certificate.php?id=<?php echo $fetch3['application_no']?>&owner_name=<?php echo $fetch3['owner_name']?>"class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="left" title="Print Preview">  <i class="fa fa-eye"></i>  Preview</a>
+                                    </td>
+                                </tr>
+                                <?php
+}
+$conn->close();
+?>
+                            </tbody>
                                                                         </table>
                                                                     </div>
                                                                 </div>
@@ -217,155 +99,48 @@
                                                                 <div class="panel panel-default">
                                                                     <div class="panel-body">
                                                                         <table class="table datatable" id="dataTables-example">
-                                                                            <thead>
+                                                                        <thead>
                                                                                 <tr>
                                                                                     <th>Applicant No</th>
                                                                                     <th>Owner Name</th>
                                                                                     <th>Business Name</th>
-                                                                                    <th>Status</th>
+                                                                                    <th>Type of Permit</th>
                                                                                     <th>Date Applied</th>
                                                                                     <th>Action</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                    <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>2018-01-01</td>
-                                                                                    <td>Kenneth Cayetano</td>
-                                                                                    <td>Kenneth Salon</td>
-                                                                                    <td>Complete</td>
-                                                                                    <td>2018/01/1</td>
-                                                                                   <td><button class="btn btn-success"><i class="glyphicon glyphicon-list-alt"></i> Preview</button></td>
-                                                                                </tr>
-                                                                               
-                                                                            </tbody>
+                                <?php
+require 'require/databaseconnection.php';
+$query2 = $conn->query("select * from `application` where assessment_status = 'Inspected' && application_type = 'FSIC' ") or die(mysqli_error());
+while ($fetch2 = $query2->fetch_array()) {
+    $month = date("m", strtotime($fetch2['month']));
+    $date = date("F j, Y", strtotime($fetch2['date_applied']));
+    ?>
+                                <tr>
+                                    <td><?php echo $fetch2['year'] . '-' . $month . '-' . $fetch2['application_no'] ?></td>
+                                    <td><?php echo $fetch2['owner_name'] ?></td>
+                                    <td><?php echo $fetch2['business_name'] ?></td>
+                                    <td><?php echo $fetch2['type_of_permit'] ?></td>
+                                    <td><?php echo $date?></td>
+                                    <td>
+                                    <?php 
+    if ($fetch2['type_of_permit'] == 'Building') {
+                                    $permit = 'BP';
+    }
+    if ($fetch2['type_of_permit'] == 'Occupancy') {
+        $permit = 'OP';
+    }
+                                    
+?>
+                                        <a href="Reports/FSIC-Certificate-<?php echo $permit?>.php?id=<?php echo $fetch2['application_no']?>&owner_name=<?php echo $fetch2['owner_name']?>"class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="left" title="Print Preview">  <i class="fa fa-eye"></i>  Preview</a>
+                                    </td>
+                                </tr>
+                                <?php
+}
+$conn->close();
+?>
+                            </tbody>
                                                                         </table>
                                                                     </div>
                                                                 </div>
@@ -382,6 +157,16 @@
                                         </div>       
                     
                                     </div>
+
+                                    <script>
+			function printContent(el){
+				var restorepage = document.body.innerHTML;
+				var printcontent = document.getElementById(el).innerHTML;
+				document.body.innerHTML = printcontent;
+				window.print();
+				document.body.innerHTML = restorepage;
+			}
+		</script>
                                     <!-- END PAGE CONTENT WRAPPER -->
 
         </div>

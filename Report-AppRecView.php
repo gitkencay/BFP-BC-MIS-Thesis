@@ -13,6 +13,15 @@
         <!-- CSS INCLUDE -->      
         <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+        <style>
+			@media print{
+				body, page[size="letter"] {
+                    margin: 0;
+					box-shadow: 0;
+                    orientation: landscape;
+                  }
+            }
+        </style>
         <!-- EOF CSS INCLUDE -->                                    
     </head>
     <body>
@@ -37,18 +46,28 @@
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
                 <!-- START BREADCRUMB -->
+                <?php
+                    require 'require/databaseconnection.php';
+                    $query = $conn->query("SELECT * FROM `application` WHERE `application_no` = '$_GET[id]'") or die(mysqli_error());
+                    $fetch = $query->fetch_array();
+                    $month = date("m", strtotime($fetch['month']));
+                    $date = date("F j, Y", strtotime($fetch['date_applied']));
+                ?>
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Reports</a></li>
-                    <li><a href="#">Applicant Record Report</a></li>                    
-                    <li class="active"><a href="#">Kenneth Cayetano</a></li>
+                    <li><a href="Report-Applicant.php   ">Applicant Record Report</a></li>                    
+                    <li class="active"> <label><?php echo $fetch['owner_name']?> </label> </a></li>
                 </ul>
                 <!-- END BREADCRUMB -->                       
 
                 <!-- PAGE CONTENT WRAPPER -->
-                <div class="page-content-wrap"> 
+                
+                <button class="btn btn-default btn-sm" onclick="printContent('print')">Print</button>
+                <div class="page-content-wrap">
+                    <div id="print">
                     <div class="AppRecOverView">
-                        <h2 id="appRec"><label>Applicant No: 2018-2-24</label></h2>
+                        <h3 id="appRec">Applicant No: <?php echo $fetch['year'] . '-' . $month . '-' .$fetch['application_no']?></h3>
                         <div class="panel panel-default">
                             <div class="panel-body">
                             <table>
@@ -60,13 +79,13 @@
                                         <th>
                                             <label for="app-name" class="col-sm-5 control-label">Owner Name&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="app-nme" placeholder="Kenneth Cayetano" disabled="">  
+                                                <input type="text" class="form-control" id="app-nme" value="<?php echo $fetch['owner_name']?>"readonly>   
                                             </div>
                                         </th>
                                         <th>
                                             <label for="bus-name" class="col-sm-5 control-label">Business Name&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="bus-name" placeholder="Kenneth Salon" disabled="">  
+                                                <input type="text" class="form-control" id="bus-name"  value="<?php echo $fetch['business_name']?>"readonly>  
                                             </div>
                                         </th>
                                     </tr>
@@ -74,13 +93,13 @@
                                         <th>
                                             <label for="location" class="col-md-8 control-label"><br>Establishment Address&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="location" placeholder="Magsungay, Brgy. Singcang Airport" disabled="">  
+                                                <input type="text" class="form-control" id="location"  value="<?php echo $fetch['establishment_address']?>"readonly>  
                                             </div>
                                         </th>
                                         <th>
                                             <label for="cert" class="col-md-8 control-label"><br>Certificate Applying For&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="cert" placeholder="FSIC" disabled="">  
+                                                <input type="text" class="form-control" id="cert"  value="<?php echo $fetch['application_type']?>"readonly>  
                                             </div>
                                         </th>
                                     </tr>
@@ -90,13 +109,13 @@
                                         <td>
                                             <label for="cert" class="col-md-8 control-label"><br>UserName&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="cert" placeholder="KenCay24218" disabled="">  
+                                                <input type="text" class="form-control" id="cert"  value="<?php echo $fetch['username']?>"readonly>  
                                             </div> 
                                         </td>
                                         <td>
                                             <label for="cert" class="col-md-8 control-label"><br>Date Applied&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="cert" placeholder="24/2/2018" disabled="">  
+                                                <input type="text" class="form-control" id="cert"  value="<?php echo $date?>"readonly>  
                                             </div>
                                         </td>
                                     </tr>
@@ -110,7 +129,7 @@
                                         <td>
                                             <label for="cert" class="col-md-8 control-label"><br>Building Type&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="cert" placeholder="Small Business" disabled=""> 
+                                                <input type="text" class="form-control" id="cert" value="<?php echo $fetch['building_type']?>"readonly> 
                                             </div>
                                         </td>
                                     </tr>
@@ -137,50 +156,63 @@
                                             <th>File Location</th>
                                             <th>Officer Type</th>
                                             <th>Officer Incharge</th>
-                                            <th>In</th>
-                                            <th>Out</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                require 'require/databaseconnection.php';
+                                $query = $conn->query("select * from `application` WHERE `application_no` = '$_GET[id]' ") or die(mysqli_error());
+                                $fetch = $query->fetch_array();
+                                    $month = date("m", strtotime($fetch['month']));
+                                    $date = date("F j, Y", strtotime($fetch['date_applied']));
+                                    $time = date("g:i a", strtotime($fetch['date_applied']));
+                                    $application = $fetch['application_no'];
+                                    $application2 = $fetch['year'].'-'. $month.'-'.$fetch['application_no'];
+                                $query2 = $conn->query("select * from `assessment` WHERE `application_no` = $application ") or die(mysqli_error());
+                                $fetch2 = $query2->fetch_array();
+                                    $date2 = date("F j, Y", strtotime($fetch2['date_applied']));
+                                    $time2 = date("g:i a", strtotime($fetch2['date_applied']));
+                                $query3 = $conn->query("select * from `inspection_report` WHERE `application_no` = '$application2' ") or die(mysqli_error());
+                                $fetch3 = $query3->fetch_array();
+                                    $date4 = date("F j, Y", strtotime($fetch3['date_applied']));
+                                    $time4 = date("g:i a", strtotime($fetch3['date_applied']));
+                                    
+                                ?>
                                         <tr>
                                             <td>Applicant Registration</td>
                                             <td>Customer Relations Officer</td>
                                             <td>Puatu Puatu</td>
-                                            <td>24/2/18 8:45 AM</td>
-                                            <td>24/2/18 9:00 AM</td>
+                                            <td><?php echo $date?></td>
+                                            <td><?php echo $time?></td>
                                         </tr>
                                         <tr>
                                             <td>Assessment & Payment</td>
                                             <td>Fire Code Assessor</td>
                                             <td>John Rey</td>
-                                            <td>24/2/18 9:00 AM</td>
-                                            <td>26/2/18 3:00 PM</td>
+                                            <td><?php echo $date2?></td>
+                                            <td><?php echo $time2?></td>
                                         </tr>
                                         <tr>
                                             <td>Inspection Order Form</td>
                                             <td>Customer Relations Officer</td>
                                             <td>Renz Owen</td>
-                                            <td>27/2/2018 8:00 AM</td>
-                                            <td>27/2/2018 8:05 AM</td>
+                                            <td><?php echo $date4?></td>
+                                            <td><?php echo $time4?></td>
                                         </tr>
-                                        <tr>
+                                        <tr>    
                                             <td>After Inspection Report</td>
                                             <td>Inspector</td>
                                             <td>Kenny Mistahverygood</td>
-                                            <td>1/3/2018 2:00 PM</td>
-                                            <td>1/3/2018 2:00 PM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Certificate Issued</td>
-                                            <td>Customer Relations Officer</td>
-                                            <td>Arim Torr</td>
-                                            <td>1/3/2018 2:00 PM</td>
-                                            <td>5/3/2018 3:00 PM</td>
+                                            <td><?php echo $date4?></td>
+                                            <td><?php echo $time4?></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
         <!-- END PAGE CONTAINER -->
@@ -208,6 +240,15 @@
         </div>
         <!-- END MESSAGE BOX-->
 
+        <script>
+			function printContent(el){
+				var restorepage = document.body.innerHTML;
+				var printcontent = document.getElementById(el).innerHTML;
+				document.body.innerHTML = printcontent;
+				window.print();
+				document.body.innerHTML = restorepage;
+			}
+		</script>
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>

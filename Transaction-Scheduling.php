@@ -38,80 +38,96 @@
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>                    
-                    <li class="active">Dashboard</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Transaction</a></li>                    
+                    <li class="active"><a href="Transaction-Scheduling.php">Scheduling</a></li>
                 </ul>
                 <!-- END BREADCRUMB -->                       
 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                    <!-- START CONTENT FRAME -->
-                    <div class="content-frame">            
-                        <!-- START CONTENT FRAME TOP -->
-                        <div class="content-frame-top">                        
-                            <div class="page-title">                    
-                                <h2><span class="fa fa-calendar"></span> Calendar</h2>
-                            </div>  
-                            <div class="pull-right">
-                                <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
-                            </div>                                                                                
-                        </div>
-                        <!-- END CONTENT FRAME TOP -->
 
-                        <!-- START CONTENT FRAME LEFT -->
-                        <div class="content-frame-left">
-                            <h4>New Schedule</h4>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="new-event-text" placeholder="Enter Inspector"/>
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary" id="new-event">Add</button>
+                     <div class="row">
+                        <div class="col-md-12">
+
+                                           <!--Start Default Table-->
+                                             <div class="panel panel-default">
+                                             </div>
+                                                <div class="panel-body">
+                                                    <table class="table datatable" id="dataTables-inspection">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Inspection Order No.</th>
+                                                                <th>Owner Name</th>
+                                                                <th>Inspector Name</th>
+                                                                <th>Time</th>
+                                                                <th>Day</th>
+                                                                <th>Month</th>
+                                                                <th>Year</th>
+                                                                <th>Status</th>
+                                                            
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <?php
+require 'require/databaseconnection.php';
+$query = $conn->query("select * from `inspection_schedule` ") or die(mysqli_error());
+while ($fetch = $query->fetch_array()) {
+    $query2 = $conn->query("select * from `inspection_report` ") or die(mysqli_error());
+    $fetch2 = $query2->fetch_array();
+    $name = $fetch2['owner_name'];
+    
+    $month = date("m", strtotime($fetch['month']));
+    $day = date("jS", strtotime($fetch['date_applied']));
+    $io_schedule = $fetch['io_schedule'];
+    $inspectors = $fetch['inspectors'];
+    $status = $fetch['status'];
+    ?>
+                                                        <tr>
+
+                                                            <td><?php echo $fetch['io_no'] ?></td>
+                                                            <td><?php echo $name ?></td>
+                                                            <td><?php echo $inspectors?></td>
+                                                            <td><?php echo $fetch['inspection_time'] ?></td>
+                                                            <td><?php echo $day ?></td>
+                                                            <td><?php echo $month ?></td>
+                                                            <td><?php echo $fetch['year'] ?></td>
+                                                            <td>
+                                                            <?php if ($fetch['status'] == 'Complete') {
+        echo "<span class='badge badge-success'>Complete</span>";
+    }
+
+    if ($fetch['status'] == 'Pending') {
+        echo "<span class='badge badge-danger'>" . $fetch['status'] . "</span>";
+    }
+    ?>
+                                                        <button href="#edit_status<?php echo $io_schedule; ?>" data-target="#edit_status<?php echo $io_schedule; ?>" data-toggle="modal" <i class="fa fa-edit"></i></button>
+                                                        </td>
+                                                        </tr>
+                                                        <?php
+}
+$conn->close();
+?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- END DEFAULT DATATABLE -->
+
+                                        </div>
+                                       
+
+                                        </div>                                        
+                                        
                                     </div>
-                                </div>
-                            </div>
+                                    
+                                </div>                                
 
-                            <h4>Inspectors Scheduled Today</h4>
-                            <div class="list-group border-bottom" id="external-events">                                    
-                                <a class="list-group-item external-event">Insp. Clark CAnlog</a>
-                                <a class="list-group-item external-event">Insp. Justin Puatu</a>
-                                <a class="list-group-item external-event">Insp. Carl Arcillas</a>
-                                <a class="list-group-item external-event">Isnp. Lebron James</a>
-                                <a class="list-group-item external-event">Insp. Kobe Bryant</a>                                    
-                                <a class="list-group-item external-event">Insp. Michael Jordan</a>
-                            </div>                            
+                            </form>
 
-                            <!--<div class="push-up-10">
-<label class="check">
-<input type="checkbox" class="icheckbox" id="drop-remove"/> Remove after drop
-</label>
-</div>  -->   
-
-                            <!--<div class="panel panel-default push-up-10">
-<div class="panel-body padding-top-0">
-<h4>Fullcalendar</h4>
-<p>FullCalendar is a jQuery plugin that provides a full-sized, drag & drop event calendar like the one below. It uses AJAX to fetch events on-the-fly and is easily configured to use your own feed format. It is visually customizable with a rich API.</p>
-</div>
-</div>-->
                         </div>
-                        <!-- END CONTENT FRAME LEFT -->
+                    </div>       
 
-                        <!-- START CONTENT FRAME BODY -->
-                        <div class="content-frame-body padding-bottom-0">
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div id="alert_holder"></div>
-                                    <div class="calendar">                                
-                                        <div id="calendar"></div>                            
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>                    
-                        <!-- END CONTENT FRAME BODY -->
-
-                    </div>               
-                    <!-- END CONTENT FRAME -->
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                                
             </div>            
@@ -119,6 +135,10 @@
         </div>
         <!-- END PAGE CONTAINER -->
 
+        <!--Start MODAL-->
+        <?php require 'modals/editStatus.php'?>
+        <!--End MODAL-->
+        <!--End MODAL-->
         <!-- MESSAGE BOX-->
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
             <div class="mb-container">
@@ -138,11 +158,10 @@
             </div>
         </div>
         <!-- END MESSAGE BOX-->
-
         <!-- START PRELOADS -->
         <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->          
+        <!-- END PRELOADS -->                  
 
         <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
@@ -154,17 +173,30 @@
         <!-- START THIS PAGE PLUGINS-->        
         <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
 
-        <script type="text/javascript" src="js/plugins/moment.min.js"></script>
-        <script type="text/javascript" src="js/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+         <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+         <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>-->
+             <script>
+                 $(document).ready(function () {
+                      $('#dataTables-example').dataTable();
+                  });
+             </script>
+
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/settings.js"></script>
 
         <script type="text/javascript" src="js/plugins.js"></script>        
-        <script type="text/javascript" src="js/actions.js"></script>        
-        <!-- END TEMPLATE -->         
+        <script type="text/javascript" src="js/actions.js"></script>
+
+        <script type="text/javascript" src="js/demo_dashboard.js"></script>
+        <!-- END TEMPLATE -->
+
+        <!-- END SCRIPTS -->         
     </body>
 </html>
 

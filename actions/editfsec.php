@@ -9,6 +9,8 @@ if(isset($_POST['editfsec'])){
     $barangay_name = $_POST['barangay_name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $cpnumb = $_POST['cpnumb'];
+    $croname = $_POST['croname'];
     $owner_name = $_POST['owner_name'];
     $number_of_floors = $_POST['number_of_floors'];
     $lot_size = $_POST['lot_size'];
@@ -30,7 +32,7 @@ if(isset($_POST['editfsec'])){
 		}
 	}
 
-    $conn->query("UPDATE `application` SET `application_name` = '$application_name', `business_name` = '$business_name', `establishment_address` = '$establishment_address', `building_type` = '$building_type', `barangay_name` = '$barangay_name', `username` = '$username', `password` = '$password', `owner_name` = '$owner_name', `number_of_floors` = '$number_of_floors', `lot_size` = '$lot_size', `status` = '$status', `initial_requirements` = '$new' WHERE `application_no` = '$application_no'") or die(mysqli_error());
+    $conn->query("UPDATE `application` SET `application_name` = '$application_name', `business_name` = '$business_name', `establishment_address` = '$establishment_address', `building_type` = '$building_type', `barangay_name` = '$barangay_name', `cpnumb` = '$cpnumb', `username` = '$username', `password` = '$password', `owner_name` = '$owner_name', `number_of_floors` = '$number_of_floors', `lot_size` = '$lot_size', `status` = '$status', `initial_requirements` = '$new' WHERE `application_no` = '$application_no'") or die(mysqli_error());
 
     echo "<script type='text/javascript'>alert('Successfully edited FSEC application!');</script>";
     echo "<script>document.location='../DataEntry-AppReg.php'</script>";
