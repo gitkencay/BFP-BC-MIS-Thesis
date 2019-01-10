@@ -49,10 +49,10 @@
                                             <form method="post" action="actions/addInspection.php" onsubmit="return confirm('Are you sure you want to add this Inspection Information?');"  >
                                                 <div class="panel-body">
                                                     <div class="row">
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-5 control-label">IO No.</label>
-                                                                <div class="col-sm-10">
+                                                                <div class="col-md-8">
                                                                     <input type="hidden" name="application_number" value="<?php echo $fetch['application_no']?>"/>
                                                                     <input type="text" class="form-control" name="io_no" value="<?php echo 'IO' . '-' . $year . '-' . $month . '-' . $ir_no ?>">
                                                                 </div>
@@ -60,46 +60,14 @@
 
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-5 control-label">Application No</label>
-                                                                <div class="col-sm-10">
+                                                                <div class="col-md-8">
                                                                     <input type="hidden" name="application_number" value="<?php echo $fetch['application_no']?>"/>
                                                                     <input type="text" class="form-control" name="application_no" value="<?php echo $fetch['year'] . '-' . $month2 . '-' . $fetch['application_no'] ?>" >
                                                                 </div>
                                                             </div> <br><br><br>
 
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Owner Name</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="owner_name" value="<?php echo $fetch['owner_name'] ?>" >
-                                                                </div>
-                                                            </div> <br><br><br>                                                      
-                                                        </div>
 
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Business Name</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="business_name" value="<?php echo $fetch['business_name'] ?>" >
-                                                                </div>
-                                                            </div> <br><br><br>  
-
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Establishment Address</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="establishment_address" value="<?php echo $fetch['establishment_address'] ?>" >
-                                                                </div>
-                                                            </div> <br><br><br> 
-
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Date Applied</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" id="date_applied" name="date_applied" value="<?php echo $today ?>" >
-                                                                </div>
-                                                            </div> <br><br><br>  
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-5">
+                                                             <div class="col-md-5">
                                                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#add_inspection"> <i class="fa fa-plus"></i>Add Schedule</button>
                                                         </div>
                                                         <div class="col-md-7">
@@ -107,85 +75,131 @@
                                                                 <center><span id="alerttext"></span></center>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-5">
+
+                                                                                                                 
+                                                        </div>
+
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Inspection Report No</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="ir_no" value="<?php echo 'IR' . '-' . $year . '-' . $month . '-' . $ir_no ?>">
+                                                                <label for="app-name" class="col-sm-5 control-label">Business Name</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" name="business_name" value="<?php echo $fetch['business_name'] ?>" >
                                                                 </div>
                                                             </div> <br><br><br>  
 
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Application No</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="application_no" value="<?php echo $fetch['year'] . '-' . $month2 . '-' . $fetch['application_no'] ?>" >
+                                                                <label for="app-name" class="col-sm-9 control-label">Establishment Address</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" name="establishment_address" value="<?php echo $fetch['establishment_address'] ?>" >
                                                                 </div>
-                                                            </div> <br><br><br>
+                                                            </div> <br><br><br> 
+
+                                                              
+                                                        </div>
+
+                                                        <div class="col-md-4">
 
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-5 control-label">Owner Name</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" value="<?php echo $fetch['owner_name'] ?>" readonly>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" name="owner_name" value="<?php echo $fetch['owner_name'] ?>" >
                                                                 </div>
-                                                            </div> <br><br><br>     
+                                                            </div> <br><br><br> 
 
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Owner Address</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="owner_address" id="owner_address" required>
+                                                                <label for="app-name" class="col-sm-5 control-label">Date Applied</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" id="date_applied" name="date_applied" value="<?php echo $today ?>" >
                                                                 </div>
-                                                            </div> <br><br><br>     
+                                                            </div> <br><br><br>
+
                                                         </div>
-                                                        <div class="col-md-5">
+                                                    </div>
+                                                    
+                                                
+                                                    <hr>
+                                                    <h3><label><span>After Inspection Report</span></label></h3>
+                                                    <div class="row">
+                                                        <div class="col-md-3">
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Building Name</label>
-                                                                <div class="col-sm-10">
+                                                                <label for="app-name" class="col-sm-8 control-label">Inspection Report No</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" name="ir_no" value="<?php echo 'IR' . '-' . $year . '-' . $month . '-' . $ir_no ?>" readonly>
+                                                                </div>
+                                                            </div> <br><br><br>  
+
+                                                            <div class="form-group">
+                                                                <label for="app-name" class="col-sm-8 control-label">Application No</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" name="application_no" value="<?php echo $fetch['year'] . '-' . $month2 . '-' . $fetch['application_no'] ?>" readonly>
+                                                                </div>
+                                                            </div> <br><br><br>
+  
+    
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="app-name" class="col-sm-8 control-label">Building Name</label>
+                                                                <div class="col-md-8">
                                                                     <input type="text" class="form-control" value="<?php echo $fetch['business_name'] ?>" require readonly>
                                                                 </div>
                                                             </div> <br><br><br>  
 
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Building Address</label>
-                                                                <div class="col-sm-10">
+                                                                <label for="app-name" class="col-sm-8 control-label">Building Address</label>
+                                                                <div class="col-md-8">
                                                                     <input type="text" class="form-control" name="building_address"  value="<?php echo $fetch['establishment_address'] ?>" readonly require >
+                                                                </div>
+                                                            </div> <br><br><br> 
+                                                    
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="app-name" class="col-sm-5 control-label">Owner Name</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" value="<?php echo $fetch['owner_name'] ?>" readonly>
+                                                                </div>
+                                                            </div> <br><br><br>   
+
+                                                            <div class="form-group">
+                                                                <label for="app-name" class="col-sm-8 control-label">Owner Address</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" class="form-control" name="owner_address" id="owner_address" required>
+                                                                </div>
+                                                            </div> <br><br><br> <br>
+
+                                                            <div class="col-md-4">
+                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Bldg_Const"> <i class="fa fa-plus"></i>Add Building Construction</button>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="app-name" class="col-sm-12 control-label">Number of Floors</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="text" class="form-control" name="number_of_floors" id="number_of_floors" value="<?php echo $fetch['number_of_floors'] ?>" readonly>
+                                                                </div>
+                                                            </div> <br><br><br>
+
+                                                             <div class="form-group">
+                                                                <label for="app-name" class="col-sm-12 control-label">Lot Size</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="text" class="form-control" name="lot_size" id="lot_size" value="<?php echo $fetch['lot_size'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br><br>  
 
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Height of Building</label>
-                                                                <div class="col-sm-10">
+                                                             <div class="form-group">
+                                                                <label for="app-name" class="col-sm-12 control-label">Building Height</label>
+                                                                <div class="col-sm-5">
                                                                     <input type="text" class="form-control" name="bldg_height" id="bldg_height" required >
                                                                 </div>
                                                             </div> <br><br><br>  
 
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Lot Size</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="lot_size" id="lot_size" value="<?php echo $fetch['lot_size'] ?>" readonly>
-                                                                </div>
-                                                            </div> <br><br><br>                                                        
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <div class="form-group">
-                                                                <label for="app-name" class="col-sm-12 control-label">Number of Floors</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="number_of_floors" id="number_of_floors" value="<?php echo $fetch['number_of_floors'] ?>" readonly>
-                                                                </div>
-                                                            </div> <br><br><br>  
+                                                           
                                                         </div>
                                                     </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-3">
-                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Bldg_Const"> <i class="fa fa-plus"></i>Add Building Construction</button>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#IssueNotice"> <i class="fa fa-plus"></i>Issue Notice</button>
-                                                        </div>
-                                                    </div>
+                                                 
                                                     <hr>
                                                     <div class="row">
                                                         <div class="col-md-5">
@@ -196,31 +210,100 @@
                                                                     <textarea rows="3" cols="60" placeholder="Recommend for Deficiences" name="recommendation"  id="recommendation" require></textarea>
                                                                 </div>
                                                             </div>
+                                                            <br><br><br><br><br>
+                                                             <div class="col-md-3">
+                                                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#IssueNotice"> <i class="fa fa-plus"></i>Issue Notice</button>
+                                                            </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-12 control-label">Checklist</label>
                                                                 <div class="col-sm-10">
-                                                                    <select class="form-control" name="ir_checklist"  id"ir_checklist">
-                                                                        <option value="Select">Select</option>
-                                                                        <option value="Classification">Classification</option>
-                                                                        <option value="Exit Details">Exit Details</option>
-                                                                        <option value="Lightings and Signs">Lightings and Signs</option>
-                                                                        <option value="Features of Fire Protection">Features of Fire Protection</option>
-                                                                        <option value="Building Service Equipment">Building Service Equipment</option>
-                                                                        <option value="Hazardous Areas">Hazardous Areas</option>
-                                                                        <option value="Operating Features">Operating Features</option>
-                                                                    </select>
+                                                                    <input type="text" class="form-control" name="classific" value="Classification" readonly="">
                                                                 </div> 
                                                             </div><br><br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="exitDet" value="Exit Details" readonly="">
+                                                                </div> 
+                                                            </div><br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="LigSign" value="Lightings and Signs" readonly="">
+                                                                </div> 
+                                                            </div><br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="featFire" value="Features of Fire Protection" readonly="">
+                                                                </div> 
+                                                            </div><br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="builSer" value="Building Service Equipment" readonly="">
+                                                                </div> 
+                                                            </div><br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="hazard" value="Hazardous Areas" readonly="">
+                                                                </div> 
+                                                            </div><br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="opsFeat" value="Operating Features" readonly="">
+                                                                </div> 
+                                                            </div>
+
+
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-12 control-label">Specify Deficiency</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="deficiency" require>
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency1">
                                                                 </div>
                                                             </div> <br><br><br> 
+
+                                                             <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency2">
+                                                                </div>
+                                                            </div> <br><br> 
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency3">
+                                                                </div>
+                                                            </div> <br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency4">
+                                                                </div>
+                                                            </div> <br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency5">
+                                                                </div>
+                                                            </div> <br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency6">
+                                                                </div>
+                                                            </div> <br><br>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" class="form-control" name="deficiency7">
+                                                                </div>
+                                                            </div> <br><br>
 
                                                         </div>
 

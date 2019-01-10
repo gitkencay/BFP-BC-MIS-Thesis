@@ -307,108 +307,153 @@ $year = date('Y');
                                             </div>
                                             <div class="panel-body panel-body" id="means_egress_acddg">
                                                 <div class="form-group">
-                                                    <div class="col-md-12">
-                                                        <label><input type="checkbox" class="icheckbox" value="Means_Egrees_Req_1" name="means_of_egrees[]">&nbsp;Building exits must abut a public street or approved alley.</label> <br>
+                                                    <div class="col-md-1">
+                                                        <label><input type="checkbox" class="icheckbox" value="Means_Egrees_Req_1" name="means_of_egrees[]"></label> <br>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                    &nbsp;Building exits must abut a public street or approved alley.
                                                     </div>
                                                 </div>
                                                     <br>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                         <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_2" name="means_of_egrees[]">&nbsp;Provide at least two (2) means of egress for each floor, room.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_2" name="means_of_egrees[]">
                                                             </label> <br>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Provide at least two (2) means of egress for each floor, room.
                                                         </div>
                                                     </div>
                                                     <br>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_3" name="means_of_egrees[]">&nbsp;Provide secondary stairs/exits as far/remote from main stair, to serve ___.                                                    
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_3" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Provide secondary stairs/exits as far/remote from main stair, to serve ___.                                                    .
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_4" name="means_of_egrees[]">&nbsp;Enclose all stairways and ire escapes with walls having	hours of fire resistance with access thru self-closing fire doors.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_4" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Enclose all stairways and ire escapes with walls having	hours of fire resistance with access thru self-closing fire doors.                                                .
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_5" name="means_of_egrees[]">&nbsp;Provide two (2) doors as exit ways from all rooms.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_5" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Provide two (2) doors as exit ways from all rooms.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_6" name="means_of_egrees[]">&nbsp;Interconnect stairs and fire escapes with fire resistive passageways on corridors at least ____ meters wide.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_6" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Interconnect stairs and fire escapes with fire resistive passageways on corridors at least ____ meters wide.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_7" name="means_of_egrees[]">&nbsp;Enclose walls, doors, stairs ramps, escalators and other components of exits systems.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_7" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Enclose walls, doors, stairs ramps, escalators and other components of exits systems.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_8" name="means_of_egrees[]">&nbsp;Provide protected/enclosed horizontal exits with self-closing fire doors.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_8" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Provide protected/enclosed horizontal exits with self-closing fire doors.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_9" name="means_of_egrees[]">&nbsp;Travel distance to an exit shall not be more than ___ meters.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_9" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Travel distance to an exit shall not be more than ___ meters.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_10" name="means_of_egrees[]">&nbsp;Exit doors shall swing in the direction of exit travel.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_10" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Exit doors shall swing in the direction of exit travel.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_11" name="means_of_egrees[]">&nbsp;Revolving doors shall not be used as means of egress except_________.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_11" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Revolving doors shall not be used as means of egress except_________.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_12" name="means_of_egrees[]">&nbsp;Exit door/s should be openable from the inside without the use of keys, special knowledge or effort flush bolts or surface bolts are prohibited.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_12" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Exit door/s should be openable from the inside without the use of keys, special knowledge or effort flush bolts or surface bolts are prohibited.
+                                                        </div>                                        
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-1">
+                                                            <label>
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_13" name="means_of_egrees[]">
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Exit door should have a minimum width of 71 cm and a maximum width 122 cm and shall not restrict the opening.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_13" name="means_of_egrees[]">&nbsp;Exit door should have a minimum width of 71 cm and a maximum width 122 cm and shall not restrict the opening.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_14" name="means_of_egrees[]">
                                                             </label>
+                                                        </div>
+                                                        <div class="col-md-11">
+                                                            &nbsp;A floor or landing is required not less than the width of exit door.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-1">
                                                             <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_14" name="means_of_egrees[]">&nbsp;A floor or landing is required not less than the width of exit door.
+                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_15" name="means_of_egrees[]">
                                                             </label>
                                                         </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-md-12">
-                                                            <label>
-                                                            <input type="checkbox" class="icheckbox" value="Means_Egrees_Req_15" name="means_of_egrees[]">&nbsp;Door should be not project into the required corridor width when fully opened so as not to reduce the corridor width to less than 76.17 cm.
-                                                            </label>
+                                                        <div class="col-md-11">
+                                                            &nbsp;Door should be not project into the required corridor width when fully opened so as not to reduce the corridor width to less than 76.17 cm.
                                                         </div>
                                                     </div>
                                                     <div class="form-group">

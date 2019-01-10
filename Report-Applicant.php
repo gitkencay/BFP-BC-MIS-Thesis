@@ -79,6 +79,7 @@ $query3 = $conn->query("select * from `application` where assessment_status = 'E
 while ($fetch3 = $query3->fetch_array()) {
     $month = date("m", strtotime($fetch3['month']));
     $date = date("F j, Y", strtotime($fetch3['date_applied']));
+    $app = $fetch3['year'] . '-' . $month . '-' . $fetch3['application_no']
     ?>
                                 <tr>
                                     <td><?php echo $fetch3['year'] . '-' . $month . '-' . $fetch3['application_no'] ?></td>
@@ -88,7 +89,7 @@ while ($fetch3 = $query3->fetch_array()) {
                                     <td><?php echo $date?></td>
                                     <td>
                                         <a href="Report-AppRecView.php?id=<?php echo $fetch3['application_no']?>"> <i class="fa fa-eye"></i>  Preview</a> </br>
-                                        <a href=""> <i class="fa fa-eye"></i>  Evaluation Checklist</a>
+                                        <a href="Reports/EvaluationChecklist.php?id=<?php echo $app;?>"> <i class="fa fa-eye"></i>  Evaluation Checklist</a>
                                     </td>
                                 </tr>
                                 <?php
