@@ -1,6 +1,19 @@
-<?php require_once 'vendor/autoload.php'; 
-$client = new NexmoClient(new NexmoClientCredentialsBasic(API_KEY, API_SECRET)); 
-$text = new NexmoMessageText(NEXMO_TO_NUMBER, NEXMO_FROM_NUMBER, 'How to send an SMS with PHP'); 
-$response = $client->message()->send($text);
-print_r($response->getResponseData());
+<?php
+	// Textlocal account details
+	$username = 'ken05cay@gmail.com';
+	$hash = 'Wfaqjrc0RYU-Qogmlgmk6wd2LFyPpM7IRMd8whMB0F';
+
+	// Prepare data for POST request
+	$data = array('username' => $username, 'hash' => $hash);
+
+	// Send the POST request with cURL
+	$ch = curl_init('http://api.txtlocal.com/get_templates/');
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$response = curl_exec($ch);
+	curl_close($ch);
+
+	// Process your response here
+	echo $response;
 ?>

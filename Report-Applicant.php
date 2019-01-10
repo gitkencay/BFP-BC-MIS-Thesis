@@ -175,9 +175,7 @@ $conn->close();
                                         </div>                                        
                                         
                                     </div>
-                                    <div class="panel-footer">                                                                        
-                                        <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
-                                    </div>
+                                    
                                 </div>                                
 
                             </form>

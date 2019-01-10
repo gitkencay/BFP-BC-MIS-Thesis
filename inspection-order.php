@@ -135,7 +135,7 @@
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-5 control-label">Owner Address</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="owner_address" id="owner_address" require>
+                                                                    <input type="text" class="form-control" name="owner_address" id="owner_address" required>
                                                                 </div>
                                                             </div> <br><br><br>     
                                                         </div>
@@ -157,7 +157,7 @@
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-5 control-label">Height of Building</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" class="form-control" name="bldg_height" id="bldg_height" require >
+                                                                    <input type="text" class="form-control" name="bldg_height" id="bldg_height" required >
                                                                 </div>
                                                             </div> <br><br><br>  
 

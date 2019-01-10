@@ -27,6 +27,7 @@
 				width: 80%;
 				margin: auto;
 				border: 10px double #000;
+
 			}
 
             .left-1{
