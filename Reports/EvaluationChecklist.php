@@ -160,6 +160,48 @@
                 top: -333px;
             }
 
+            .meansofegrees{
+                text-align: left;
+				position: relative;
+                left: 140px;
+                top: -300px;
+            }
+
+            .walls{
+                text-align: left;
+				position: relative;
+                left: 140px;
+                top: -300px;
+            }
+
+            .compartmentation{
+                text-align: left;
+				position: relative;
+                left: 140px;
+                top: -300px;
+            }
+
+            .warningsys{
+                text-align: left;
+				position: relative;
+                left: 140px;
+                top: -300px;
+            }
+
+            .fireprotect{
+                text-align: left;
+				position: relative;
+                left: 140px;
+                top: -300px;
+            }
+
+            .miscellaneous{
+                text-align: left;
+				position: relative;
+                left: 140px;
+                top: -300px;
+            }
+
 
 
 </style>
@@ -223,6 +265,54 @@ $app = $fetch2['year'] . '-' . $month . '-' . $fetch2['application_no'];
                                     <p class="occupancy-1"> <b> <?php echo $fetch['occupancy_classification']?> </b> </p>
                                     <p class="project"> <b>  </b> </p>
 
+                                
+                                    <h3 class="meansofegrees"> Means of Egrees </h3>
+                                <p>
+                                    <?php 
+                                       $means = explode(",", $fetch['means_of_egrees']);
+                                       
+                                       foreach($means as $meanegrees){
+                                           echo $meanegrees."<br>";
+                                       }
+                                    ?>
+                                </p>
+
+
+                                <!-- 
+                                    <h3 class="walls"> Walls </h3>
+                                <p>
+                                    <?php 
+                                        var_dump( explode( ',', $fetch['walls'] ) );
+                                    ?>
+                                </p>
+
+                                    <h3 class="compartmentation"> Compartmentation </h3>
+                                <p>
+                                    <?php 
+                                        var_dump( explode( ',', $fetch['compartmentation'] ) );
+                                    ?>
+                                </p>
+                                
+                                    <h3 class="warningsys"> Warning Systems </h3>
+                                <p>
+                                    <?php 
+                                        var_dump( explode( ',', $fetch['warning_systems'] ) );
+                                    ?>
+                                </p>
+
+                                    <h3 class="fireprotect"> Fire Protection </h3>
+                                <p>
+                                    <?php 
+                                        var_dump( explode( ',', $fetch['fire_protection'] ) );
+                                    ?>
+                                </p>
+
+                                    <h3 class="miscellaneous"> Miscellaneous </h3>
+                                <p>
+                                    <?php 
+                                        var_dump( explode( ',', $fetch['miscellaneous'] ) );
+                                    ?>
+                                </p> -->
 							</div>
 						</div>
 					</div>

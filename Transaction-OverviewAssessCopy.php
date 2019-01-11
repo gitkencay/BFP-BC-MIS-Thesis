@@ -74,13 +74,13 @@ $ops_no = $fetch2['ops_no'] + 1;
                                         <tr>
                                         <th>
                                         <input type="hidden" class="form-control" id="application_no" name="application_no"  value="<?php echo $fetch['application_no'] ?>">
-                                        <label for="app-name" class="col-sm-5 control-label">Applicant Name&nbsp;&nbsp;</label>
+                                        <label for="app-name" class="col-sm-5 control-label"><br> Applicant Name&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="applicant_name" name="application_name" value="<?php echo $fetch['application_name'] ?>" readonly>
                                             </div>
                                         </th>
                                             <th>
-                                                <label for="bus-name" class="col-sm-5 control-label">Business Name&nbsp;&nbsp;</label>
+                                                <label for="bus-name" class="col-sm-5 control-label"><br> Business Name&nbsp;&nbsp;</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="business_name" name="business_name" value="<?php echo $fetch['business_name'] ?>" readonly>
                                                 </div>
@@ -104,13 +104,13 @@ $ops_no = $fetch2['ops_no'] + 1;
                                     <script type="text/javascript" src="js/jquery.min.js"></script>
                                     <tbody>
                                         <tr>
-                                            <th><h5><br>Applicable Fees</h5></th>
-                                            <th><h5><br>Grand Total</h5></th>
+                                            <th><h5><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicable Fees</h5></th>
+                                            <th><h5><br>&nbsp;&nbsp;&nbsp;&nbsp;Grand Total</h5></th>
                                             <th><h5><br>Amount to be Paid</h5></th>
                                         </tr>
                                         <tr>
 
-                                            <td><label>Fire Code Construction Tax</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Construction Tax</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_FC_Constr" placeholder="Enter Amount" >
@@ -118,7 +118,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="construction_tax" name="construction_tax" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="construction_tax" name="construction_tax" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -132,7 +132,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Fire Code Reality Tax</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Reality Tax</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="Ini_FC_RT" placeholder="Enter Amount">
@@ -140,7 +140,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="reality_tax" name="reality_tax" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="reality_tax" name="reality_tax" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -154,7 +154,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Fire Code Premium Tax</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Premium Tax</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="Ini_FC_PreT" placeholder="Enter Amount">
@@ -162,7 +162,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="premium_tax" name="premium_tax" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="premium_tax" name="premium_tax" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -177,7 +177,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Fire Code Sales Tax</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Sales Tax</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_FC_ST" placeholder="Enter Amount">
@@ -185,7 +185,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="sales_tax" name="sales_tax" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="sales_tax" name="sales_tax" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -200,7 +200,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Fire Code Proceeds Tax</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Proceeds Tax</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_FC_ProT" placeholder="Enter Amount">
@@ -208,7 +208,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="proceeds_tax" name="proceeds_tax" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="proceeds_tax" name="proceeds_tax" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -222,8 +222,9 @@ $ops_no = $fetch2['ops_no'] + 1;
                                                 });
                                             </script>
                                         </tr>
+                                        <br>
                                         <tr>
-                                            <td><label>Fire Safety Inspection Fee</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Safety Inspection Fee</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_FS_InspFee" placeholder="Enter Amount">
@@ -231,7 +232,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="number" class="form-control-qty" id="inspection_fee" name="inspection_fee" placeholder="Discounted Amount" readonly>
+                                                    <input type="number" class="form-control" id="inspection_fee" name="inspection_fee" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -246,7 +247,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Storage Clearance</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Storage Clearance</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_StorClear" placeholder="Enter Amount">
@@ -254,7 +255,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="storage_clearance" name="storage_clearance" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="storage_clearance" name="storage_clearance" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -265,7 +266,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Conveyance Clearance</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conveyance Clearance</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_ConvClear" placeholder="Enter Amount">
@@ -273,7 +274,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="conveyance_clearance" name="conveyance_clearance" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="conveyance_clearance" name="conveyance_clearance" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                         </tr>
@@ -284,7 +285,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                                 });
                                         </script>
                                         <tr>
-                                            <td><label>Installation Clearance</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Installation Clearance</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_InstClear" placeholder="Enter Amount">
@@ -292,7 +293,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="installation_clearance" name="installation_clearance" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="installation_clearance" name="installation_clearance" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -303,7 +304,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Other Clearance Fee</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Clearance Fee</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" id="Ini_OtherClear" placeholder="Enter Amount">
@@ -311,7 +312,7 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </td>
                                             <td>
                                                 <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="other_clearance" name="other_clearance" placeholder="Discounted Amount" readonly>
+                                                    <input type="text" class="form-control" id="other_clearance" name="other_clearance" placeholder="Discounted Amount" readonly>
                                                 </div>
                                             </td>
                                             <script>
@@ -322,28 +323,30 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             </script>
                                         </tr>
                                         <tr>
-                                            <td><label>Total Amount of Fire Code Fees</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount of Fire Code Fees</label></td>
+                                            <td><label> </label></td>
                                             <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="total_amount" name="total_amount">
+                                                <div class="col-sm-14">
+                                                    <input type="text" class="form-control" id="total_amount" name="total_amount" required>
                                                 </div>
                                             </td>
                                         </tr>
                                         <br>
                                         <tr>
-                                            <td><label>Payment</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment</label></td>
                                             <td>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="payment" name="payment">
+                                                    <input type="text" class="form-control" id="payment" name="payment" required>
                                                 </div>
                                             </td>
                                         </tr>
                                         <br>
                                         <tr>
-                                            <td><label>Change</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change</label></td>
+                                            <td><label> </label></td>
                                             <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="changed" name="changed">
+                                                <div class="col-sm-14">
+                                                    <input type="text" class="form-control" id="changed" name="changed" readonly>
                                                 </div>
                                             </td>
                                         </tr>
@@ -424,13 +427,13 @@ $ops_no = $fetch2['ops_no'] + 1;
                     var output10 = parseFloat(main9);
 
                     var total = parseFloat(output1+output2+output3+output4+output5+output6+output7+output8+output9+output10);
-                    $('#total_amount').val(total);//show total
+                    $('#total_amount').val(total.toFixed(2));//show total
 
                     var main10 = $('#payment').val();
                     var output11 = parseFloat(main10);
                     var change = parseFloat(output11-total); //compute for change
 
-                    $('#changed').val(change);
+                    $('#changed').val(change.toFixed(2));
 
 
                     });

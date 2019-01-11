@@ -9,7 +9,6 @@
         <link rel="stylesheet" type="text/css" id="theme" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
         <link rel="stylesheet" type="text/css" href="assets2/vendor/font-awesome/css/font-awesome.min.css" />
-
     </head>
     <body>
 
@@ -51,16 +50,16 @@
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">IO No.</label>
-                                                                <div class="col-md-8">
+                                                                <label for="app-name" class="col-sm-12 control-label">IO No.</label>
+                                                                <div class="col-md-5">
                                                                     <input type="hidden" name="application_number" value="<?php echo $fetch['application_no']?>"/>
                                                                     <input type="text" class="form-control" name="io_no" value="<?php echo 'IO' . '-' . $year . '-' . $month . '-' . $ir_no ?>">
                                                                 </div>
                                                             </div> <br><br><br>
 
                                                             <div class="form-group">
-                                                                <label for="app-name" class="col-sm-5 control-label">Application No</label>
-                                                                <div class="col-md-8">
+                                                                <label for="app-name" class="col-sm-12 control-label">Application No</label>
+                                                                <div class="col-md-5">
                                                                     <input type="hidden" name="application_number" value="<?php echo $fetch['application_no']?>"/>
                                                                     <input type="text" class="form-control" name="application_no" value="<?php echo $fetch['year'] . '-' . $month2 . '-' . $fetch['application_no'] ?>" >
                                                                 </div>
@@ -265,43 +264,43 @@
                                                             <div class="form-group">
                                                                 <label for="app-name" class="col-sm-12 control-label">Specify Deficiency</label>
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency1">
+                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_classification">
                                                                 </div>
                                                             </div> <br><br><br> 
 
                                                              <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency2">
+                                                                    <input type="text" class="form-control" name="checklist_exit" id="checklist_exit">
                                                                 </div>
                                                             </div> <br><br> 
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency3">
+                                                                    <input type="text" class="form-control" name="checklist_lightings" id="checklist_lightings">
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency4">
+                                                                    <input type="text" class="form-control" name="checklist_protection" id="checklist_protection">
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency5">
+                                                                    <input type="text" class="form-control" name="checklist_equipments" id="checklist_equipments">
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency6">
+                                                                    <input type="text" class="form-control" name="checklist_hazardous" id="checklist_hazardous" >
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="deficiency7">
+                                                                    <input type="text" class="form-control" name="checklist_operating" id="checklist_operating">
                                                                 </div>
                                                             </div> <br><br>
 

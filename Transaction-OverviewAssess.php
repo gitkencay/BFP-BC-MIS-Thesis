@@ -322,6 +322,7 @@
                                         </tr>
                                         <tr>
                                             <td><label>Total Amount of Fire Code Fees</label></td>
+                                            <td><label>Total Amount of Fire Code Fees</label></td>
                                             <td>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="total_amount" name="total_amount">  

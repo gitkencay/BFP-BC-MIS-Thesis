@@ -35,7 +35,6 @@
                 <div class="page-content-wrap">
                     <div class="AssessForm">
                         <div class="panel panel-default">
-                        
                             <div class="panel-body">
                                 <table>
                                     <thead>
@@ -69,13 +68,13 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                         <th>
                                         <input type="hidden" class="form-control" id="application_no" name="application_no"  value="<?php echo $fetch['application_no'] ?>">
-                                        <label for="app-name" class="col-sm-5 control-label">Applicant Name&nbsp;&nbsp;</label>
+                                        <label for="app-name" class="col-sm-5 control-label"><br>Applicant Name&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="applicant_name" name="application_name" value="<?php echo $fetch['application_name'] ?>" readonly>
                                             </div>
                                         </th>
                                             <th>
-                                                <label for="bus-name" class="col-sm-5 control-label">Business Name&nbsp;&nbsp;</label>
+                                                <label for="bus-name" class="col-sm-5 control-label"><br>Business Name&nbsp;&nbsp;</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="business_name" name="business_name" value="<?php echo $fetch['business_name'] ?>" readonly>
                                                 </div>
@@ -99,181 +98,191 @@ $ops_no = $fetch['ops_no'];
                                     <script type="text/javascript" src="js/jquery.min.js"></script>
                                     <tbody>
                                         <tr>
-                                            <th><h5><br>Applicable Fees</h5></th>
-                                            <th><h5><br>Grand Total</h5></th>
-                                            <th><h5><br>Amount to be Paid</h5></th>
+                                            <th><h5><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicable Fees</h5></th>
+                                            <th><h5><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount to be Paid</h5></th>
                                         </tr>
                                         <tr>
-
-                                            <td><label>Fire Code Construction Tax</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Construction Tax</label></td>
                                             <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_FC_Constr"  readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="construction_tax" name="construction_tax" readonly value="<?php echo $fetch['construction_tax']?>">
-                                                </div>
-                                            </td>
-                                           
-                                        </tr>
-                                        <tr>
-                                            <td><label>Fire Code Reality Tax</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="Ini_FC_RT"  readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="reality_tax" name="reality_tax" readonly value="<?php echo $fetch['reality_tax']?>">
-                                                </div>
-                                            </td>
-                                           
-                                        </tr>
-                                        <tr>
-                                            <td><label>Fire Code Premium Tax</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="Ini_FC_PreT"  readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="premium_tax" name="premium_tax" readonly value="<?php echo $fetch['premium_tax']?>">
-                                                </div>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><label>Fire Code Sales Tax</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_FC_ST"  readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="sales_tax" name="sales_tax" readonly value="<?php echo $fetch['sales_tax']?>">
-                                                </div>
-                                            </td>
-                                           
-                                        </tr>
-                                        <tr>
-                                            <td><label>Fire Code Proceeds Tax</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_FC_ProT"  readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="proceeds_tax" name="proceeds_tax" readonly value="<?php echo $fetch['proceeds_tax']?>">
-                                                </div>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><label>Fire Safety Inspection Fee</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_FS_InspFee" readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="number" class="form-control-qty" id="inspection_fee" name="inspection_fee" readonly value="<?php echo $fetch['inspection_fee']?>">
-                                                </div>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><label>Storage Clearance</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_StorClear"  readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="storage_clearance" name="storage_clearance" readonly value="<?php echo $fetch['storage_clearance']?>">
-                                                </div>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><label>Conveyance Clearance</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_ConvClear" readonly>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="conveyance_clearance" name="conveyance_clearance" readonly value="<?php echo $fetch['conveyance_clearance']?>">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td><label>Installation Clearance</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_InstClear" readonly >
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="installation_clearance" name="installation_clearance" readonly value="<?php echo $fetch['installation_clearance']?>">
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $construction_tax = number_format($fetch['construction_tax'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="construction_tax" name="construction_tax" readonly value="<?php echo $construction_tax?>">
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><label>Other Clearance Fee</label></td>
-                                            <td>
-                                                <div class="col-sm-8">
-                                                    <input type="number" class="form-control" id="Ini_OtherClear" readonly >
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-sm-14">
-                                                    <input type="text" class="form-control-qty" id="other_clearance" name="other_clearance" readonly value="<?php echo $fetch['other_clearance']?>">
-                                                </div>
-                                            </td>
-                                            
+                                            <th>&nbsp;</th> 
                                         </tr>
                                         <tr>
-                                            <td><label>Total Amount of Fire Code Fees</label></td>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Reality Tax</label></td>
                                             <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control-qty" id="total_amount" name="total_amount" readonly value="<?php echo $fetch['total_amount']?>">
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $reality_tax = number_format($fetch['reality_tax'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="reality_tax" name="reality_tax" readonly value="<?php echo $reality_tax?>">
                                                 </div>
-                                            </td>
+                                            </td>  <br/> 
                                         </tr>
-                                        <br>
                                         <tr>
-                                            <td><label>Payment</label></td>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Premium Tax</label></td>
                                             <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control-qty" id="payment" name="payment" readonly value="<?php echo $fetch['payment']?>" >
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $premium_tax = number_format($fetch['premium_tax'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="premium_tax" name="premium_tax" readonly value="<?php echo $premium_tax?>">
                                                 </div>
                                             </td>
                                         </tr>
-                                        <br>
                                         <tr>
-                                            <td><label>Change</label></td>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Sales Tax</label></td>
                                             <td>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control-qty" id="changed" name="changed" readonly value="<?php echo $fetch['changed']?>">
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $sales_tax = number_format($fetch['sales_tax'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="sales_tax" name="sales_tax" readonly value="<?php echo $sales_tax?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Proceeds Tax</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $proceeds_tax = number_format($fetch['proceeds_tax'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="proceeds_tax" name="proceeds_tax" readonly value="<?php echo $proceeds_tax?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Safety Inspection Fee</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $inspection_fee = number_format($fetch['inspection_fee'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="number" class="form-control" id="inspection_fee" name="inspection_fee" readonly value="<?php echo $inspection_fee?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Storage Clearance</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $storage_clearance = number_format($fetch['storage_clearance'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="storage_clearance" name="storage_clearance" readonly value="<?php echo $storage_clearance?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conveyance Clearance</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $conveyance_clearance = number_format($fetch['conveyance_clearance'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="conveyance_clearance" name="conveyance_clearance" readonly value="<?php echo $conveyance_clearance?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Installation Clearance</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $installation_clearance = number_format($fetch['installation_clearance'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="installation_clearance" name="installation_clearance" readonly value="<?php echo $installation_clearance?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Clearance Fee</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $other_clearance = number_format($fetch['other_clearance'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="other_clearance" name="other_clearance" readonly value="<?php echo $other_clearance?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount of Fire Code Fees</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $total = number_format($fetch['total_amount'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="total_amount" name="total_amount" readonly value="<?php echo $total?>">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                        <?php 
+                                                            $payment = number_format($fetch['payment'], 2, '.', ',');
+                                                        ?>
+                                                    <input type="text" class="form-control" id="payment" name="payment" readonly value="<?php echo $payment?>" >
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th> 
+                                        </tr>
+                                        <tr>
+                                            <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change</label></td>
+                                            <td>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="changed" name="changed" readonly value="<?php echo $fetch['changed']?>">
                                                 </div>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="panel-footer">
-                                <a href="Transaction-Assessment.php"><button type="submit" class="btn btn-danger" name="save_inspection"><span class="fa fa-close"></span>Exit</button></a>        
-                            </div>
+                                    <br>
+                                    <div class="panel-footer">
+                                        <a href="Transaction-Assessment.php"><button type="submit" class="btn btn-danger" name="save_inspection"><span class="fa fa-close"></span>Exit</button></a>        
+                                    </div>
                             </div>
                         </div>
                     </div>
