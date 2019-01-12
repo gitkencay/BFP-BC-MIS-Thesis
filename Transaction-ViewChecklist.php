@@ -1541,10 +1541,28 @@ $check6 = explode(",", $miscellaneous);
 
 
                             <div class="panel-footer">
-                                <!-- <div class="col-sm-6">
-                                            <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
-                                        </div>  -->
-                                <button type="submit" class="btn btn-info" name="save_eval_checklist"><span class="fa fa-check"></span>Save Changes</button>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="col-md-5">
+                                                <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="app-name" class="col-sm-1 control-label">Status</label>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <select class="form-control select" id="status_of_checklist" name="status_of_checklist">
+                                                    <option value="<?php echo $fetch['status_of_checklist'];?>"> <?php echo $fetch['status_of_checklist'];?></option>
+                                                    <option value="Pending">On Progress</option>
+                                                    <option value="Complete">Comply</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit" class="btn btn-info" name="save_eval_checklist"><span class="fa fa-check"></span>Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             </form>
                         </div>
@@ -1595,6 +1613,7 @@ $check6 = explode(",", $miscellaneous);
             <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
             <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
             <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+            <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script> 
 
             <!--<script src="assets/js/dataTables/jquery.dataTables.js"></script>
          <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>-->

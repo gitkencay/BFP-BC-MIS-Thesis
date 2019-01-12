@@ -17,7 +17,8 @@ if(isset($_POST['save_eval_checklist'])){
     $fire_protection = $_POST['fire_protection'];
     $miscellaneous = $_POST['miscellaneous'];
     $month = date("M");
-    $year = date("Y");
+		$year = date("Y");
+		$status_of_checklist = $_POST['status_of_checklist'];
     $new = "";
     $new2 = "";
     $new3 = "";
@@ -97,7 +98,7 @@ if(isset($_POST['save_eval_checklist'])){
 
     $conn->query("INSERT INTO `evaluation_checklist` VALUES('', '$application_no', '$plan_evaluator', '$owner_name', '$business_name', '$project_title', 
     '$location', '$occupancy_classification', '$date_received', '$new', '$new2', '$new3', '$new4', '$new5', 
-    '$new6', '$month', '$year')") or die(mysqli_error());
+    '$new6', '$month', '$year', '$status_of_checklist')") or die(mysqli_error());
 
     $conn->query("UPDATE `application` SET `assessment_status` = 'Evaluated' WHERE `application_no` = '$application_number'") or die(mysqli_error());
     $conn->close();

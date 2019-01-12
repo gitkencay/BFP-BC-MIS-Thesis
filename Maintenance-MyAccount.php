@@ -77,7 +77,7 @@
                                             <li class="active">
                                                 <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Maintenance</span></a>
                                                 <ul>                            
-                                                    <li class="active"><a href="Maintenance-MyAccount.html"><span class="fa fa-align-justify"></span> My Account</a></li>
+                                                    <li class="active"><a href="Maintenance-MyAccount.php"><span class="fa fa-align-justify"></span> My Account</a></li>
                                                     <li><a href="Maintenance-UserManage.html"><span class="fa fa-sort-alpha-desc"></span> User Management</a></li>
                                                     <li><a href="Maintenance-SystemBackUp.html"><span class="fa fa-download"></span> System Back Up</a></li>                            
                                                 </ul>
@@ -100,7 +100,7 @@
             <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Maintenance</a></li>                    
-                <li class="active"><a href="Maintenance-MyAccount.html">Certification</a></li>
+                <li class="active"><a href="Maintenance-MyAccount.php">My Account</a></li>
             </ul>
             <!-- END BREADCRUMB --> 
 
