@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 10, 2019 at 08:22 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Generation Time: Jan 13, 2019 at 02:17 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -77,7 +77,7 @@ INSERT INTO `application` (`application_no`, `application_type`, `application_na
 (18, 'FSEC', 'Gabey Ruoss', 'Taylor Devices, Inc.', '138 Mariners Cove Hill', 'Assembly', 'Barangay 24', 'NA', '09523424231', '', 'December 13, 2018 10:27 pm', 'gruossrq', '8080', 'Gabey Ruoss', '4', '60000', 'Pending', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
 (19, 'FSIC', 'Maria Umbert', 'CBAK Energy Technology, Inc.', '8 Hazelcrest Center', 'Small-Business', 'Barangay 4', 'Building', '09523424231', '', 'December 13, 2018 10:29 pm', 'clarkcan2018', '8080', ' Melodie Brosenius', '6', '180000', 'Pending', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Unassessed', 'Dec', '2018'),
 (20, 'FSIC', 'Constantia Armall', 'Templeton Global Income Fund, Inc.', '80 Hudson Hill', 'Assembly', 'Barangay 18', 'Building', '09523424231', '', 'December 13, 2018 10:29 pm', 'clarkcan2018', '8080', ' Irwinn Bushell', '4', '60000', 'Pending', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Unassessed', 'Dec', '2018'),
-(21, 'FSIC', 'Irwinn Bushell', 'Zoetis Inc.', '3860 Oriole Plaza', 'Business-Office', 'Barangay 29', 'Building', '09523424231', '', 'December 13, 2018 10:30 pm', 'clarkcan2018', '8080', ' Constantia Armall', '4', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Assessed', 'Dec', '2018'),
+(21, 'FSIC', 'Irwinn Bushell', 'Zoetis Inc.', '3860 Oriole Plaza', 'Business-Office', 'Barangay 29', 'Building', '09523424231', '', 'December 13, 2018 10:30 pm', 'clarkcan2018', '8080', ' Constantia Armall', '4', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
 (22, 'FSEC', 'Maeryger D. Gomez', 'Medical Clinic', 'Menlo 4', 'Business-Office', 'Barangay 18', 'NA', '09523424231', 'croname', 'January 5, 2019 3:39 pm', 'clarkcan2018', '8080', 'Maeryger D. Gomez', '3', '75', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Jan', '2019'),
 (23, 'FSEC', 'Juro Kazuhiko', 'Nigger Corp', 'Niggeria', 'Storage', 'Barangay 37 ', 'NA', '09085553776', 'Kenneth', 'January 10, 2019 6:07 pm', 'JRUKAZ', '8080', 'Juro', '6', '140000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Assessed', 'Jan', '2019'),
 (24, 'FSEC', 'Ignacio Branton', 'Zoetis Inc.', 'Niggeria', 'Mercantile', '', 'NA', '09085553776', 'Sergent', 'January 10, 2019 9:58 pm', 'iggy97', '8080', 'Ignacio', '5', '140000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Jan', '2019'),
@@ -131,7 +131,7 @@ INSERT INTO `assessment` (`ops_no`, `application_no`, `application_name`, `locat
 (8, '15', 'Marrilee Cattini', '3860 Oriole Plaza', 'Complete', 'CBAK Energy Technology, Inc.', 'FSIC', '10', '2.2', '6.8', '0.42', '0.86', '35', '310', '22', '11', '1000', '1398.28', 1400, 1.7200000000000273, 'Dec', '2018', 'December 31, 2018 11:10 pm'),
 (9, '16', 'Ajay Espinos', '83589 Muir Street', 'Complete', 'NewStar Financial, Inc.', 'FSIC', '0.5', '0.34', '1.12', '0.9', '1.54', '55.6', '234', '2344', '25', '54', '2717', 3000, 283, 'Jan', '2019', 'January 3, 2019 11:17 am'),
 (10, '21', 'Irwinn Bushell', '3860 Oriole Plaza', 'Complete', 'Zoetis Inc.', 'FSIC', '50', '2', '2', '0.8', '8.08', '33.4', '66', '54', '234', '33', '483.28', 555, 71.72000000000003, 'Jan', '2019', 'January 3, 2019 7:35 pm'),
-(11, '5', 'Ives Tassell', '1249 Ludington Place', 'Select', 'Chart Industries, Inc.', 'FSEC', '23.400000000000002', '23.41', '4.68', '2.68', '68.66', '23.400000000000002', '10', '23', '23', '333', '535.23', 699, 163.76999999999998, 'Jan', '2019', 'January 7, 2019 6:41 pm'),
+(11, '5', 'Ives Tassell', '1249 Ludington Place', 'Pending', 'Chart Industries, Inc.', 'FSEC', '23.400000000000002', '23.41', '4.68', '2.68', '68.66', '23.400000000000002', '10', '23', '23', '333', '535.23', 699, 163.76999999999998, 'Jan', '2019', 'January 7, 2019 6:41 pm'),
 (12, '23', 'Juro Kazuhiko', 'Niggeria', 'Complete', 'Nigger Corp', 'FSEC', '56', '4', '7', '3', '2.96', '45.5', '34', '656', '700', '121', '1629.46', 2000, 0, 'Jan', '2019', 'January 10, 2019 6:08 pm');
 
 -- --------------------------------------------------------
@@ -246,6 +246,40 @@ INSERT INTO `bldg_construct` (`bc_no`, `ir_no`, `beams`, `columns`, `floor`, `ex
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `checklist`
+--
+
+CREATE TABLE `checklist` (
+  `checklist_id` varchar(100) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `compartmentation`
+--
+
+CREATE TABLE `compartmentation` (
+  `checklist_id` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `compartmentation`
+--
+
+INSERT INTO `compartmentation` (`checklist_id`, `description`) VALUES
+('Compartmentation_Req_1', 'Provide fire break up to the roof for ceiling areas.'),
+('Compartmentation_Req_2', 'Provide monitored and curtained roof of sheet metal or non-combustible material of a minimum of 1.82m (6 ft) high spaced not more than 76 m (250 ft) & curtained area limited to a minimum of 4, 630 m2 (50,000 ft2).'),
+('Compartmentation_Req_3', 'Provide smoke partition at enclosed areas of 2, 083 m2 (22, 500 ft2) or less with the length of 45.7m (150 ft) or less, with self-closing fire doors.'),
+('Compartmentation_Req_4', 'Provide  smoke  partition  of  two  (2)  hour  fire  resistance  from  floor  to underside of floor above.'),
+('Compartmentation_Req_5', 'Provide interior finish as follows; Exit; Class _________ Access to Exit; Class ___________ Other Spaces; Class _________'),
+('Compartmentation_Req_6', 'Provide fire stopping for all concealed spaces.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `employee`
 --
 
@@ -279,7 +313,10 @@ INSERT INTO `employee` (`id`, `officer_type`, `rank`, `officer_fname`, `officer_
 (9, 'CRO', 'F01', 'Hilliary', 'D.', 'Sparkwell', 'hsparkwellb', '1234', '1234', '5', 'December 13, 2018 11:28 pm'),
 (10, 'CRO', 'F01', 'Agna', 'R.', 'Nottingam', 'anottingamh', '1234', '1234', '4', 'December 13, 2018 11:29 pm'),
 (11, 'Inspection-CRO', 'F04', 'Justin', 'Christian', 'Puatu', 'ken05cay', 'ken05', 'ken05', '5', 'December 14, 2018 6:52 pm'),
-(12, 'CRO', 'F01', 'Sergent', 'D.', 'Cecere', 'scecere0', 'ao68bc291xz', 'ao68bc291xz', '1', 'January 10, 2019 9:56 pm');
+(12, 'CRO', 'F01', 'Sergent', 'D.', 'Cecere', 'scecere0', 'ao68bc291xz', 'ao68bc291xz', '1', 'January 10, 2019 9:56 pm'),
+(13, 'Inspector', 'F04', 'Alvin', 'Go', 'Yanson', 'alvin2', 'alvin3', 'alvin3', '6', 'January 13, 2019 7:41 pm'),
+(14, 'Inspector', 'F04', 'Alvin', 'Go', 'Yanson', 'alvin2', 'alvin3', 'alvin3', '6', 'January 13, 2019 7:43 pm'),
+(15, 'Inspector', 'F04', 'Alvin', 'Go', 'Yanson', 'alvin2', 'alvin3', 'alvin3', '6', 'January 13, 2019 7:43 pm');
 
 -- --------------------------------------------------------
 
@@ -304,19 +341,43 @@ CREATE TABLE `evaluation_checklist` (
   `fire_protection` varchar(1000) NOT NULL,
   `miscellaneous` varchar(1000) NOT NULL,
   `month` varchar(50) NOT NULL,
-  `year` varchar(50) NOT NULL
+  `year` varchar(50) NOT NULL,
+  `status_of_checklist` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `evaluation_checklist`
 --
 
-INSERT INTO `evaluation_checklist` (`checklist_no`, `application_no`, `plan_evaluator`, `owner_name`, `business_name`, `project_title`, `location`, `occupancy_classification`, `date_received`, `means_of_egrees`, `walls`, `compartmentation`, `warning_systems`, `fire_protection`, `miscellaneous`, `month`, `year`) VALUES
-(1, '2018-12-2', 'Sir Cartagena', 'Alexandre Calleja', 'Bay Bancorp, Inc.', 'Nanotech', 'Mansilingan', '2', '2018-12-25', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_2,Warning_Req_4,Warning_Req_5,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_2,Miscellaneous_Req_3,Miscellaneous_Req_4,', 'Dec', '2018'),
-(2, '2018-12-3', 'Sir Cartagena', 'Norris Maestro', 'Acacia Research Corporation', 'Nanotech', 'Mansilingan', 'Residential', '2018-12-14', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,', 'Walls_Req_4,', 'Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,', 'Fire_Protection_Req_2,', 'Miscellaneous_Req_2,', 'Dec', '2018'),
-(3, '2018-12-4', 'Sir Cartagena', 'Marylin Klampk', 'Allstate Corporation (The)', 'Nexmo ', 'Mansilingan', 'Business', '2019-01-05', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means', 'Walls_Req_1,Walls_Req_2,Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_4,Compartmentation_Req_5,Compartmentation_Req_6,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_4,Warning_Req_5,Warning_Req_7,Warning_Req_8,Wa', 'Fire_Protection_Req_1,Fire_Protection_Req_3,Fire_Protection_Req_4,Fire_Protection_Req_5,Fire_Protect', 'Miscellaneous_Req_1,Miscellaneous_Req_3,Miscellaneous_Req_4,Miscellaneous_Req_5,Miscellaneous_Req_6,', 'Jan', '2019'),
-(4, '2018-12-5', 'Cartajena', 'Ives Tassell', 'Chart Industries, Inc.', 'Sacrilige', 'Bacolod', 'Sanctuary', '2019-01-15', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means_Egrees_Req_6,Means_Egrees_Req_7,Means_Egrees_Req_8,Means_Egrees_Req_9,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_7,Warning_Req_8,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_6,Miscellaneous_Req_7,', 'Jan', '2019'),
-(5, '', 'Cartajena', 'Ives Tassell', 'Chart Industries, Inc.', 'Sacrilige', 'Bacolod', 'Sanctuary', '2019-01-15', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means_Egrees_Req_6,Means_Egrees_Req_7,Means_Egrees_Req_8,Means_Egrees_Req_9,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_7,Warning_Req_8,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_6,Miscellaneous_Req_7,', 'Jan', '2019');
+INSERT INTO `evaluation_checklist` (`checklist_no`, `application_no`, `plan_evaluator`, `owner_name`, `business_name`, `project_title`, `location`, `occupancy_classification`, `date_received`, `means_of_egrees`, `walls`, `compartmentation`, `warning_systems`, `fire_protection`, `miscellaneous`, `month`, `year`, `status_of_checklist`) VALUES
+(1, '2018-12-2', 'Sir Cartagena', 'Alexandre Calleja', 'Bay Bancorp, Inc.', 'Nanotech', 'Mansilingan', '2', '2018-12-25', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_2,Warning_Req_4,Warning_Req_5,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_2,Miscellaneous_Req_3,Miscellaneous_Req_4,', 'Dec', '2018', ''),
+(2, '2018-12-3', 'Sir Cartagena', 'Norris Maestro', 'Acacia Research Corporation', 'Nanotech', 'Mansilingan', 'Residential', '2018-12-14', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,', 'Walls_Req_4,', 'Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,', 'Fire_Protection_Req_2,', 'Miscellaneous_Req_2,', 'Dec', '2018', ''),
+(3, '2018-12-4', 'Sir Cartagena', 'Marylin Klampk', 'Allstate Corporation (The)', 'Nexmo ', 'Mansilingan', 'Business', '2019-01-05', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means', 'Walls_Req_1,Walls_Req_2,Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_4,Compartmentation_Req_5,Compartmentation_Req_6,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_4,Warning_Req_5,Warning_Req_7,Warning_Req_8,Wa', 'Fire_Protection_Req_1,Fire_Protection_Req_3,Fire_Protection_Req_4,Fire_Protection_Req_5,Fire_Protect', 'Miscellaneous_Req_1,Miscellaneous_Req_3,Miscellaneous_Req_4,Miscellaneous_Req_5,Miscellaneous_Req_6,', 'Jan', '2019', ''),
+(4, '2018-12-5', 'Cartajena', 'Ives Tassell', 'Chart Industries, Inc.', 'Sacrilige', 'Bacolod', 'Sanctuary', '2019-01-15', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means_Egrees_Req_6,Means_Egrees_Req_7,Means_Egrees_Req_8,Means_Egrees_Req_9,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_7,Warning_Req_8,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_6,Miscellaneous_Req_7,', 'Jan', '2019', ''),
+(5, '', 'Cartajena', 'Ives Tassell', 'Chart Industries, Inc.', 'Sacrilige', 'Bacolod', 'Sanctuary', '2019-01-15', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means_Egrees_Req_6,Means_Egrees_Req_7,Means_Egrees_Req_8,Means_Egrees_Req_9,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_7,Warning_Req_8,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_6,Miscellaneous_Req_7,', 'Jan', '2019', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fire_protection`
+--
+
+CREATE TABLE `fire_protection` (
+  `checklist_id` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fire_protection`
+--
+
+INSERT INTO `fire_protection` (`checklist_id`, `description`) VALUES
+('Fire_Protection_Req_3', 'Provide Fire Service connection with a standard outlet of 64 mm ?, and 102 mm ? dry standpipe, and shall located on a street front.'),
+('Fire_Protection_Req_2', 'Provide dry & wet standpipe system with        mm ? riser and coupling\r\n                                                        of fire department standards with pumps of reliable pressure & connected to an adequate water supply tank. Hose and hose cabinet shall be provided at every hose gate valve on all floors.'),
+('Fire_Protection_Req_4', 'Provide automatic fire extinguishing system where kitchen equipment is located (Kitchenhood).'),
+('Fire_Protection_Req_5', 'Provide automatic chemical extinguishing system on all areas where electronic/electrical equipment are located.'),
+('Fire_Protection_Req_1', 'Provide approved type portable fire extinguisher (dry chemical) ABC type,	_________ lbs. capacity for every 278 m2. (3000 ft2) of floor area or\r\n                                                        22.8 m (75 ft) travel distance on every floor level.'),
+('Fire_Protection_Req_6', 'Provide   approved-type automatic fire extinguishing system in\r\n                                                        accordance with NFPA 13.  Approval of system plan is required prior to installation.');
 
 -- --------------------------------------------------------
 
@@ -376,21 +437,27 @@ CREATE TABLE `inspection_report` (
   `month` varchar(50) NOT NULL,
   `year` varchar(50) NOT NULL,
   `inspection_status` varchar(50) NOT NULL,
-  `ir_checklist` varchar(50) NOT NULL,
   `recommendation` varchar(100) NOT NULL,
-  `deficiency` varchar(100) NOT NULL
+  `checklist_classification` varchar(100) NOT NULL,
+  `checklist_exit` varchar(100) NOT NULL,
+  `checklist_lightings` varchar(100) NOT NULL,
+  `checklist_protection` varchar(100) NOT NULL,
+  `checklist_equipments` varchar(100) NOT NULL,
+  `checklist_hazardous` varchar(100) NOT NULL,
+  `checklist_operating` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inspection_report`
 --
 
-INSERT INTO `inspection_report` (`ir_no`, `io_no`, `application_no`, `owner_name`, `owner_address`, `business_name`, `establishment_address`, `bldg_height`, `lot_size`, `number_of_floors`, `date_applied`, `month`, `year`, `inspection_status`, `ir_checklist`, `recommendation`, `deficiency`) VALUES
-(1, 'IO-2018-12-1', '2018-12-12', ' Constantia Armall', 'Blck 16, North East Village', 'Northfield Bancorp, Inc.', '80 Hudson Hill', '78', '60000', '6', 'December 31, 2018 3:53 pm', 'Dec', '2018', 'Inspection Report', 'Features of Fire Protection', 'Recommend', 'Columns'),
-(2, 'IO-2018-12-2', '2018-12-13', ' Irwinn Bushell', 'Blck 16, North East Village', 'Ichor Holdings', '8 Hazelcrest Center', '22', '60000', '6', 'December 31, 2018 3:50 pm', 'Dec', '2018', 'Inspection Report', 'Lightings and Signs', '', ''),
-(3, 'IO-2018-12-3', '2018-12-14', ' Bettye Tapping', 'Blck 16, North East Village', 'Zoetis Inc.', '585 Cardinal Point', '66', '60000', '5', 'December 31, 2018 3:57 pm', 'Dec', '2018', 'Inspection Report', 'Operating Features', 'Work', 'Work'),
-(4, 'IO-2018-12-4', '2018-12-15', ' Bettye Tapping', 'San Luis', 'CBAK Energy Technology, Inc.', '3860 Oriole Plaza', '10', '60000', '6', 'December 31, 2018 11:11 pm', 'Dec', '2018', 'Inspection Report', 'Hazardous Areas', 'Refrained', '10'),
-(5, 'IO-2019-01-5', '2018-12-16', ' Melodie Brosenius', 'San Enrique', 'NewStar Financial, Inc.', '83589 Muir Street', '312313', '60000', '5', '19-01-03', 'January 3, 2019 11:36 amJan', '2019', 'Inspection Report', 'Building Service Equipment', 'Many', 'Many');
+INSERT INTO `inspection_report` (`ir_no`, `io_no`, `application_no`, `owner_name`, `owner_address`, `business_name`, `establishment_address`, `bldg_height`, `lot_size`, `number_of_floors`, `date_applied`, `month`, `year`, `inspection_status`, `recommendation`, `checklist_classification`, `checklist_exit`, `checklist_lightings`, `checklist_protection`, `checklist_equipments`, `checklist_hazardous`, `checklist_operating`) VALUES
+(1, 'IO-2018-12-1', '2018-12-12', ' Constantia Armall', 'Blck 16, North East Village', 'Northfield Bancorp, Inc.', '80 Hudson Hill', '78', '60000', '6', 'December 31, 2018 3:53 pm', 'Dec', '2018', 'Inspection Report', 'Recommend', '', '', '', '', '', '', ''),
+(2, 'IO-2018-12-2', '2018-12-13', ' Irwinn Bushell', 'Blck 16, North East Village', 'Ichor Holdings', '8 Hazelcrest Center', '22', '60000', '6', 'December 31, 2018 3:50 pm', 'Dec', '2018', 'Inspection Report', '', '', '', '', '', '', '', ''),
+(3, 'IO-2018-12-3', '2018-12-14', ' Bettye Tapping', 'Blck 16, North East Village', 'Zoetis Inc.', '585 Cardinal Point', '66', '60000', '5', 'December 31, 2018 3:57 pm', 'Dec', '2018', 'Inspection Report', 'Work', '', '', '', '', '', '', ''),
+(4, 'IO-2018-12-4', '2018-12-15', ' Bettye Tapping', 'San Luis', 'CBAK Energy Technology, Inc.', '3860 Oriole Plaza', '10', '60000', '6', 'December 31, 2018 11:11 pm', 'Dec', '2018', 'Inspection Report', 'Refrained', '', '', '', '', '', '', ''),
+(5, 'IO-2019-01-5', '2018-12-16', ' Melodie Brosenius', 'San Enrique', 'NewStar Financial, Inc.', '83589 Muir Street', '312313', '60000', '5', '19-01-03', 'January 3, 2019 11:36 amJan', '2019', 'Inspection Report', 'Many', '', '', '', '', '', '', ''),
+(6, 'IO-2019-01-6', '2018-12-21', ' Constantia Armall', 'Blck 16, North East Village', 'Zoetis Inc.', '3860 Oriole Plaza', '89', '60000', '4', 'Jan-11-2019', 'Jan', '2019', 'Inspection Report', 'List of Scurvy', 'Kwashiorkor', 'Marasmus', 'Tetany', 'Goiter', 'Keshan disease', 'Beriberi', 'Pellagra');
 
 -- --------------------------------------------------------
 
@@ -415,7 +482,7 @@ CREATE TABLE `inspection_schedule` (
 --
 
 INSERT INTO `inspection_schedule` (`io_schedule`, `io_no`, `inspectors`, `inspection_date`, `inspection_time`, `date_applied`, `month`, `year`, `status`) VALUES
-(1, 'IO-2018-12-1', 'Cardo', '2018-12-04', '13:50', 'December 26, 2018 - 11:03 pm', 'Dec', '2018', 'Pending');
+(1, 'IO-2018-12-1', 'Cardo', '2018-12-04', '13:50', 'December 26, 2018 - 11:03 pm', 'Dec', '2018', 'Complete');
 
 -- --------------------------------------------------------
 
@@ -452,25 +519,170 @@ INSERT INTO `issue_notice` (`issue_notice_no`, `type_of_notice`, `amount`, `owne
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `means_of_egress`
+--
+
+CREATE TABLE `means_of_egress` (
+  `checklist_id` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `means_of_egress`
+--
+
+INSERT INTO `means_of_egress` (`checklist_id`, `description`) VALUES
+('Means_Egrees_Req_1', 'Building exits must abut a public street or approved alley.'),
+('Means_Egrees_Req_2', 'Provide at least two (2) means of egress for each floor, room.'),
+('Means_Egrees_Req_3', 'Provide secondary stairs/exits as far/remote from main stair, to serve ___.'),
+('Means_Egrees_Req_4', 'Enclose all stairways and ire escapes with walls having	hours of fire resistance with access thru self-closing fire doors.'),
+('Means_Egrees_Req_5', 'Provide two (2) doors as exit ways from all rooms.'),
+('Means_Egrees_Req_6', 'Interconnect stairs and fire escapes with fire resistive passageways on corridors at least ____ meters wide.'),
+('Means_Egrees_Req_7', 'Enclose walls, doors, stairs ramps, escalators and other components of exits systems.'),
+('Means_Egrees_Req_8', 'Provide protected/enclosed horizontal exits with self-closing fire doors.'),
+('Means_Egrees_Req_9', 'Travel distance to an exit shall not be more than ___ meters.'),
+('Means_Egrees_Req_10', 'Exit doors shall swing in the direction of exit travel.'),
+('Means_Egrees_Req_11', 'Revolving doors shall not be used as means of egress except_________.'),
+('Means_Egrees_Req_12', 'Exit door/s should be openable from the inside without the use of keys, special knowledge or effort flush bolts or surface bolts are prohibited.'),
+('Means_Egrees_Req_13', 'Exit door should have a minimum width of 71 cm and a maximum width 122 cm and shall not restrict the opening.'),
+('Means_Egrees_Req_14', 'A floor or landing is required not less than the width of exit door.'),
+('Means_Egrees_Req_15', 'Door should be not project into the required corridor width when fully opened so as not to reduce the corridor width to less than 76.17 cm.'),
+('Means_Egrees_Req_16', 'Exit doors should provide immediate access to an approved means of egress. Exiting through a bathroom, bedroom or other room subject to locking does not comply.'),
+('Means_Egrees_Req_17', 'Corridors should have a minimum width of _________ meters.'),
+('Means_Egrees_Req_18', 'Required corridors in occupancies shall have.\r\n                                                            2.43 meters (8 ft) minimum width.'),
+('Means_Egrees_Req_19', 'Dead-end corridors and exit balconies is limited to 6.08 m (20 ft).'),
+('Means_Egrees_Req_20', 'Aisles in auditorium shall be minimum of meters in width.'),
+('Means_Egrees_Req_21', 'Walls and ceilings  of  corridors  should  be  fire  resistive  construction materials.'),
+('Means_Egrees_Req_22', 'Interior  openings  into  corridor  should  be  protected  as  set  forth  in ____________________________.'),
+('Means_Egrees_Req_23', 'Main stairways should have a minimum width of 112 cm. Trims and handrails should not project more than 8.90 cm (3 1/2 in) into the required width.'),
+('Means_Egrees_Req_24', 'Landings on stairways should have a minimum dimension of 112 cm (44 in) in the direction of travel.'),
+('Means_Egrees_Req_25', 'Risers on stairways should not exceed 19 cm and tread exclusive of nosing or projections should not be less than 25 cm.'),
+('Means_Egrees_Req_26', 'Doors between guest’s rooms and corridors shall be self-closing and shall have a fire protection rating at least twenty (20) minutes.'),
+('Means_Egrees_Req_28', 'Openings in corridor partitions other than door openings shall be prohibited.'),
+('Means_Egrees_Req_29', 'Basement portion of stairways should be provided with an approved barrier where continuous to upper floor in an exit enclosure.'),
+('Means_Egrees_Req_30', 'Vertical distance between stairway landings are limited to 3.69 m (12 ft) in assembly occupancies, distance is 2.43 m (8 ft).'),
+('Means_Egrees_Req_31', 'Handrails should be placed not less than 81.28 cm (32 in) above the tread. Two (2) handrails are required when stairways exceed 111.7 cm in width.'),
+('Means_Egrees_Req_32', 'Guardrails for stairs, balconies, stair landings, ramps & aisles located along the edge of openside floors and mezzanines shall be provided.'),
+('Means_Egrees_Req_33', 'There shall be no enclosed usable space under the stairs in an exit enclosure nor shall the open space under such stairs be used for any purpose.'),
+('Means_Egrees_Req_34', 'Non-combustible outside stairs are required to have 2.03 m (6 ft, 8 in) minimum headroom clearance for stairways which should be indicated on plans.'),
+('Means_Egrees_Req_35', 'Ramp slopes should have be roughened or with nonslip surface.'),
+('Means_Egrees_Req_36', 'Ramp slopes should not exceed 30.3 cm. (1 ft) in 3.03 m (10 ft.).'),
+('Means_Egrees_Req_37', 'No openings other than the required exits are permitted and exit passageways should be one (1) hr fire resistive construction for a three (3) storey building or less and two (2) hrs for four (4) storey building or more. Any opening therein shall be protected with an approved self-closing fire doors.'),
+('Means_Egrees_Req_38', 'Exit illumination and directional EXIT signs shall be provided.'),
+('Means_Egrees_Req_39', 'Panic hardware is required on exit doors. In lieu of this, doors shall have no locks or latches.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `misc`
+--
+
+CREATE TABLE `misc` (
+  `checklist_id` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `misc`
+--
+
+INSERT INTO `misc` (`checklist_id`, `description`) VALUES
+('Miscellaneous_Req_1', 'Provide outside window opening on bedrooms with a clear opening of not less than fifty six (56) cm in least dimension and forty five- hundredths (0.45) m2 in area. The bottom of the window shall be not more than one hundred twenty two (122) cm above the floor.'),
+('Miscellaneous_Req_2', 'All  liquefied  petroleum  gas  equipment  including  such  equipment installed at utility gas plants shall be installed in accordance with the provisions of NFPA 59.'),
+('Miscellaneous_Req_3', 'No  grills  or  any  obstruction  shall  be  installed  on  window  openings and/or fire exits.'),
+('Miscellaneous_Req_4', 'Provide emergency lighting facilities with automatic transfer switch to AC/DC power source.'),
+('Miscellaneous_Req_5', 'Air conditioning ducts must be provided with approved fire dampers.'),
+('Miscellaneous_Req_6', ' Roof covering must be of non-combustible materials. Combustible roof covering must have fire retardant treatment.'),
+('Miscellaneous_Req_7', 'Provide fire escape ladder/s.'),
+('Miscellaneous_Req_8', 'Provide fire escape stair/s.'),
+('Miscellaneous_Req_9', 'All unit partition wall shall be extended up to upper floor slab and/or one (1) meter above the roofline.'),
+('Miscellaneous_Req_10', 'Provide effective means of smoke ventilation such as access panels, movable windows.'),
+('Miscellaneous_Req_11', 'Project  activity  shall  not  affect  the  effectivity  of  the  existing  fire protection facilities.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `login` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `password`) VALUES
-(7, 'assessor1', 'assessor1'),
-(9, 'user2', 'cooluser2'),
-(10, 'user3', 'cooluser3'),
-(11, 'ken05cay', 'ken05'),
-(12, 'scecere0', 'ao68bc291xz');
+INSERT INTO `user` (`id`, `name`, `password`, `fname`, `lname`, `login`) VALUES
+(7, 'assessor1', 'assessor1', '', '', ''),
+(9, 'user2', 'cooluser2', '', '', ''),
+(10, 'user3', 'cooluser3', '', '', ''),
+(11, 'ken05cay', 'ken05', '', '', 'January 13, 2019, 5:03 pm'),
+(12, 'scecere0', 'ao68bc291xz', '', '', ''),
+(13, 'alvin2', 'alvin3', 'Alvin', 'Yanson', 'January 13, 2019, 7:44 pm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `walls`
+--
+
+CREATE TABLE `walls` (
+  `checklist_id` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `walls`
+--
+
+INSERT INTO `walls` (`checklist_id`, `description`) VALUES
+('Walls_Req_1', 'Provide standard fire wall with at least 100 cm (39.38 in) high parapets on all portion of the building on the property line.'),
+('Walls_Req_2', 'Extend exterior masonry walls to form parapets or wings.'),
+('Walls_Req_3', 'Provide protection of all exterior walls. All exterior walls facing approved alleys which are dead-ended must have a fire resistance of ______ hours.'),
+('Walls_Req_4', 'Provide automatic fire dampers on wall openings.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `warning_systems`
+--
+
+CREATE TABLE `warning_systems` (
+  `checklist_id` varchar(50) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `warning_systems`
+--
+
+INSERT INTO `warning_systems` (`checklist_id`, `description`) VALUES
+('Warning_Req_1', 'Provide approved emergency alarm bell system on each floor with adequate number of sending stations.'),
+('Warning_Req_2', 'Provide approved type heat and smoke detection system.'),
+('Warning_Req_3', 'Provide efficient communication system for warning occupants and calling fire department.'),
+('Warning_Req_4', 'Provide/post   allowable   occupant   load   sign/s.   Such   signs   shall   be conspicuously and suitably located.'),
+('Warning_Req_5', 'Provide fire protection/suppression during construction.'),
+('Warning_Req_7', 'Provide fire exit plan for each floor of the building showing the routes from each room to appropriate exits, displayed prominently on the door of each room.'),
+('Warning_Req_8', 'No heating or lighting apparatus or equipment capable of igniting flammable materials shall be used in any storage or work area where rags, excelsior, hair or other highly flammable or combustible materials are stored or used.'),
+('Warning_Req_9', 'Provide/post \"NO SMOKING\" sign/s where combustible materials are stored or handled. Such signs shall be conspicuously and suitable located.'),
+('Warning_Req_10', 'If high hazard commodities will be stored/handled, automatic fire suppression system shall be provided.'),
+('Warning_Req_11', 'Provide/post \"DO NOT USE ELEVATOR IN CASE OF FIRE\" sign/s.'),
+('Warning_Req_12', 'LPG tank/s must be installed outside the building and should be provided with safety devices that automatically stop the flow of gas should a leak develop.'),
+('Warning_Req_13', 'Provide fire resistive walls between stair & kitchen area.'),
+('Warning_Req_14', 'Provide outside window/s for rescue and ventilation with a minimum clear opening of 55 cm and approximately one half (0.5) m2 in area; the bottom of window opening is not more than eighty two (82) cm above the floor; it can readily be opened from the inside without the use of tools; where storm windows, screens, or antiburglar devices are used, these be provided with quick mechanism so that they may be so arranged that when opened they will not drop to the ground.'),
+('Warning_Req_15', 'Rooms used for kindergarten, first or second grade pupils shall not be located above or below the floor of exit discharge. Rooms used for second grade pupils shall not be located more than one (1) storey above the floor of exit discharge.'),
+('Warning_Req_16', 'Provide firefighters’ elevator.'),
+('Warning_Req_17', 'All correction indicated on the original approved plan from this office on shall be followed.'),
+('Warning_Req_18', 'Any changes in occupancy other than stated shall be in accordance with Rule 10.'),
+('Warning_Req_19', 'Subject to inspection during construction.'),
+('Warning_Req_20', 'Fire Safety Inspection Certificate must be secured before/prior to issuance of Certificate of Occupancy.'),
+('Warning_Req_21', 'Subject to additional requirements upon recommendation of the Fire Safety Inspector during construction phase and final inspection.');
 
 --
 -- Indexes for dumped tables
@@ -581,7 +793,7 @@ ALTER TABLE `bldg_construct`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `evaluation_checklist`
@@ -605,7 +817,7 @@ ALTER TABLE `inspection_order`
 -- AUTO_INCREMENT for table `inspection_report`
 --
 ALTER TABLE `inspection_report`
-  MODIFY `ir_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ir_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `inspection_schedule`
@@ -623,7 +835,7 @@ ALTER TABLE `issue_notice`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

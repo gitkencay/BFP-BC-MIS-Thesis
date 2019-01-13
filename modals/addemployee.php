@@ -37,38 +37,38 @@
                         <div class="form-group">
                             <label for="officer" class="col-sm-6 control-label">First Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="officer_fname" name="officer_fname">
+                                <input type="text" class="form-control" id="officer_fname" name="officer_fname" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="officer" class="col-sm-6 control-label">Middle Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="officer_mname" name="officer_mname">
+                                <input type="text" class="form-control" id="officer_mname" name="officer_mname" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="officer" class="col-sm-6 control-label">Last Name</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="officer_lname" name="officer_lname">
+                                <input type="text" class="form-control" id="officer_lname" name="officer_lname" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-6 control-label">Username</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="username" name="username">
+                                <input type="text" class="form-control" id="username" name="username" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="password" class="col-sm-6 control-label">Password</label>
                             <div class="col-sm-8">
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" name="password" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-6 control-label">Confirm Password</label>
                             <div class="col-sm-8">
-                                <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
                             </div>
                         </div>
                         <div class="form-group">
