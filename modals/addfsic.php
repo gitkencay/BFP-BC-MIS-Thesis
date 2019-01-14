@@ -130,13 +130,14 @@
                             <div class="form-group">
                                 <label for="user-id" class="col-sm-3 control-label">&nbsp;Username</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="user-id" name="username" value="clarkcan2018">
+                                    <input type="text" class="form-control" id="fsicusername" name="username">
+                                    <div id="fsicname_response"></div>
                                 </div>                                                                                            
                             </div>
                             <div class="form-group">
                                 <label for="password" class="col-sm-3 control-label">&nbsp;Password</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="user-id" name="password" value="8080">
+                                    <input type="text" class="form-control" id="user-id" name="password">
                                 </div>                                                                                            
                             </div>
                             <div class="form-group">
@@ -190,7 +191,7 @@
                     <div class="col-sm-6">
                         <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
                     </div> 
-                    <button type="submit" class="btn btn-info" name="submit"><span class="fa fa-check"></span>Save</button>
+                    <button id="fsicsave" type="submit" class="btn btn-info" name="submit"><span class="fa fa-check"></span>Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
                 </div>
             </form>

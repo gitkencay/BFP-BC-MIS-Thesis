@@ -1,5 +1,4 @@
 <?php
-
 require_once 'require/logincheck.php';
 ?>
 <!DOCTYPE html>
@@ -39,10 +38,16 @@ require_once 'require/logincheck.php';
 
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-            <div class="page-content-wrap">
+                <div class="page-content-wrap">
 					<div class="row">
 						<div class="col-md-6">
-                            <form role="form" id="user" class="form-horizontal" action="update_profile.php" method="post" onsubmit="return confirm('Are you sure you want to update your profile?');">
+                        <?php
+	        require 'require/databaseconnection.php';
+			$id = $_SESSION['id'];
+			$query = $conn->query("SELECT * FROM `user` where `id` = '$id'") or die(mysqli_error());
+			$fetch = $query->fetch_array();
+							?>
+                            <form id="user" class="form-horizontal" action="actions/update_profile.php" method="post" onsubmit="return confirm('Are you sure you want to update your profile?');">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h3 class="panel-title"><strong> Update My Account</strong></h3>
@@ -51,42 +56,48 @@ require_once 'require/logincheck.php';
 										<h5 class="push-up-1">First Name</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input title="Name" type="text" class="form-control" name="firstname" value="John"/>
+                                            <input type="hidden" class="form-control" name="id" value="<?php echo $fetch['id']?>"/>
+        										<input title="Name" type="text" class="form-control" name="firstname" value="<?php echo $fetch['fname']?>"/>
 											</div>
 										</div>
 										<h5 class="push-up-1">Last Name</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input title="Name" type="text" class="form-control" name="lastname" value="Doe"/>
+												<input title="Name" type="text" class="form-control" name="lastname" value="<?php echo $fetch['lname']?>"/>
 											</div>
 										</div>
 										<h5 class="push-up-1">Username</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input title="Username" type="text" class="form-control" name="username" value="clarkcan2018"/>
+												<input title="Username" type="text" class="form-control" name="username" value="<?php echo $fetch['name']?>"/>
 											</div>
 										</div>
 										<h5 class="push-up-1">New Password</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input title="New Password" type="text" class="form-control" id="password" name="password"/>
+												<input type="password" class="form-control" id="password" name="password" />
 											</div>
 										</div>
 										<h5 class="push-up-1">Confirm Password</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input title="Confirm Password" type="text" class="form-control" id="cfmPassword" name="newpassword" />
+												<input type="password" class="form-control" id="confirm_password" name="confirm_password"/>
 											</div>
+                                            <div class="col-md-6 col-xs-6" >
+                                                <strong> <span id="divCheckPasswordMatch" style="display: none;"> </span> </strong>
+                                            </div>
 										</div>
+
 										<h5 class="push-up-1">Old Password</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input title="Old Password" type="text" class="form-control" name="passwordold" required/>
+												<input type="text" class="form-control" name="passwordold" id="passwordold" required/>
+                                                <div id ="old_response" ></div>
 											</div>
 										</div>
 									</div>
 									<div class="panel-footer">
-										<button type="submit" class="btn btn-info pull-right">Update Profile</button>
+										<button type="submit" id="save" name="save" class="btn btn-info pull-right">Update Profile</button>
 									</div>
 								</div>
 							</form>
@@ -96,7 +107,7 @@ require_once 'require/logincheck.php';
             </div>
             <!-- END PAGE CONTENT WRAPPER -->
 
-        </div>
+     
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
             <div class="mb-container">
                 <div class="mb-middle">
@@ -118,42 +129,42 @@ require_once 'require/logincheck.php';
 
         
 
-        <!-- START PRELOADS -->
         <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->                  
-
-        <!-- START SCRIPTS -->
-        <!-- START PLUGINS -->
         <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="ajax/checkoldpass.js"></script>
         <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>        
-        <!-- END PLUGINS -->
-
-        <!-- START THIS PAGE PLUGINS-->        
         <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+        <script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>
         <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
         <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
-
-
-         <!--<script src="assets/js/dataTables/jquery.dataTables.js"></script>
-         <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>-->
-             <script>
+        <script>
                  $(document).ready(function () {
                       $('#dataTables-example-emp').dataTable();
                   });
-             </script>
-        <!-- END THIS PAGE PLUGINS-->        
-
-        <!-- START TEMPLATE -->
+        </script>
         <script type="text/javascript" src="js/settings.js"></script>
-
         <script type="text/javascript" src="js/plugins.js"></script>        
         <script type="text/javascript" src="js/actions.js"></script>
+<script>
+            $("#user").validate({
+                ignore: [],
+                rules: {
+                    password: {
+                        minlength: 6,
+                        maxlength: 10
+                    },
+                    'confirm_password': {
+                        minlength: 6,
+                        maxlength: 10,
+                        equalTo: "#password"
+                    }
+                }
+            });
+        </script>
 
-        <script type="text/javascript" src="js/demo_dashboard.js"></script>
-        <!-- END TEMPLATE -->
-
+                  
         <!-- END SCRIPTS -->        
     </body>
 </html>

@@ -5,7 +5,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h3 class="modal-title">New FSEC Applicant</h3>
                     </div>
-                    <form method="post" action="actions/addfsec.php" onsubmit="return confirm('Are you sure you want to add this FSEC application?');"  >
+                    <form id="fsec" method="post" action="actions/addfsec.php" onsubmit="return confirm('Are you sure you want to add this FSEC application?');"  >
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -95,19 +95,18 @@
                                 </div>
                                 </div>
                             <div class="col-md-6">
-                               
-
-
                                     <div class="form-group">
                                         <label for="user-id" class="col-sm-3 control-label">Username</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="user-id" name="username" value="clarkcan2018">
+                                            <input type="text" class="form-control" id="username" name="username">
+                                            <div id="uname_response"></div>
                                         </div>                                                                                            
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="col-sm-3 control-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="user-id" name="password" value="8080">
+                                            <input type="text" class="form-control" id="password" name="password">
+                                           
                                         </div>                                                                                            
                                     </div>
                                     <div class="form-group">
@@ -159,7 +158,7 @@
                             <div class="col-sm-6">
                                 <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;</small></p>
                             </div> 
-                            <button type="submit" class="btn btn-info" name="submit"><span class="fa fa-check"></span>Save</button>
+                            <button type="submit" id="save" class="btn btn-info" name="submit"><span class="fa fa-check"></span>Save</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
                         </div>
                     </form>

@@ -32,14 +32,11 @@ $io_no = $fetch2['io_no'] + 1;
                                 <label for="bldg-code" class="col-sm-5 control-label">Inspector&emsp;</label>
                                 <div class="col-sm-10">
                                     <select class="form-control select" id="inspectors_drop" name="inspectors_drop">
-                                        <option value="" selected="selected">Select Inspector</option>
-                                        <option value="Cardo">Cardo</option>
-                                        <option value="Cardo">Elmer</option>
-                                        <option value="Cardo">Cartagena</option>
-                                        <option value="Cardo">Alvin</option>
-                                        <option value="Cardo">Julia</option>
+                                        <option disabled selected="selected">Select Inspector</option>
+
+
                                         <?php
-    $sql = "SELECT * FROM inspection_schedule";
+    $sql = "SELECT * FROM inspectors group by inspectors";
                                    $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
                                    while( $rows = mysqli_fetch_assoc($resultset) ) {
                                         ?>

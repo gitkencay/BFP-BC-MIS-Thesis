@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Employee Form</h4>
             </div>
-            <form method="post" action="actions/addemployee.php" onsubmit="return confirm('Are you sure you want to add this Employee Profile?');"  >
+            <form id="employee" method="post" action="actions/addemployee.php" onsubmit="return confirm('Are you sure you want to add this Employee Profile?');"  >
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -56,6 +56,7 @@
                             <label for="password" class="col-sm-6 control-label">Username</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="username" name="username" required>
+                                <div id ="uname_response" ></div>
                             </div>
                         </div>
                         
@@ -94,7 +95,7 @@
                 <div class="col-sm-6">
                     <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
                 </div>
-                <button type="submit" class="btn btn-info" name="add_new_employ"><span class="fa fa-check"></span>Save</button>
+                <button type="submit" class="btn btn-info" id="save" name="add_new_employ"><span class="fa fa-check"></span>Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
             </div>
             </form>

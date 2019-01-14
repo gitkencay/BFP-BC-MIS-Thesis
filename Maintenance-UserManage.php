@@ -1,3 +1,6 @@
+<?php
+    require_once 'require/logincheck.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -19,82 +22,11 @@
     <!-- START PAGE CONTAINER -->
         <div class="page-container">
             <!-- START PAGE SIDEBAR -->
-                <div class="page-sidebar">
-                    <!-- START X-NAVIGATION -->
-                    <ul class="x-navigation">
-                        <li class="xn-logo">
-                            <a href="index.html"><strong>BFP-BC MIS</strong></a>
-                            <a href="#" class="x-navigation-control"></a>
-                        </li>              
-                        <div class="profile">
-                            <div class="profile-image">
-                                <img src="img/fireman2.png"/>
-                            </div>
-                                <div class="profile-data">
-                                    <div class="profile-data-name">John Doe</div>
-                                        <div class="profile-data-title">Customer Relations Officer</div>
-                                            </div>
-                        </div>
-                            <ul id="navSid">                                                                            
-                                <li>
-                                    <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
-                                        </li>                    
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Master File</span></a>
-                                                <ul>
-                                                    <li class="active"><a href="DataEntry-EmpProf.html"><span class="fa fa-user"></span> Employee Profiling</a></li>
-                                                    <li><a href="DataEntry-AppReg.html"><span class="fa fa-user"></span> Applicant Registration</a></li>                          
-                                                </ul>
-                                            </li>
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Transaction</span></a>
-                                                <ul>
-                                                    <li><a href="Transaction-Assessment.html"> Assessments & Payments</a></li>
-                                                    <li><a href="Transaction-Inspection.html"> Inspection & Compliance</a></li>
-                                                    <li><a href="Transaction-BuildEval.html">Building Evaluation</a></li>
-                                                    <li><a href="#">Issuance Of Certificates</a></li>
-                                                    <li><a href="#">Status Monitoring</a></li>
-                                                    <li><a href="#">Scheduling</a></li>                            
-                                                </ul>
-                                            </li>
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">Reports</span></a>                        
-                                                <ul>
-                                                    <li><a href="Report-Certification.html"><span class=""></span> Certification</a></li>                            
-                                                    <li><a href="Report-MasterFile.html"><span class=""></span> Master File Record Report</a></li>
-                                                    <li><a href="Report-TransactionRecord.html"><span class=""></span> Transaction Record Report</a></li>
-                                                    <li><a href="Report-DistressCall.html"><span class=""></span> Distress Call Report</a></li>                            
-                                                    <li><a href="Report-RiskandFire.html"><span class=""></span> Risk & Fire Frequency</a></li>
-                                                </ul>
-                                            </li>                    
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-warning"></span> <span class="xn-text">Distress Call</span></a>
-                                                <ul>
-                            <li><a href="Distress-FireRespondents.html"><span class="fa fa-align-justify"></span> Fire Stations Respondents</a></li>
-                            <li><a href="Distress-SMSandCall.html"><span class="fa fa-th-large"></span> SMS & Call Logs</a></li>
-                        </ul>
-                                            </li>
-                                            <li class="active">
-                                                <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Maintenance</span></a>
-                                                <ul>                            
-                                                    <li><a href="Maintenance-MyAccount.html"><span class="fa fa-align-justify"></span> My Account</a></li>
-                                                    <li class="active"><a href="Maintenance-UserManage.html"><span class="fa fa-sort-alpha-desc"></span> User Management</a></li>
-                                                    <li><a href="Maintenance-SystemBackUp.html"><span class="fa fa-download"></span> System Back Up</a></li>                            
-                                                </ul>
-                                            </li>                                      
-                            </ul>
-                            <!-- END X-NAVIGATION -->
-                </div>
+                <?php require 'require/sidebar.php'?>
                 <!-- END PAGE SIDEBAR -->
         <div class="page-content">
         <!-- START X-NAVIGATION VERTICAL -->
-            <ul id="hozironNav" class="x-navigation x-navigation-horizontal x-navigation-panel">
-            <!-- SIGN OUT -->
-                <li class="xn-icon-button pull-right">
-                    <a href="pages-login.html" class="mb-control" data-box="#mb-signout"><span class="glyphicon glyphicon-off"></span></a>
-                </li> 
-            <!-- END SIGN OUT -->
-            </ul>
+                <?php require 'require/header.php'?>
             <!-- END X-NAVIGATION VERTICAL -->                     
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
@@ -120,7 +52,6 @@
     
                                                <!--Start Default Table-->
                                                  <div class="panel panel-default">
-                                                    
                                                     <div class="panel-body">
                                                         <table class="table datatable" id="dataTables-example">
                                                             <thead>
@@ -184,7 +115,6 @@
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                                                 <h4 class="modal-title">Edit Applicant</h4>
                                                             </div>
-       
                                                             <div class="modal-body">
                                                                <div class="row">
                                                                    <div class="col-md-12">
@@ -248,15 +178,18 @@
                                             <div class="tab-pane" id="tab-employ">
                                                  <!--Start Default Table-->
                                                 <div class="panel panel-default">
-                                                    
+                                                            <?php
+                                                                require 'require/databaseconnection.php';
+                                                                $query = $conn->query("SELECT * FROM `employee` ORDER BY 'id' DESC") or die(mysqli_error());
+                                                                $fetch = $query->fetch_array();
+                                                            ?>
                                                     <div class="panel-body">
                                                         <table class="table datatable" id="dataTables-example">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>Officer ID</th>
-                                                                    <th>Officer Name</th>
+                                                                    <th>First Name</th>
+                                                                    <th>Last Name</th>
                                                                     <th>Username</th>
-                                                                    <th>Password</th>
                                                                     <th>Last Login</th>
                                                                     <th>Status</th>
                                                                     <th>Action</th>
@@ -264,40 +197,12 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <td>2018-04-024</td>
-                                                                    <td>Lito Lit</td>
-                                                                    <td>LLG2017</td>
-                                                                    <td>********</td>
-                                                                    <td>September 4, 2018</td>
-                                                                    <td><span class="badge badge-info">Active</span></td>
-                                                                    <td align="center"><button type="button" data-toggle="modal" class="btn btn-success" data-target="#Edit-Employee">Edit</button></td>
-                                                                </tr>
-                                                                <tr>
                                                                     <td>2018-06-04</td>
-                                                                    <td>Peer Poe</td>
-                                                                    <td>PeerSeven12</td>
-                                                                    <td>********</td>
-                                                                    <td>July 30, 2018</td>
-                                                                    <td><span class="badge badge-info">Active</span></td>
-                                                                    <td align="center"><button class="btn btn-success">Edit</button></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2018-04-024</td>
-                                                                    <td>Lito Lit</td>
-                                                                    <td>LLG2017</td>
-                                                                    <td>********</td>
-                                                                    <td>September 4, 2018</td>
-                                                                    <td><span class="badge badge-danger">Inactive</span></td>
-                                                                    <td align="center"><button class="btn btn-success">Edit</button></td>
-                                                                </tr>
-                                                                <tr>
                                                                     <td>2018-06-04</td>
-                                                                    <td>Peer Poe</td>
-                                                                    <td>PeerSeven12</td>
-                                                                    <td>********</td>
-                                                                    <td>July 30, 2018</td>
-                                                                    <td><span class="badge badge-danger">Inactive</span></td>
-                                                                    <td align="center"><button class="btn btn-success">Edit</button></td>
+                                                                    <td>2018-06-04</td>
+                                                                    <td>2018-06-04</td>
+                                                                    <td>2018-06-04</td>
+                                                                    <td>2018-06-04</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
