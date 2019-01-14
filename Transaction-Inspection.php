@@ -14,105 +14,6 @@
         <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->
-        <style>
-
-            #toast {
-                visibility: hidden;
-                max-width: 50px;
-                height: 50px;
-                /*margin-left: -125px;*/
-                margin: auto;
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                border-radius: 2px;
-
-                position: fixed;
-                z-index: 1;
-                left: 0;right:0;
-                bottom: 30px;
-                font-size: 17px;
-                white-space: nowrap;
-            }
-            #toast #img{
-                width: 50px;
-                height: 50px;
-                
-                float: left;
-                
-                padding-top: 16px;
-                padding-bottom: 16px;
-                
-                box-sizing: border-box;
-
-                
-                background-color: #111;
-                color: #fff;
-            }
-            #toast #desc{
-
-                
-                color: #fff;
-            
-                padding: 16px;
-                
-                overflow: hidden;
-                white-space: nowrap;
-            }
-
-            #toast.show {
-                visibility: visible;
-                -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
-                animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
-            }
-
-            @-webkit-keyframes fadein {
-                from {bottom: 0; opacity: 0;} 
-                to {bottom: 30px; opacity: 1;}
-            }
-
-            @keyframes fadein {
-                from {bottom: 0; opacity: 0;}
-                to {bottom: 30px; opacity: 1;}
-            }
-
-            @-webkit-keyframes expand {
-                from {min-width: 50px} 
-                to {min-width: 350px}
-            }
-
-            @keyframes expand {
-                from {min-width: 50px}
-                to {min-width: 350px}
-            }
-            @-webkit-keyframes stay {
-                from {min-width: 350px} 
-                to {min-width: 350px}
-            }
-
-            @keyframes stay {
-                from {min-width: 350px}
-                to {min-width: 350px}
-            }
-            @-webkit-keyframes shrink {
-                from {min-width: 350px;} 
-                to {min-width: 50px;}
-            }
-
-            @keyframes shrink {
-                from {min-width: 350px;} 
-                to {min-width: 50px;}
-            }
-
-            @-webkit-keyframes fadeout {
-                from {bottom: 30px; opacity: 1;} 
-                to {bottom: 60px; opacity: 0;}
-            }
-
-            @keyframes fadeout {
-                from {bottom: 30px; opacity: 1;}
-                to {bottom: 60px; opacity: 0;}
-            }
         </style>
     </head>
     <body>
@@ -167,6 +68,7 @@
                                                             <th>Owner Name</th>
                                                             <th>Action</th>
                                                             <th>Type of Notice</th>
+                                                            <th>Status</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -189,9 +91,19 @@ while ($fetch = $query->fetch_array()) {
                                                                     <a href="inspection-orderView.php?ir_no=<?php echo $fetch['ir_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
                                                                 </td>
                                                                 <td>
-                                                                
-                                                                    <a href="#view_notice<?php echo $appno_2; ?>" onclick="launch_toast()" data-target="#view_notice<?php echo $appno_2; ?>" data-toggle="modal" class="btn btn-info btn-sm"> <i class="fa fa-edit"></i> Issue Notice</a>
-                                                                    <div id="toast"><div id="desc">No Issue Notice</div></div>
+                                                                    <a href="#view_notice<?php echo $appno_2; ?>" data-target="#view_notice<?php echo $appno_2; ?>" data-toggle="modal" class="btn btn-info btn-sm"> <i class="fa fa-edit"></i> Issue Notice</a>
+                                                                </td>
+                                                                <td>
+                                                                    <?php if ($fetch['status_of_checklist'] == 'NA') {
+                                                                        echo "<span class='badge badge-info'>NA</span>";
+                                                                    }
+                                                                    if ($fetch['status_of_checklist'] == 'Comply') {
+                                                                        echo "<span class='badge badge-success'>Comply</span>";
+                                                                    }
+                                                                    if ($fetch['status_of_checklist'] == 'Correct Violation') {
+                                                                        echo "<span class='badge badge-success'>Comply</span>";
+                                                                    }
+                                                                    ?>
                                                                 </td>
                                                             </tr>
                                                             <?php
@@ -326,13 +238,6 @@ $conn->close();
                       $('#dataTables-example').dataTable();
                   });
              </script>
-            <script>
-                function launch_toast() {
-                    var x = document.getElementById("toast")
-                    x.className = "show";
-                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-                }
-            </script>
         <!-- END THIS PAGE PLUGINS-->
 
         <!-- START TEMPLATE -->

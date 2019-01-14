@@ -124,9 +124,8 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             <script>
                                                 $(document).on("change keyup blur", "#Ini_FC_Constr", function() {
                                                 var main = $('#Ini_FC_Constr').val();
-                                                var disc = 10;
-                                                var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                                                var mult = main*dec; // gives the value for subtract from main value
+                                                var disc = 0.001;
+                                                var mult = main*disc; // gives the value for subtract from main value
                                                 $('#construction_tax').val(mult);
                                                 });
                                             </script>
@@ -146,9 +145,8 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             <script>
                                                 $(document).on("change keyup blur", "#Ini_FC_RT", function() {
                                                 var main = $('#Ini_FC_RT').val();
-                                                var disc = 1;
-                                                var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                                                var mult = main*dec; // gives the value for subtract from main value
+                                                var disc = 0.0001;
+                                                var mult = main*disc; // gives the value for subtract from main value
                                                 $('#reality_tax').val(mult);
                                                 });
                                             </script>
@@ -168,10 +166,8 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             <script>
                                                 $(document).on("change keyup blur", "#Ini_FC_PreT", function() {
                                                 var main = $('#Ini_FC_PreT').val();
-                                                var disc = 2;
-                                                var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                                                var mult = main*dec; // gives the value for subtract from main value
-
+                                                var disc = 0.02;
+                                                var mult = main*disc; // gives the value for subtract from main value
                                                 $('#premium_tax').val(mult);
                                                 });
                                             </script>
@@ -191,10 +187,8 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             <script>
                                                 $(document).on("change keyup blur", "#Ini_FC_ST", function() {
                                                 var main = $('#Ini_FC_ST').val();
-                                                var disc = 2;
-                                                var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                                                var mult = main*dec; // gives the value for subtract from main value
-                                                var discount = main-mult;
+                                                var disc = 0.02;
+                                                var mult = main*disc; // gives the value for subtract from main value
                                                 $('#sales_tax').val(mult);
                                                 });
                                             </script>
@@ -214,10 +208,8 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             <script>
                                                 $(document).on("change keyup blur", "#Ini_FC_ProT", function() {
                                                 var main = $('#Ini_FC_ProT').val();
-                                                var disc = 2;
-                                                var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                                                var mult = main*dec; // gives the value for subtract from main value
-                                                var discount = main-mult;
+                                                var disc = 0.02;
+                                                var mult = main*disc; // gives the value for subtract from main value
                                                 $('#proceeds_tax').val(mult);
                                                 });
                                             </script>
@@ -238,10 +230,8 @@ $ops_no = $fetch2['ops_no'] + 1;
                                             <script>
                                                 $(document).on("change keyup blur", "#Ini_FS_InspFee", function() {
                                                 var main = $('#Ini_FS_InspFee').val();
-                                                var disc = 10;
-                                                var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                                                var mult = main*dec; // gives the value for subtract from main value
-                                                var discount = main-mult;
+                                                var disc = 0.2;
+                                                var mult = main*disc; // gives the value for subtract from main value
                                                 $('#inspection_fee').val(mult);
                                                 });
                                             </script>
@@ -368,39 +358,34 @@ $ops_no = $fetch2['ops_no'] + 1;
                     $(document).on("change keyup blur", "#total_amount",
                     function() {
                     var main = $('#Ini_FC_Constr').val();
-                    var disc = 10;
-                    var dec = (disc/100).toFixed(2); //its convert 10 into 0.10
-                    var mult = main*dec; // gives the value for subtract from main value
+                    var disc = 0.001;
+                    
+                    var mult = main*disc; // gives the value for subtract from main value
 
 
                     var main1 = $('#Ini_FC_RT').val();
-                    var disc1 = 1;
-                    var dec1 = (disc1/100).toFixed(2); //its convert 10 into 0.10
-                    var mult1 = main1*dec1; // gives the value for subtract from main value
+                    var disc1 = 0.0001;
+                    var mult1 = main1*disc1; // gives the value for subtract from main value
 
 
                     var main2 = $('#Ini_FC_PreT').val();
-                    var disc2 = 2;
-                    var dec2 = (disc2/100).toFixed(2); //its convert 10 into 0.10
-                    var mult2 = main2*dec2; // gives the value for subtract from main value
+                    var disc2 = 0.02;
+                    var mult2 = main2*disc2; // gives the value for subtract from main value
 
 
                     var main3 = $('#Ini_FC_ST').val();
-                    var disc3 = 2;
-                    var dec3 = (disc3/100).toFixed(2); //its convert 10 into 0.10
-                    var mult3 = main3*dec3; // gives the value for subtract from main value
+                    var disc3 = 0.02;
+                    var mult3 = main3*disc3; // gives the value for subtract from main value
 
 
                     var main4 = $('#Ini_FC_ProT').val();
-                    var disc4 = 2;
-                    var dec4 = (disc4/100).toFixed(2); //its convert 10 into 0.10
-                    var mult4 = main4*dec4; // gives the value for subtract from main value
+                    var disc4 = 0.02;
+                    var mult4 = main4*disc4; // gives the value for subtract from main value
 
 
                     var main5 = $('#Ini_FS_InspFee').val();
-                    var disc5 = 10;
-                    var dec5 = (disc/100).toFixed(2); //its convert 10 into 0.10
-                    var mult5 = main5*dec5; // gives the value for subtract from main value
+                    var disc5 = 0.2;
+                    var mult5 = main5*disc5; // gives the value for subtract from main value
 
 
                     var main6 = $('#Ini_StorClear').val();

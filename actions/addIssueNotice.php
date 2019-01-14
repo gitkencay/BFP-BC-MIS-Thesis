@@ -14,7 +14,6 @@ if(isset($_POST['save_issue_notice'])){
     $business_address = $_POST['business_address'];
     $grace_period_from = $_POST['grace_period_from'];
     $grace_period_to = $_POST['grace_period_to'];
-    $application_no = $_POST['application_number'];
     $month = date("M");
     $year = date("Y");
 
@@ -24,10 +23,14 @@ if(isset($_POST['save_issue_notice'])){
 
     $conn->query("INSERT INTO `issue_notice` VALUES('', '$type_of_notice', '$amount', '$owner_name', '$inspector_name', '$business_name','$deficiency',
     '$date_issued', '$IR_date_applied', '$application_no', '$inspection_order', '$business_address', '$grace_period_from',
-     '$grace_period_to', '$month', '$year' )") or die(mysqli_error());
+    '$grace_period_to', '$month', '$year' )") or die(mysqli_error());
+
+    $conn->query("UPDATE `inspection_report` SET `status_of_checklist` = '$type_of_notice' WHERE `io_no` = '$inspection_order'") or die(mysqli_error());
+
+
     $conn->close();
 
     echo "<script type='text/javascript'>alert('Successfully added new Issue Notice!');</script>";
-    echo "<script>document.location='../inspection-order.php?application_no=$application_no'</script>";
+    echo "<script>document.location='../Transaction-Inspection.php'</script>";
 }
 ?>

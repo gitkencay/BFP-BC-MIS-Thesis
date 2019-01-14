@@ -16,6 +16,7 @@ if(isset($_POST['save_inspection'])){
     $date_applied = $_POST['date_applied'];
     date_default_timezone_set('Asia/Manila');
     $date_applieds=date("F j, Y g:i a");
+    $status_of_checklist = $_POST['status_of_checklist'];
     $month = date("M");
     $year = date("Y");
     $checklist_classification = $_POST['checklist_classification'];
@@ -61,7 +62,7 @@ if(isset($_POST['save_inspection'])){
     // blank ang sa first field kay auto increment ang id followed sang application name, business name ... .. 
    $conn->query("INSERT INTO `inspection_report` VALUES('', '$io_no', '$application_no', '$owner_name', '$owner_address', '$business_name', 
     '$establishment_address', '$bldg_height', '$lot_size', '$number_of_floors', '$date_applied', '$month', '$year', 'Inspection Report', '$recommendation',
-    '$checklist_classification', '$checklist_exit', '$checklist_lightings', '$checklist_protection', '$checklist_equipments', '$checklist_hazardous', '$checklist_operating')") or die(mysqli_error());
+    '$checklist_classification', '$checklist_exit', '$checklist_lightings', '$checklist_protection', '$checklist_equipments', '$checklist_hazardous', '$checklist_operating', '$status_of_checklist')") or die(mysqli_error());
    
 
     $conn->query("UPDATE `application` SET `assessment_status` = 'Inspected' WHERE `application_no` = '$application_number'") or die(mysqli_error());

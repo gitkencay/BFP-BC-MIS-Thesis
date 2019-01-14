@@ -17,7 +17,6 @@ if(isset($_POST['save_eval_checklist'])){
     $warning_systems = $_POST['warning_systems'];
     $fire_protection = $_POST['fire_protection'];
 		$miscellaneous = $_POST['miscellaneous'];
-		$status_of_checklist = $_POST['status_of_checklist'];
     $month = date("M");
     $year = date("Y");
     $new = "";
@@ -97,7 +96,7 @@ if(isset($_POST['save_eval_checklist'])){
 
     // blank ang sa first field kay auto increment ang id followed sang application name, business name ... .. 
 
-		$conn->query("UPDATE `evaluation_checklist` SET `application_no` = '$application_no', `plan_evaluator` = '$plan_evaluator', `owner_name` = '$owner_name', `business_name` = '$business_name', `project_title` = '$project_title', `location` = '$location', `occupancy_classification` = '$occupancy_classification', `date_received` = '$date_received', `means_of_egrees` = '$new', `walls` = '$new2', `compartmentation` = '$new3', `warning_systems` = '$new4', `fire_protection` = '$new5', `miscellaneous` = '$new6', `status_of_checklist` = '$status_of_checklist' WHERE `checklist_no` = '$checklist_no'") or die(mysqli_error());
+		$conn->query("UPDATE `evaluation_checklist` SET `application_no` = '$application_no', `plan_evaluator` = '$plan_evaluator', `owner_name` = '$owner_name', `business_name` = '$business_name', `project_title` = '$project_title', `location` = '$location', `occupancy_classification` = '$occupancy_classification', `date_received` = '$date_received', `means_of_egrees` = '$new', `walls` = '$new2', `compartmentation` = '$new3', `warning_systems` = '$new4', `fire_protection` = '$new5', `miscellaneous` = '$new6' WHERE `checklist_no` = '$checklist_no'") or die(mysqli_error());
 
     $conn->query("UPDATE `application` SET `assessment_status` = 'Evaluated' WHERE `application_no` = '$application_number'") or die(mysqli_error());
     $conn->close();

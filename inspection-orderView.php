@@ -256,37 +256,37 @@ $ir_no = $fetch['ir_no'];
 
                                                          <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_exit" value="<?php echo $fetch['checklist_exit'] ?>" readonly>
+                                                                    <input type="text" class="form-control" name="checklist_exit" id="checklist_exit" value="<?php echo $fetch['checklist_exit'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br> 
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_lightings" value="<?php echo $fetch['checklist_lightings'] ?>" readonly>
+                                                                    <input type="text" class="form-control" name="checklist_lightings" id="checklist_lightings" value="<?php echo $fetch['checklist_lightings'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_protection" value="<?php echo $fetch['checklist_protection'] ?>" readonly>
+                                                                    <input type="text" class="form-control" name="checklist_protection" id="checklist_protection" value="<?php echo $fetch['checklist_protection'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_equipments" value="<?php echo $fetch['checklist_equipments'] ?>" readonly>
+                                                                    <input type="text" class="form-control" name="checklist_equipments" id="checklist_equipments" value="<?php echo $fetch['checklist_equipments'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_hazardous" value="<?php echo $fetch['checklist_hazardous'] ?>" readonly>
+                                                                    <input type="text" class="form-control" name="checklist_hazardous" id="checklist_hazardous" value="<?php echo $fetch['checklist_hazardous'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br>
 
                                                             <div class="form-group">
                                                                 <div class="col-sm-12">
-                                                                    <input type="text" class="form-control" name="checklist_classification" id="checklist_operating" value="<?php echo $fetch['checklist_operating'] ?>" readonly>
+                                                                    <input type="text" class="form-control" name="checklist_operating" id="checklist_operating" value="<?php echo $fetch['checklist_operating'] ?>" readonly>
                                                                 </div>
                                                             </div> <br><br>
 

@@ -29,6 +29,7 @@
                         <div class="form-group">
                             <label for="app-name" class="col-sm-5 control-label">Owner Name</label>
                                 <div class="col-sm-10">
+                                    <input type="hidden" class="form-control" name="application_number" id="application_number" value="<?php echo $fetch3['owner_name'] ?>" >
                                     <input type="text" class="form-control" name="owner_name" id="owner_name" value="<?php echo $fetch3['owner_name'] ?>" >
                                 </div>
                         </div>
