@@ -15,7 +15,7 @@ while($fetch = $query->fetch_array()){
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">Application No: <?php echo $fetch['year']. '-' .$month. '-' .$fetch['application_no']?></h3>
             </div>
-            <form method="post" action="actions/editfsic.php" onsubmit="return confirm('Are you sure you want to edit this FSIC application?');"  >
+            <form method="post" action="actions/editfsec.php" onsubmit="return confirm('Are you sure you want to edit this FSEC application?');"  >
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
@@ -68,17 +68,7 @@ while($fetch = $query->fetch_array()){
                             </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="brgy-no" class="col-sm-12 control-label">&nbsp;Type of Permit</label>
-                                <div class="col-sm-10">
-                                    <select class="form-control select" id="type_of_permit" name="type_of_permit">
-                                        <option value="<?php echo $fetch['type_of_permit']?>"><?php echo $fetch['type_of_permit']?></option>
-                                        <option value="0">Brgy.1</option>
-                                        <option value="Building">Building</option>
-                                        <option value="Occupancy">Occupancy</option>
-                                    </select>
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                     <label for="user-id" class="col-sm-12 control-label">&nbsp; Phone Number </label>
                                     <div class="col-sm-10">
@@ -103,7 +93,7 @@ while($fetch = $query->fetch_array()){
 -->
                            
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="user-id" class="col-sm-3 control-label">&nbsp;Username</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="user-id" name="username" value="<?php echo $fetch['username']?>">
@@ -114,7 +104,7 @@ while($fetch = $query->fetch_array()){
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="user-id" name="password" value="<?php echo $fetch['password']?>">
                                 </div>                                                                                            
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="owner-name" class="col-sm-5 control-label">Owner Name&emsp;&nbsp;&nbsp;&nbsp;</label>
                                 <div class="col-sm-10">
@@ -122,14 +112,14 @@ while($fetch = $query->fetch_array()){
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="floor-number" class="col-sm-6 control-label">Number of Floors&emsp;&nbsp;&nbsp;&nbsp;</label>
-                                <label for="lot-size" class="col-sm-3 control-label">Lot Size&nbsp;&nbsp;</label>
-                                <div class="col-sm-6">
+                                <label for="floor-number" class="col-sm-5 control-label">Number of Floors</label>
+                                <label for="lot-size" class="col-sm-7 control-label">Lot Size</label>
+                                <div class="col-sm-4">
                                     <input type="text" class="form-control" id="floor-number" name="number_of_floors" value="<?php echo $fetch['number_of_floors']?>">
                                 </div>
 
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="lot-size" name="lot_size" value="<?php echo $fetch['lot_size']?>">
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="lot-size" name="lot_size" value="<?php echo $fetch['lot_size'] . " sq.m"?>">
                                 </div>
                             </div>
                             
@@ -181,17 +171,7 @@ $check = explode(",", $initial_requirements);
                                   
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="status" class="col-sm-2 control-label">&nbsp;Status</label>
-                                <div class="col-sm-12">
-                                    <select class="form-control select" id="status" name="status" >
-                                        <option value="<?php echo $fetch['status']?>"><?php echo $fetch['status']?></option>
-                                        <option value="Pending">Pending</option>
-                                        <option value="Incomplete">Incomplete</option>
-                                        <option value="Complete">Complete</option>
-                                    </select>
-                                </div>
-                            </div>
+                            <input type="hidden" class="form-control" id="status" name="status">
                         </div>
                     </div> 
                 </div>
@@ -199,7 +179,7 @@ $check = explode(",", $initial_requirements);
                     <div class="col-sm-6">
                         <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
                     </div> 
-                    <button type="submit" class="btn btn-info" name="editfsic"><span class="fa fa-check"></span>Save</button>
+                    <button type="submit" class="btn btn-info" name="editfsec"><span class="fa fa-check"></span>Save</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
                 </div>
             </form>

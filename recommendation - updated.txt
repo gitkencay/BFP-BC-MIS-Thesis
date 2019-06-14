@@ -1,0 +1,28 @@
+
+combine table and graph for print fire incident
+Quality graphs for the year, month, day
+dropdown
+print on fire incident
+
+---DONE
+change issue notice edit to updating (title)
+FSEC Assessment Pending List (title)
+uppercase company name (FSIC/FSEC)
+include all the report in report module instead in master file report
+equal decimal places on receipt and assesment amount should be right justified
+Change font color for the readonly textfields
+Confirmation for the modal: Employee, Applicant Registration, Issue Notice
+
+---to be Done
+improve labeling of multiple bars in graphs
+automatic status changes
+improve listing on reports
+improve logo on reports
+Match barangay and location
+ask for criteria of grace period
+type of area create a dropdown
+validation of certificates
+change occupancy classification to dropdown
+catching data for location of construction
+configure checklist inspection order to be disabled when unchecked
+improve or add message on loading screen

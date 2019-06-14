@@ -1,3 +1,6 @@
+<?php
+require_once 'require/logincheck.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -6,8 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->      
@@ -18,240 +20,64 @@
     <body>
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
-
-            <!-- START PAGE SIDEBAR -->
-            <div class="page-sidebar">
-                <!-- START X-NAVIGATION -->
-                <ul class="x-navigation">
-                    <li class="xn-logo">
-                        <a href="index.html"><strong>BFP-BC MIS</strong></a>
-                        <a href="#" class="x-navigation-control"></a>
-                    </li>
-                    
-                        <div class="profile">
-                            <div class="profile-image">
-                                <img src="img/fireman2.png"/>
-                            </div>
-                            <div class="profile-data">
-                                <div class="profile-data-name">John Doe</div>
-                                <div class="profile-data-title">Customer Relations Officer</div>
-                            </div>
-                        </div>
-                    <ul id="navSid">                                                                            
-                    <li>
-                        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
-                    </li>                    
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Master File</span></a>
-                        <ul>
-                            <li class="active"><a href="DataEntry-EmpProf.html"><span class="fa fa-user"></span> Employee Profiling</a></li>
-                            <li><a href="DataEntry-AppReg.html"><span class="fa fa-user"></span> Applicant Registration</a></li>                          
-                        </ul>
-                    </li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Transaction</span></a>
-                        <ul>
-                            <li><a href="Transaction-Assessment.html"> Assessments & Payments</a></li>
-                            <li><a href="Transaction-Inspection.html"> Inspection & Compliance</a></li>
-                            <li><a href="Transaction-BuildEval.html">Building Evaluation</a></li>
-                            <li><a href="#">Issuance Of Certificates</a></li>
-                            <li><a href="#">Status Monitoring</a></li>
-                            <li><a href="#">Scheduling</a></li>                            
-                        </ul>
-                    </li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">Reports</span></a>                        
-                        <ul>
-                            <li><a href=""><span class=""></span> Detailed Report</a></li>                            
-                            <li><a href=""><span class=""></span> Summary Report</a></li>
-                            <li><a href=""><span class=""></span> Exceptional Report</a></li>                            
-                            <li><a href=""><span class=""></span> Risk & Fire Frequency</a></li>
-                        </ul>
-                    </li>                    
-                    <li class="active">
-                        <a href="#"><span class="fa fa-warning"></span> <span class="xn-text">Distress Call</span></a>
-                        <ul>
-                            <li><a href="Distress-FireRespondents.html"><span class="fa fa-align-justify"></span> Fire Stations Respondents</a></li>
-                            <li class="active"><a href="Distress-SMSandCall.html"><span class="fa fa-th-large"></span> SMS & Call Logs</a></li>
-                        </ul>
-                    </li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Maintenance</span></a>
-                        <ul>                            
-                            <li><a href="Maintenance-MyAccount.html"><span class="fa fa-align-justify"></span> My Account</a></li>
-                            <li><a href="Maintenance-UserManage.html"><span class="fa fa-sort-alpha-desc"></span> User Management</a></li>
-                            <li><a href="Maintenance-SystemBackUp.html"><span class="fa fa-download"></span> System Back Up</a></li>                            
-                        </ul>
-                    </li>                                      
-                </ul>
-                <!-- END X-NAVIGATION -->
-            </div>
-            <!-- END PAGE SIDEBAR -->
-
+            <?php require 'require/sidebar-CRO.php'?>
             <!-- PAGE CONTENT -->
             <div class="page-content">
-
-                <!-- START X-NAVIGATION VERTICAL -->
-                <ul id="hozironNav" class="x-navigation x-navigation-horizontal x-navigation-panel">
-                    <!-- SIGN OUT -->
-                    <li class="xn-icon-button pull-right">
-                        <a href="pages-login.html" class="mb-control" data-box="#mb-signout"><span class="glyphicon glyphicon-off"></span></a>
-                    </li> 
-                    <!-- END SIGN OUT -->
-                </ul>
-                <!-- END X-NAVIGATION VERTICAL -->                     
-
+                <?php require 'require/header.php'?>
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Distress Call</a></li>                    
-                    <li class="active"><a href="Distress-FireRespondents.html">Fire Stations Respondents</a></li>
+                    <li class="active"><a href="Distress-SMSandCall.php">SMS Logs</a></li>
                 </ul>
                 <!-- END BREADCRUMB -->                       
 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-
                      <div class="row">
                          <div class="col-md-12">
-
                              <!--Start Default Table-->
                                  <div class="panel-body">
                                      <table class="table datatable" id="dataTables-example-emp">
                                          <thead>
                                              <tr>
-                                                 <th>Sender</th>
-                                                 <th>Location</th>
-                                                 <th>Date</th>
-                                                 <th>Time</th>
-                                                 <th>Fire Station</th>
+                                                 <th>Application No.</th>
+                                                 <th>Owner Name</th>
+                                                 <th>Transaction Status</th>
+                                                 <th>Date and Time</th>
                                                  <th>Message Details</th>
                                              </tr>
                                          </thead>
                                          <tbody>
+                                         <?php 
+                                            require 'require/databaseconnection.php';
+                                            $query = $conn->query("select * from `messages` ") or die(mysqli_error());
+                                                while ($fetch = $query->fetch_array()) {
+                                                    $month = date("m", strtotime($fetch['date']));
+                                                    $year = date("Y", strtotime($fetch['date']));
+                                            ?>
                                              <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 1 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
+                                                 <td><?php echo $year . "-" . $month . "-" . $fetch['application_no']?></td>
+                                                 <td><?php echo $fetch["owner_name"]?></td>
+                                                 <td><?php echo $fetch["transaction"]?></td>
+                                                 <td><?php echo $fetch["date"]?></td>
+                                                 <td>
+                                                    <button href="#Message_Alert<?php echo $fetch["application_no"];?>" data-target="#Message_Alert<?php echo $fetch["application_no"];?>"  type="button" class="btn btn-info" data-toggle="modal" >
+                                                    <i class="fa fa-eye"> </i> View </button>
+                                                 </td>
                                              </tr>
-                                             <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 2 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
-                                             </tr>
-                                             <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 3 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
-                                             </tr>
-                                             <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 4 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
-                                             </tr>
-                                             <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 5 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
-                                             </tr>
-                                             <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 6 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
-                                             </tr>
-                                             <tr>
-                                                 <td>Kenny</td>
-                                                 <td>Lopez Jaena St. </td>
-                                                 <td>September 1, 2018 </td>
-                                                 <td>07:45 AM </td>
-                                                 <td>Fire Station 7 </td>
-                                                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#Message-Alert"><i class="fa fa-eye"></i> View</button></td>
-                                             </tr>
+                                         <?php
+                                            }
+                                            $conn->close();
+                                         ?>
                                         </tbody>
                                      </table>
-                                     <!--Start modal view sms alert-->
-           <div id="Message-Alert" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">SMS and Call Information</h4>
-                        </div>
-
-                        <div class="modal-body">
-                           <div class="row">
-                               <div class="col-md-12">
-                                   <div class="form-group">
-                                           <label for="officer-type" class="col-sm-6 control-label">Location</label>
-                                           <div class="col-sm-8">
-                                               <input type="text" class="form-control" id="officer" disabled="" value="China Town Square Primier, 888 Gatuslao St, Barangay 9">
-                                           </div>
-                                   </div>
-                                   <div class="form-group">
-                                           <label for="rank-code" class="col-sm-6 control-label">Business Name</label>
-                                           <div class="col-sm-8">
-                                               <input type="text" class="form-control" id="officer" disabled="" value="888 CHINA TOWN SQUARE COMPLEX">
-                                           </div>
-                                   </div>
-                                   <div class="form-group">
-                                           <label for="rank-code" class="col-sm-6 control-label">Designated Fire Station</label>
-                                           <div class="col-sm-8">
-                                               <input type="text" class="form-control" id="officer" disabled="" value="Fire Station 1">
-                                           </div>
-                                   </div>
-                                   <div class="form-group">
-                                           <label for="rank-code" class="col-sm-8 control-label"><br>Message Details</label>
-                                           <div class="col-sm-8">
-                                               <textarea class="form-control" rows="7" cols="100" id="comment" disabled="">
-                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sender: Kenny
-                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Number: 09231332131
-                                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Message  : HELP!
-                                               </textarea>
-                                           </div>
-                                   </div>
-                           </div>
-                        </div>
-                       </div>
-                        <div class="modal-footer">
-                               <div class="col-sm-6">
-                                       <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
-                               </div>
-                           <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-times"></span>Close</button>
-                               </div>
-                       </div>
-                    </div>
-                </div>
-                <!--End modal view sms alert-->
                                  </div>
                              </div>
                              <!-- END DEFAULT DATATABLE -->
 
                          </div>
-                                       
-
-                                        </div>                                        
-                                        
-                                    </div>
-                                    <div class="panel-footer">                                                                        
-                                        <button class="btn btn-primary pull-right">Save Changes <span class="fa fa-floppy-o fa-right"></span></button>
+                    </div>   
                                     </div>
                                 </div>                                
 
@@ -267,63 +93,8 @@
         </div>
         <!-- END PAGE CONTAINER -->
 
-        <!--Start MODAL-->
-        <!--Start modal view sms alert-->
-           <div id="Message-Alert" class="modal fade">
-                                             <div class="modal-dialog">
-                                                 <div class="modal-content">
-                                                     <div class="modal-header">
-                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                         <h4 class="modal-title">SMS Alert Information</h4>
-                                                     </div>
+        <?php require 'modals/message_detail.php'?>
 
-                                                     <div class="modal-body">
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                        <label for="officer-type" class="col-sm-6 control-label">Location</label>
-                                                                        <div class="col-sm-8">
-                                                                            <input type="text" class="form-control" id="officer" disabled="" value="China Town Square Primier, 888 Gatuslao St, Barangay 9">
-                                                                        </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                        <label for="rank-code" class="col-sm-6 control-label">Business Name</label>
-                                                                        <div class="col-sm-8">
-                                                                            <input type="text" class="form-control" id="officer" disabled="" value="888 CHINA TOWN SQUARE COMPLEX">
-                                                                        </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                        <label for="rank-code" class="col-sm-6 control-label">Designated Fire Station</label>
-                                                                        <div class="col-sm-8">
-                                                                            <input type="text" class="form-control" id="officer" disabled="" value="Fire Station 3">
-                                                                        </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                        <label for="rank-code" class="col-sm-8 control-label"><br>Message Details</label>
-                                                                        <div class="col-sm-8">
-                                                                            <textarea font size="6" class="form-control" rows="7" cols="100" id="comment">
-                                                                                    &emsp;Sender: Kenny &emsp;
-                                                                                    &emsp;Number: 09231332131 &emsp;
-                                                                                    &emsp;&emsp;&emsp;Message  : HELP! &emsp;  
-                                                                            </textarea>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                     </div>
-                                                    </div>
-                                                     <div class="modal-footer">
-                                                            <div class="col-sm-6">
-                                                                    <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
-                                                            </div>
-                                                        <button type="submit" class="btn btn-danger" name="add_new_ipt"><span class="fa fa-truck"></span>Respond</button>
-                                                        <button type="button" class="btn btn-warning" data-dismiss="modal"><span class="fa fa-plus-square"></span>Request Back Up</button>
-                                                            </div>
-                                                    </div>
-                                                 </div>
-                                             </div>
-                                             <!--End modal view sms alert-->
-
-        <!--End MODAL-->
         <!-- MESSAGE BOX-->
         <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
             <div class="mb-container">

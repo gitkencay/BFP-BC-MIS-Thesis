@@ -1,20 +1,17 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<!-- META SECTION -->
-<title>BFP BACOLOD MIS</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>BFP BACOLOD MIS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<!-- END META SECTION -->
-
 <!-- CSS INCLUDE -->
 <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
 <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+
+<!-- styles -->
 <style>
 			@media print{
 				body, page[size="letter"] {
@@ -23,280 +20,212 @@
                   }
 
 			}
-			#print{
+
+		#print{
 				width:80%;
 				height:100%;
 				margin:auto;
 				border:3px solid #000;
 				overflow: hidden;
-			}
-
-			.today{
-				text-align: right;
-				position: relative;
-				right: 125px;
-				bottom: -28px;
-			}
-
-			.date{
-				text-align: right;
-				position: relative;
-				right: 155px;
-				bottom: 22px;
-			}
-
-			.line-1{
+		}
+		.line-1{
 				text-align: right;
 				position: relative;
 				right: 111px;
 				bottom: 5px;
 			}
-
-			.center-1{
-				text-align: center;
-				position: relative;
-				top: 20px;
-			}
-
-			.BFP-title{
-				color:darkblue;
-				text-align: center;
-				position: relative;
-				top: -17px;
-			}
-
-			.title-line-1{
-				text-align: left;
-				position: relative;
-				left: 111px;
-				bottom: 5px;
-			}
-
-			.title-line-2{
-				text-align: left;
-				position: relative;
-				left: 111px;
-				bottom: 15px;
-			}
-
-			.title-line-3{
-				text-align: left;
-				position: relative;
-				left: 111px;
-				bottom: 23px;
-			}
-
-			.title-line-4{
-				text-align: left;
-				position: relative;
-				left: 111px;
-				bottom: 30px;
-			}
-			
-			.ntcTitle{
-				text-align: center;
-				position: relative;
-				top: 10px;
-			}
-
-			.gret{
-				text-align: left;
-				position: relative;
-				left: 111px;
-				bottom: -15px;
-			}
-
-			.text-justify{
+		.line-2{
+			text-align:left;
+			position:relative;
+			left:111px;
+			bottom: 30px;
+		}
+		.date{
+			text-align:right;
+			position: relative;
+			right:195px;
+			bottom: 20px;
+		}
+		.center-2{
+			font-size:25px;
+			font-weight: bold;
+			position: relative;
+			bottom: 20px;
+		}
+		.text-justify{
 				text-align: justify;
 				position: relative;
-				bottom: -35px;
-				text-indent: 60px;
-				margin: 0px 95px 0px 111px;
+				font-size: 18px;
+				margin: 0px 95px 0px 95px;
+				text-indent: 50px;
 			}
-
-			.defects{
-				text-align: left;
-				position: relative;
-				left: 305px;
-				bottom: -15px;
-			}
-
-			.grace{
-				text-align: right;
-				position: relative;
-				right: 305px;
-				bottom: 25px;
-			}
-
-			.defects-1{
-				text-align: left;
-				position: relative;
-				left: 305px;
-				bottom: 35px;
-			}
-
-			.grace-1{
-				text-align: right;
-				position: relative;
-				right: 305px;
-				bottom: 75px;
-			}
-
-			.defects-2{
-				text-align: left;
-				position: relative;
-				left: 305px;
-				bottom: 85px;
-			}
-
-			.grace-2{
-				text-align: right;
-				position: relative;
-				right: 305px;
-				bottom: 125px;
-			}
-
-			.text-justify-2{
+			.text-justify2{
 				text-align: justify;
 				position: relative;
-				bottom: 100px;
-				text-indent: 60px;
-				margin: 0px 95px 0px 111px;
+				font-size: 18px;
+				margin: 0px 95px 0px 95px;
+				text-indent: 50px;
 			}
-
-			.autho-3{
+		.text-greet{
+			text-align: justify;
+				position: relative;
+				font-size: 18px;
+				margin: 0px 95px 0px 95px;
+		}
+		.date{
+			text-align:right;
+			position: relative;
+			right:195px;
+			bottom: 20px;
+		}
+		.center-1{
+			text-align: center;
+			position: relative;
+			top: 20px;
+		}
+		.today{
 				text-align: right;
 				position: relative;
-				bottom: 80px;
-				right: 236px;
+				right: 165px;
+				bottom: -28px;
 			}
-
-			.autho-4{
-				text-align: right;
-				position: relative;
-				right: 87px;
-				bottom: 55px;
-			}
-
-			.line-3{
-				text-align: right;
-				position: relative;
-				right: 97px;
-				bottom: 110px;
-			}
+		.lamesa{
+        width:500pt;
+        font-family: times;
+        font-size: 14;
+        left: 195px;
+		}
+		.line3{
+			text-align:right;
+			position:relative;
+			right:200px;
+			bottom:5px;
+		}
+		.line4{
+			text-align:right;
+			position:relative;
+			right:111px;
+			bottom:5px;
+		}
+		.officer{
+			text-align:right;
+			position: relative;
+			right:100px;
+			bottom: 20px;
+		}
+		.lamesa2{
+			text-align:left;
+			position:relative;
+			left:95px;
+			bottom:30px;
+			border: collapse;
+			border: 1px solid #000;
+		}
 </style>
-<!-- EOF CSS INCLUDE -->
 </head>
-	<body>
-		<!-- START PAGE CONTAINER -->
-		<div class="page-content">
-			<div class="row">
-				<div class="col-md-12">
-					<!-- START TEXT ELEMENTS -->
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<div class="btn-group pull-right">
-								<div class="pull-left">
+<body>
+<div class="pull-left">
 									<button class="btn btn-default btn-sm" onclick="printContent('print')">Print</button>
 									<a href="../Report-Applicant.php" class="btn btn-default btn-sm">Back</a>
 								</div>
-							</div>
-						</div>
-						<div id="print">
-							<div class="panel-body">
-                            <?php
+
+<div id="print">
+<?php
 require '../require/databaseconnection.php';
-$query = $conn->query("SELECT * FROM `issue_notice` WHERE `issue_notice_no` = '$_GET[id]'") or die(mysqli_error());
-$fetch = $query->fetch_array();
+$query0 = $conn->query("SELECT * FROM `inspection_order` WHERE io_no = '$_GET[id]'") or die(mysqli_error());
+$fetch0 = $query0->fetch_array();
+$month2 = date("m", strtotime($fetch0['month']));
+$io = 'IO'.'-'.$fetch0['year'].'-'.$month2.'-'.$fetch0['io_no'];
+$dated = date("M-d-Y", strtotime($fetch0['date_created']));
+
+$query5 = $conn->query("SELECT * FROM `inspection_report` WHERE io_no = '$io'") or die(mysqli_error());
+$fetch5 = $query5->fetch_array();
 date_default_timezone_set('Asia/Manila');
 $today = date("M-d-Y");
-$month = date("m", strtotime($fetch['month']));
-$io = $fetch['inspection_order'];
+$month = date("m", strtotime($fetch5['month']));
 
-$query2 = $conn->query("SELECT * FROM `inspection_report` WHERE `io_no` = '$io'") or die(mysqli_error());
-$fetch2 = $query2->fetch_array();
-$dated =  date("M-d-Y", strtotime($fetch2['date_applied']));
+$queryz = $conn->query("SELECT * FROM `issue_notice` WHERE inspection_order = '$io'") or die(mysqli_error());
+$fetchz = $queryz->fetch_array();
+$amount = number_format($fetchz['amount'],2,",",".");
 ?>
-
 								<center class="center-1">
 								<h4>Republic of the Philippines</h4>
 								<h3 class="BFP-title">BUREAU OF FIRE PROTECTION</h3>
 								</center>
 
 								<h3 class="today"><?php echo $today ?></h3>
-								<p class="line-1">________________</p>
-								<h3 class="date">Date</h3>
+<p class="line-1">___________________________</p>
 
-								<p class="title-line-1">____________________</p>
-								<p class="title-line-2">____________________</p>
-								<p class="title-line-3">____________________</p>
+<h3 class="date">Date</h3>
+<p class="line-2">___________________________<br>___________________________<br>___________________________</p>
+<center class="center-2">NOTICE TO CORRECT VIOLATION</center>
 
-								<h1 class="ntcTitle"> NOTICE TO CORRECT VIOLATION </h1>
-								
-								<h3 class="gret">Sir/Madam: </h3>
+<p class="text-greet">Sir/Madam</p><br><br><p class="text-justify">This has reference to the Notice to Comply issued by this office on establishment/building located at the above-cited address. Despite the length of time that has elapsed and the re-inspection report under Inspection Order No. <strong> <?php echo $io;?> </strong> dated <strong> <?php echo $dated;?> </strong> fire safety requirements remain not compiled.<br><br><p class="text-justify2">In this regard, you are hereby imposed an Administrative Fine of <strong> ₱ <?php echo $amount;?></strong> pursuant to Section 13.0.0.4 of IRR of RA 9514. Hence you are given three (3) days to pay the fine at New Goverment Center<br><br></p>
+<p class="text-justify2">Hereto attached is the Order of Payment for your compliance</p><br>
+<p class="text-justify2">Further, you are again directed to comply with the specific fire safety requirements in accordance with the provisions of RA 9514. The following violations/deficiencies are hereby reiterated with its corresponding grace period:</p>
+<br>
+<table class="lamesa" border="1" cellspacing="0" align="center">
+	<tr>
+		<th>Defects/Deficiencies</th>
+		<th>Grace Period</th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Classification : <?php echo $fetch5['checklist_classification']?><br></th>
+		<th><br></th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Exit : <?php echo $fetch5['checklist_exit']?><br></th>
+		<th><br></th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Lightings : <?php echo $fetch5['checklist_lightings']?><br></th>
+		<th><br></th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Protection : <?php echo $fetch5['checklist_protection']?><br></th>
+		<th><br></th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Equipments : <?php echo $fetch5['checklist_equipments']?><br></th>
+		<th><br></th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Hazardous : <?php echo $fetch5['checklist_hazardous']?><br></th>
+		<th><br></th>
+	</tr>
+	<tr>
+		<th align ="left">&nbsp; &nbsp; &nbsp; Checklist Operating : <?php echo $fetch5['checklist_operating']?><br></th>
+		<th><br></th>
+	</tr>
+	
+</table>
+<br>
+<p class="text-justify">Failure on your part to pay the administrative fine and to correct the deficiencies within the prescribed period shall be constrained to recomment issuance of abatement order for your establishment.</p>
+<br>
+<p class="line3">Very truly yours,</p>
+<p class="line4">___________________________</p>
 
-								<p class="text-justify">
-								This has reference to the Notice to Comply issued by the office on __ for compliance of your establishment/building located 
-								at the above-cited address. Despite the length of time that has elapsed and the re-inspection report under <strong> Inspection Order No. <?php echo $io?> </strong> 
-								dated <strong> <?php echo $dated ?></strong> fire safety requirements remain not complied. </br></br>
+<table class="lamesa2" cellspacing="0" align="left">
+	<tr>
+		<th><font color = "red">Original</font>(Applicant's/Owner's copy)</th>		
+	</tr>
+	<tr>
+		<th><font color = "red">Original</font>(BO or BPLO, as the case maybe)</th>
+	</tr>
+	<tr>
+		<th><font color = "red">Original</font>(BFP copy)</th>
+	</tr>
+</table>
 
-								&emsp; &emsp; &emsp;In this regard, you are hereby imposed an Administrative Fine of ___________ (P__________) pursuant to Section 13.0.0.4 of IRR of RA 9514.
-								Hence, you are given three (3) days to pay the fine at ____________________. </br></br>
-
-								&emsp; &emsp; &emsp;Hereto attached is the Order of Payment for your compliance. </br></br>
-
-								&emsp; &emsp; &emsp;Further, you are given directed to comply with the specific fire safety requirements in accordance with the provision of RA 9514.
-								The following violations/deficiencies are hereby reiterated with its corresponding grace period: </br></br>
-								</p> 
-
-								</br> </br> 
-
-								<h3 class="defects">Defects/Deficiencies</h3>
-								<h3 class="grace">Grace Period </h3>
-
-								<h3 class="defects-1">result</h3>
-								<h3 class="grace-1">results</h3>
-
-								<h3 class="defects-2">result</h3>
-								<h3 class="grace-2">results</h3>
-
-								<p class="text-justify-2">
-								Failure on your part to pay the administrative fine and to correct the deficiencies within the prescribed period,
-								this office shall be constrained to recommend issuance of abatement order for your establishment.
-								</p>
-
-								
-								</br></br></br>
-								<p class="autho-3">
-								 Very Truly Yours, </br>	
-								</p>
-
-								<p class="autho-4">
-								<strong> CITY/MUNICIPAL FIRE MARSHAL </strong> </br>  
-								</p>
-								
-								<p class="line-3">________________________________</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script>
-			function printContent(el){
-				var restorepage = document.body.innerHTML;
-				var printcontent = document.getElementById(el).innerHTML;
-				document.body.innerHTML = printcontent;
-				window.print();
-				document.body.innerHTML = restorepage;
-			}
-		</script>
-		<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
-		<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-		<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
-		<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-		<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-	</body>
+</div>
+<script>
+function printContent(el){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(el).innerHTML;
+	document.body.innerHTML = printcontent;
+	window.print();
+	document.body.innerHTML = restorepage;
+}
+</script>
+</body>
 </html>

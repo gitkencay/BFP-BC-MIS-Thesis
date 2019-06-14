@@ -2,7 +2,7 @@
     <!-- START X-NAVIGATION -->
     <ul class="x-navigation">
         <li class="xn-logo">
-            <a href="index.php"><strong>BFP-BC MIS</strong></a>
+            <a href="home.php"><strong>BFP-BC MIS</strong></a>
             <a href="#" class="x-navigation-control"></a>
         </li>
 
@@ -17,7 +17,7 @@
         </div>
         <ul id="navSid">                                                                            
             <li>
-                <a href="index.php"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
+                <a href="home.php"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
             </li>                    
             <li class="xn-openable">
                 <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Master File</span></a>
@@ -44,17 +44,17 @@
                         <ul>
                             <li><a href="Report-Applicant.php"><span class=""></span> Applicant Report</a></li>
                             <li><a href="Report-Employee.php"><span class=""></span> Employee Report</a></li>
+                            <li><a href="Report-Applicant-Summary.php"><span class=""></span> Applicant Summary Report </a></li>
                         </ul> 
                     </li>
-                    <li><a href=""><span class=""></span> Distress Call Report</a></li>                            
-                    <li><a href=""><span class=""></span> Risk & Fire Frequency</a></li>
+                    <li><a href=""><span class=""></span> Distress Call Report</a></li>
                 </ul>
             </li>                    
             <li class="xn-openable">
                 <a href="#"><span class="fa fa-warning"></span> <span class="xn-text">Distress Call</span></a>
                 <ul>
                     <li><a href="Distress-FireRespondents.php"><span class="fa fa-align-justify"></span> Fire Stations Respondents</a></li>
-                    <li><a href="Distress-SMSandCall.php"><span class="fa fa-th-large"></span> SMS & Call Logs</a></li>
+                    <li><a href="Distress-SMSandCall.php"><span class="fa fa-th-large"></span> SMS Logs</a></li>
                 </ul>
             </li>
             <li class="xn-openable">

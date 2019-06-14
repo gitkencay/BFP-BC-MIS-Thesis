@@ -203,6 +203,17 @@
 				bottom: 333px;
 			}
 
+			.businesspermit{
+				text-align: right;
+				position: relative;
+				right: 345px;
+				bottom: 604px;
+			}
+
+			#businessn{
+				font-size: 26px;
+			}
+
 </style>
 <!-- EOF CSS INCLUDE -->
 </head>
@@ -215,13 +226,16 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="btn-group pull-right">
-								<div class="pull-left">
-									<button class="btn btn-default btn-sm" onclick="printContent('print')">Print</button>
-									<a href="../Report-Certification.php" class="btn btn-default btn-sm">Back</a>
+								<div class="pull-right">
+									<ul class="panel-controls">
+										<button class="btn btn-default btn-sm" onclick="printContent('print')"><span class="fa fa-print"></span>Print</button>
+										<a href="../Report-Certification.php" class="btn btn-default btn-sm"><span class="fa fa-mail-reply"></span>Back</a>
+									</ul>
 								</div>
 							</div>
 						</div>
 						<div id="print">
+						<div class="panel-body">
                             <?php
 require '../require/databaseconnection.php';
 $query = $conn->query("SELECT * FROM `application` WHERE `application_no` = '$_GET[id]'") or die(mysqli_error());
@@ -267,8 +281,8 @@ $orno = $fetch2['ops_no'];
 								</br>
 								<center>
 								<p class="text-justify">
-									By virtue of the provisions of RA 9514 otherwise known as the Fire Code of the Philippines of 2008 the application for <strong> FIRE SAFETY EVALUATION CLEARANCE </strong> of
-									<strong> <?php echo $fetch['business_name'] ?> </strong> to be constructed / renovated / altered / modified / change of occupancy located at <strong> <?php echo $fetch['establishment_address'] ?> </strong> owned by <strong> <?php echo $fetch['owner_name'] ?> </strong>
+									By virtue of the provisions of RA 9514 otherwise known as the Fire Code of the Philippines of 2008 the application for <strong id="businessn"> FIRE SAFETY EVALUATION CLEARANCE </strong> of
+									<strong id="businessn"> <?php echo $fetch['business_name'] ?> </strong id="businessn"> to be constructed / renovated / altered / modified / change of occupancy located at <strong id="businessn"> <?php echo $fetch['establishment_address'] ?> </strong> owned by <strong id="businessn"> <?php echo $fetch['owner_name'] ?> </strong>
 									is hereby <strong>GRANTED</strong> after the building plans and other documents conform to the fire safety and life safety requirements of the Fire Code of the Philippines of 2008
 									and its IRR and that the recommendations in the Fire Safety Checklist (FSC) will be adopted.
 								</p>
@@ -277,7 +291,7 @@ $orno = $fetch2['ops_no'];
 								</br>
 								<center>
 								<p class="text-justify-2">
-									This clearance is being issued for ______ 
+									This clearance is being issued for ______________________________________.
 								</p>
 								</center>
 
@@ -315,6 +329,11 @@ $orno = $fetch2['ops_no'];
 
 								<p class="line-2">______________________________</p>
 								<p class="line-3">______________________________</p>
+
+								<p class="businesspermit">
+									<strong> EVALUATION CLEARANCE </strong> 
+								</p>
+							<div>
 						</div>
 					</div>
 				</div>
@@ -329,12 +348,13 @@ $orno = $fetch2['ops_no'];
 				document.body.innerHTML = restorepage;
 			}
 		</script>
-		<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
-		<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-		<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
-		<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-		<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+
 	</body>
 </html>

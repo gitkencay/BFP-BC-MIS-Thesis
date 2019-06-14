@@ -1,3 +1,6 @@
+<?php
+require_once 'require/logincheck.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,21 +9,37 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->
         <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->
+
+        <link rel="stylesheet" href="css/loader.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+
+
     </head>
+    <script type="text/javascript">
+//paste this code under the head tag or in a separate js file.
+    // Wait for window load
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".load-Nav").fadeOut("slow");;
+    });
+</script>
+
     <body>
+        <div class="load-Nav" id="load-Nav-id"></div>
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
 
             <!-- START PAGE SIDEBAR -->
-            <?php require 'require/sidebar.php'?>
+            <?php require 'require/sidebar-Assessor.php'?>
             <!-- END PAGE SIDEBAR -->
 
             <!-- PAGE CONTENT -->
@@ -30,7 +49,7 @@
                 <ul id="hozironNav" class="x-navigation x-navigation-horizontal x-navigation-panel">
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
-                        <a href="pages-login.html" class="mb-control" data-box="#mb-signout"><span class="glyphicon glyphicon-off"></span></a>
+                        <a class="mb-control" data-box="#mb-signout"><span class="glyphicon glyphicon-off"></span></a>
                     </li>
                     <!-- END SIGN OUT -->
                 </ul>
@@ -40,13 +59,33 @@
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Transaction</a></li>
-                    <li class="active"><a href="Transaction-Assessment.html">Assessment & Payment</a></li>
+                    <li class="active"><a href="Transaction-Assessment.php">Assessment & Payment</a></li>
                 </ul>
                 <!-- END BREADCRUMB -->
 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
+                <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <div class="form-group">
+                            <select class="form-control select input-sm" data-style="btn-primary" id="pyear">
+                                <option selected disabled>Select Year</option>
+                                <?php
+require 'require/databaseconnection.php';
+$query = $conn->query("SELECT * FROM `application` group by year") or die(mysqli_error());
 
+while ($fetch = $query->fetch_array()) {
+    ?>
+                                <option value="<?php echo $fetch['year']; ?>">
+                                    <?php echo $fetch['year'] ?>
+                                </option>
+                                <?php
+}
+?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                     <div class="row">
                         <div class="col-md-12">
                             <form class="form-horizontal">
@@ -84,21 +123,27 @@
                                                 <tbody>
                                                     <?php
 require 'require/databaseconnection.php';
-$query = $conn->query("select * from `assessment` where type_of_certificate = 'FSEC'") or die(mysqli_error());
+$year = date('Y');
+if (isset($_GET['year'])) {
+    $year = $_GET['year'];
+}
+$query = $conn->query("select * from `assessment` where type_of_certificate = 'FSEC' && year = '$year'") or die(mysqli_error());
 while ($fetch = $query->fetch_array()) {
     $month = date("m", strtotime($fetch['month']));
     ?>
                                                     <tr>
                                                         <td><?php echo "OPS-" . $fetch['year'] . '-' . $month . '-' . $fetch['ops_no'] ?></td>
-                                                        <td><?php echo $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?></td>
+                                                        <td><?php echo $fetch['application_no'] ?></td>
                                                         <td><?php echo $fetch['application_name'] ?></td>
                                                         <td><?php echo $fetch['business_name'] ?></td>
                                                         <td><?php if ($fetch['status'] == 'Complete') {
         echo "<span class='badge badge-success'>Complete</span>";
+        $ViewStat = 'Transaction-ViewAssessment';
     }
 
     if ($fetch['status'] == 'Pending') {
         echo "<span class='badge badge-danger'>" . $fetch['status'] . "</span>";
+        $ViewStat = 'Transaction-ViewPendingAssessment';
     }
 
     if ($fetch['status'] == 'Incomplete') {
@@ -112,8 +157,8 @@ while ($fetch = $query->fetch_array()) {
     ?></td>
                                                         <td><?php echo $fetch['date_applied'] ?></td>
                                                         <td>
-                                                            <a href="Transaction-ViewAssessment.php?ops_no=<?php echo $fetch['ops_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
-                                                            <a href="Reports/receipt.php?id=<?php echo $fetch['ops_no']?>"class="btn btn-sm btn-info"> <i class="fa fa-print"></i> Receipt </a>
+                                                            <a href="<?php echo $ViewStat ?>.php?ops_no=<?php echo $fetch['ops_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
+                                                            <a href="Reports/receipt.php?id=<?php echo $fetch['ops_no']?>"class="btn btn-sm btn-info"> <i class="fa fa-print"></i> Receipt </a>    
                                                         </td>
                                                     </tr>
                                                     <?php
@@ -144,7 +189,7 @@ $conn->close();
                                                     <tr>
                                                         <th>OPS No</th>
                                                         <th>Applicant No</th>
-                                                        <th>Owner Name</th>
+                                                        <th>Applicant Name</th>
                                                         <th>Business Name</th>
                                                         <th>Status</th>
                                                         <th>Date Applied</th>
@@ -154,13 +199,13 @@ $conn->close();
                                                 <tbody>
                                                     <?php
 require 'require/databaseconnection.php';
-$query = $conn->query("select * from `assessment` where type_of_certificate = 'FSIC'") or die(mysqli_error());
+$query = $conn->query("select * from `assessment` where type_of_certificate = 'FSIC' && year = '$year'") or die(mysqli_error());
 while ($fetch = $query->fetch_array()) {
     $month = date("m", strtotime($fetch['month']));
     ?>
                                                     <tr>
                                                         <td><?php echo "OPS-" . $fetch['year'] . '-' . $month . '-' . $fetch['ops_no'] ?></td>
-                                                        <td><?php echo $fetch['year'] . '-' . $month . '-' . $fetch['application_no'] ?></td>
+                                                        <td><?php echo $fetch['application_no'] ?></td>
                                                         <td><?php echo $fetch['application_name'] ?></td>
                                                         <td><?php echo $fetch['business_name'] ?></td>
                                                         <td><?php if ($fetch['status'] == 'Complete') {
@@ -213,9 +258,33 @@ $conn->close();
         </div>
         <?php require 'modals/viewPendingFSEC.php'?>
         <?php require 'modals/viewPendingFSIC.php'?>
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="glyphicon glyphicon-off"></span> Log <strong>Out</strong> ?</div>
+                    <div class="mb-content">
+                        <p>Are you sure you want to log out?</p>                    
+                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <a href="index.php" class="btn btn-success btn-lg">Yes</a>
+                            <button class="btn btn-default btn-lg mb-control-close">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--Start Modal View FSEC-REG-->
         <!--End Modal View FSEC REG-->
-
+        <script>
+            $(document).ready(function () {
+                $("#pyear").on('change', function () {
+                    var year = $(this).val();
+                    window.location = 'Transaction-Assessment.php?year=' + year;
+                });
+            });
+        </script>
                 <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
                 <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
                 <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>

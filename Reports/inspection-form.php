@@ -103,14 +103,14 @@
 			.autho-1{
 				text-align: left;
 				position: relative;
-				bottom: 335px;
+				bottom: 229px;
 				left: 95px;
 			}
 
 			.autho-2{
 				text-align: left;
 				position: relative;
-				bottom: 335px;
+				bottom: 218px;
 				left: 95px;
 			}
 
@@ -132,7 +132,7 @@
 				text-align: left;
 				position: relative;
 				left: 95px;
-				bottom: 455px;
+				bottom: 353px;
 			}
 
 			.line-3{
@@ -189,8 +189,52 @@
 				text-indent: 60px;
 				margin: 0px 95px 0px 95px;
 			}
-</style>
-<!-- EOF CSS INCLUDE -->
+			
+			#head{
+				width: 60%;
+			}
+
+			div.lamesa{
+				text-align: left;
+				position: relative;
+				left: 94px;
+				bottom: 25px;
+			}
+
+			#one{
+				width: 530pt;
+				font-size:14;
+				left: 195px;
+			}
+
+			.purpose{
+				text-align: justify;
+				position: relative;
+				right: -22px;
+			}
+
+			.businessname{
+				text-align: left;
+				position: relative;
+				left: 23px;
+				bottom: 20px;
+			}
+
+			.address{
+				text-align: left;
+				position: relative;
+				left: 320px;
+				bottom: 1135px;
+			}
+			.idcolor{
+				color: red;
+				text-align: left;
+				position: relative;
+				left: 135px;
+				bottom: 41px;
+			}
+
+</style><!-- EOF CSS INCLUDE -->
 </head>
 	<body>
 		<!-- START PAGE CONTAINER -->
@@ -198,26 +242,37 @@
 			<div class="row">
 				<div class="col-md-12">
 					<!-- START TEXT ELEMENTS -->
+					<?php
+require '../require/databaseconnection.php';
+$query = $conn->query("SELECT * FROM `inspection_order` WHERE `io_no` = '$_GET[id]'") or die(mysqli_error());
+$fetch = $query->fetch_array();
+date_default_timezone_set('Asia/Manila');
+$today = date("M-d-Y");
+$month = date("m", strtotime($fetch['month']));
+
+$ir_no = $fetch['io_no'];
+                        
+$month2 = date("m", strtotime($fetch['month']));
+$year = $fetch['year'];
+
+$io = $fetch['io_no'];
+$io_no = 'IO' . '-' . $year . '-' . $month2 . '-' . $ir_no;
+
+$query4 = $conn->query("SELECT * FROM `inspection_schedule` WHERE io_no = '$io_no'") or die(mysqli_error());
+$fetch4 = $query4->fetch_array();
+?>
+
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="btn-group pull-right">
 								<div class="pull-left">
 									<button class="btn btn-default btn-sm" onclick="printContent('print')">Print</button>
-									<a href="../Report-Applicant.php" class="btn btn-default btn-sm">Back</a>
+									<a href="../inspection-orderEdit.php?appnum=<?php echo $fetch['applicantsnumber'];?>" class="btn btn-default btn-sm">Back</a>
 								</div>
 							</div>
 						</div>
 						<div id="print">
 							<div class="panel-body">
-                            <?php
-require '../require/databaseconnection.php';
-$query = $conn->query("SELECT * FROM `inspection_report` WHERE `application_no` = '$_GET[id]'") or die(mysqli_error());
-$fetch = $query->fetch_array();
-date_default_timezone_set('Asia/Manila');
-$today = date("M-d-Y");
-$month = date("m", strtotime($fetch['month']));
-?>
-
 								<center class="center-1">
 								<h4>Republic of the Philippines</h4>
 								<h3 class="BFP-title">BUREAU OF FIRE PROTECTION</h3>
@@ -227,33 +282,49 @@ $month = date("m", strtotime($fetch['month']));
 								<p class="line-1">________________</p>
 								<h3 class="date">Date</h3>
 
-								<h3 class="IDno">NUMBER : <?php echo $fetch['io_no'] ?> </h3>
+								<h3 class="IDno">NUMBER : &nbsp; &nbsp; &nbsp; <p class="idcolor"> <?php echo $io_no; ?> </p>  </h3>
 								
 								<h1 class="IOtitle"> INSPECTION ORDER </h1>
-								
-								<div class = "leftinfo">
-									<p> TO </p>
-									<p> PROCEED </p>
-									<p> PURPOSE </p>
-									<p> DURATION </p>
-									<p> REMARKS OR </br> ADDITIONAL INSTRUCTION </p>
-								</div>
+								<br> <br>
+								<div class="lamesa">
+								<table id="one" border="1" cellspacing="0">
+									<tr>
+										<th width="27%">TO </th>
+										<th> : </th>
+										<th><strong> <p> &nbsp; &nbsp; &nbsp; Inspector <?php echo $fetch4['inspectors']?> &nbsp; &nbsp; &nbsp; </p> </strong></th>
+									</tr>
+									<tr>
+										<th width="27%">PROCEED</th>
+										<th> : </th>
+										<th>
+										<strong> 
+											<p> 
+												&nbsp; &nbsp; &nbsp; <p> <h1 class="businessname"> <?php echo $fetch['business_name'];?> </h1> </p> &nbsp; &nbsp; &nbsp; 
+											</p> 
+										</strong>
+										</th>
+									</tr>
+									<tr>
+										<th width="27%">PURPOSE</th>
+										<th> : </th>
+										<th><strong> <p class="purpose"> Fire Safety Inspection to determine compliance with the existing &emsp;provisions of the
+										Fire Code of the Philippines of 2008 (R.A 9514), &emsp;&nbsp; &emsp; directions and other partinent ordinance, laws, and regulations. &nbsp; &nbsp; &nbsp; </p> </strong></th>
+									</tr>
+									<tr>
+										<th width="27%">DURATION</th>
+										<th> : </th>
+										<th><strong> <p> &nbsp; &nbsp; &nbsp; Three (3) working days &nbsp; &nbsp; &nbsp; </p> </strong></th>
+									</tr>
+									<tr>
+										<th width="27%">REMARKS OR <br>ADDITIONAL INSTRUCTIONS &nbsp; &nbsp; &nbsp;</th>
+										<th> : </th>
+										<th><strong> <p> &nbsp; &nbsp; &nbsp; Submit Report not later than the day after inspection. &nbsp; &nbsp; &nbsp; </p> </strong></th>
+									</tr>
 
-								<div class = "leftcol">
-									<p> : </p>
-									<p> : </p>
-									<p> : </p>
-									<p> : </p>
-									<p> : </p>
+								</table>
 								</div>
+								<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-								<div class = "leftdata">
-									<strong> <p> <?php echo $fetch['owner_name']?> </p> </strong>
-									<strong> <p> unknown</p> </strong>
-									<strong> <p> unknown</p> </strong>
-									<strong> <p> unknown</p> </strong>
-									<strong> <p> <?php echo  $fetch['recommendation']?> </p> </strong>
-								</div>
                             
 								<p class="autho-1">
 								<strong> RECOMMEND APPROVAL: </strong> </br>
@@ -275,7 +346,7 @@ $month = date("m", strtotime($fetch['month']));
 								<p class="line-2">_____________________________________________</p>
 								<p class="line-3">________________________________</p>
 								
-								<strong> <p class="line-4"> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p> </strong>
+								<strong> <p class="line-4"> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p> </strong>
 
 								<h3 class="ackn"> ACKNOWLEDGEMENT</h3>
 								<p class="text-justify">
@@ -293,6 +364,8 @@ $month = date("m", strtotime($fetch['month']));
 								<p class="autho-6">
 								Date / Time </br>
 								</p>
+
+								<h2> <p class="address"> <?php echo $fetch['estab_address'];?> </p> </h2>
 
 							</div>
 						</div>

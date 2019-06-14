@@ -136,7 +136,7 @@
 							text-indent: 80px;
 							margin: 0px 113px 0px 140px;
 						}
-			
+
 						.text-justify-2{
 							text-align: justify;
 							position: relative;
@@ -144,6 +144,7 @@
 							text-indent: 80px;
 							margin: 0px 113px 0px 140px;
 						}
+
 			
 						.text-justify-3{
 							text-align: justify;
@@ -201,6 +202,24 @@
 							right: 117px;
 							bottom: 333px;
 						}
+
+						.businesspermit{
+							text-align: right;
+							position: relative;
+							right: 400px;
+							bottom: 622px;
+						}
+
+						.validuntil{
+							text-align: right;
+							position: relative;
+							right: 475px;
+							bottom: 637px;
+						}
+
+						#businessn{
+							font-size: 26px;
+						}
 </style>
 <!-- EOF CSS INCLUDE -->
 </head>
@@ -234,6 +253,8 @@ $fetch2 = $query2->fetch_array();
 $month2 = date("m", strtotime($fetch2['month']));
 $total = number_format($fetch2['total_amount'], 2, '.', ',');
 $orno = $fetch2['ops_no'];
+$validmonth = date("M", strtotime($fetch2['date_applied']));
+$validdate = date("d", strtotime($fetch2['date_applied']));
 ?>
                                 <div class = "clearfix">
                                     <img class="left-1" style="height:120px;width:120px;" src="../assets/images/DILG.png"> <br> <br>
@@ -270,13 +291,12 @@ $orno = $fetch2['ops_no'];
 								</br>
 								<center>
 								<p class="text-justify">
-									By virtue of the provisions of RA 9514 otherwise known as the Fire Code of the Philippines of 2008, the application for <strong> FIRE SAFETY INSPECTION CERTIFICATE </strong> of
-									<strong> <?php echo $fetch['business_name'] ?> </strong> owned and managed by <strong> <?php echo $fetch['owner_name'] ?> </strong> with postal address at <?php echo $fetch['establishment_address']?>
+									By virtue of the provisions of RA 9514 otherwise known as the Fire Code of the Philippines of 2008, the application for <strong id="businessn"> FIRE SAFETY INSPECTION CERTIFICATE </strong> of
+									<strong id="businessn"> <?php echo $fetch['business_name'] ?> </strong> owned and managed by <strong id="businessn"> <?php echo $fetch['owner_name'] ?> </strong> with postal address at <strong id="businessn"><?php echo $fetch['establishment_address']?> </strong>
 									is hereby <strong>GRANTED</strong> after said building structure or facility has been duly inspected with the findings that it has be fully complied with the fire safety and protection
                                     requirements of the Fire Code of the Philippines of 2008 and its Implementing Rules and Regulations.
 								</p>
 								</center>
-
 								</br>
 								<center>
 								<p class="text-justify-2">
@@ -324,6 +344,19 @@ $orno = $fetch2['ops_no'];
 
 								<p class="line-2">______________________________</p>
 								<p class="line-3">______________________________</p>
+
+								<p class="businesspermit">
+									<strong> BUSINESS PERMIT </strong> 
+								</p>
+
+								<p class="validuntil">
+								<?php 
+								
+								$year = date('Y');
+								$expiry = $year+1;
+								?>
+									<strong>  <?php echo $validmonth . ' - '. $validdate . ' - ' .$expiry?> </strong> 
+								</p>
 
                             </div>
 						</div>

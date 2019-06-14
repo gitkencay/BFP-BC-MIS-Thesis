@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2019 at 02:17 PM
+-- Generation Time: Feb 08, 2019 at 09:10 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -40,8 +40,6 @@ CREATE TABLE `application` (
   `cpnumb` varchar(100) NOT NULL,
   `croname` varchar(100) NOT NULL,
   `date_applied` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
   `owner_name` varchar(50) NOT NULL,
   `number_of_floors` varchar(10) NOT NULL,
   `lot_size` varchar(10) NOT NULL,
@@ -49,40 +47,27 @@ CREATE TABLE `application` (
   `initial_requirements` varchar(200) NOT NULL,
   `assessment_status` varchar(20) NOT NULL,
   `month` varchar(10) NOT NULL,
-  `year` varchar(10) NOT NULL
+  `year` varchar(10) NOT NULL,
+  `date_created` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `application`
 --
 
-INSERT INTO `application` (`application_no`, `application_type`, `application_name`, `business_name`, `establishment_address`, `building_type`, `barangay_name`, `type_of_permit`, `cpnumb`, `croname`, `date_applied`, `username`, `password`, `owner_name`, `number_of_floors`, `lot_size`, `status`, `initial_requirements`, `assessment_status`, `month`, `year`) VALUES
-(1, 'FSEC', 'Shamus Munks', 'Renewable Energy Group, Inc.', '524 Sunbrook Pass', 'Assembly', 'Barangay 5', 'NA', '09523424231', '', 'December 13, 2018 2:31 am', 'clarkcan2018', '8080', 'Shamus Munks', '4', '100,000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Evaluated', 'Dec', '2018'),
-(2, 'FSEC', 'Alexandre Calleja', 'Bay Bancorp, Inc.', '10514 Katie Alley', 'Small-Business', 'Barangay 7', 'NA', '09523424231', '', 'December 13, 2018 2:33 am', 'alexandre_call', '1234', 'Alexandre Calleja', '6', '20000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Evaluated', 'Dec', '2018'),
-(3, 'FSEC', 'Norris Maestro', 'Acacia Research Corporation', '7 Fallview Point', 'Educational', 'Barangay 1', 'NA', '09523424231', '', 'December 13, 2018 2:36 am', 'norris_mae', '8080', 'Norris Maestro', '3', '50000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Evaluated', 'Dec', '2018'),
-(4, 'FSEC', 'Marylin Klampk', 'Allstate Corporation (The)', '546 Luster Circle', 'Mercantile', 'Banago', 'NA', '09523424231', '', 'December 13, 2018 2:38 am', 'mary_klampk', '8080', 'Marylin Klampk', '3', '100,000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Evaluated', 'Dec', '2018'),
-(5, 'FSEC', 'Ives Tassell', 'Chart Industries, Inc.', '1249 Ludington Place', 'Business-Office', 'Barangay 3', 'NA', '09523424231', '', 'December 13, 2018 2:40 am', 'ive_ras', '8080', 'Ives Tassell', '4', '20000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Evaluated', 'Dec', '2018'),
-(6, 'FSEC', 'Gay Barnet', 'Fortinet, Inc.', '777 Drewry Center', 'Small-Business', 'Barangay 28', 'NA', '09523424231', '', 'December 13, 2018 2:42 am', 'gayass', '8080', 'Gay Barnet', '4', '50000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
-(7, 'FSEC', 'Alain Palluschek', 'Elbit Systems Ltd.', '62664 Barnett Lane', 'Storage', 'Barangay 4', 'NA', '09523424231', '', 'December 13, 2018 2:46 am', 'dsdsd', '8080', 'Alain Palluschek', '3', '20000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
-(8, 'FSEC', 'Angie Kondratovich', 'Navigator Holdings Ltd.', '8 Bobwhite Avenue', 'Small-Business', 'Barangay 3', 'NA', '09523424231', '', 'December 13, 2018 2:48 am', 'akondratovich0', '8080', 'Angie Kondratovich', '6', '20000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
-(9, 'FSEC', 'Jenine Crangle', 'Wells Fargo & Company', '4138 Barnett Avenue', 'Small-Business', 'Barangay 1', 'NA', '09523424231', '', 'December 13, 2018 2:50 am', 'jcrangle1', '8080', 'Jenine Crangle', '6', '100,000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
-(10, 'FSEC', 'Maegan Badham', 'CRA International,Inc.', '17 Graedel Road', 'Mercantile', 'Barangay 1', 'NA', '09523424231', '', 'December 13, 2018 2:53 am', 'mbadham2', '8080', 'Maegan Badham', '6', '100,000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
-(11, 'FSIC', 'Melodie Brosenius', 'Templeton Global Income Fund, Inc.', '91999 Oriole Crossing', 'Business-Office', 'Barangay 2', 'Building', '09523424231', '', 'December 13, 2018 7:54 pm', 'mbrosenius3', '8080', ' Melodie Brosenius', '5', '60000', 'Pending', 'IniReq5,IniReq6,IniReq7,IniReq8,', 'Unassessed', 'Dec', '2018'),
-(12, 'FSIC', 'Constantia Armall', 'Northfield Bancorp, Inc.', '80 Hudson Hill', 'Small-Business', 'Barangay 35', 'Building', '09523424231', '', 'December 13, 2018 7:55 pm', 'carmall4', '8080', ' Constantia Armall', '6', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
-(13, 'FSIC', 'Irwinn Bushell', 'Ichor Holdings', '8 Hazelcrest Center', 'Educational', 'Banago', 'Occupancy', '09523424231', '', 'December 13, 2018 7:56 pm', 'ibushell5', '8080', ' Irwinn Bushell', '6', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
-(14, 'FSIC', 'Bettye Tapping', 'Zoetis Inc.', '585 Cardinal Point', 'Business-Office', 'Barangay 18', 'Occupancy', '09523424231', '', 'December 13, 2018 7:58 pm', 'btappinga', '8080', ' Bettye Tapping', '5', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
-(15, 'FSIC', 'Marrilee Cattini', 'CBAK Energy Technology, Inc.', '3860 Oriole Plaza', 'Small-Business', 'Barangay 6', 'Building', '09523424231', '', 'December 13, 2018 7:59 pm', 'mcattinib', '8080', ' Bettye Tapping', '6', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
-(16, 'FSIC', 'Ajay Espinos', 'NewStar Financial, Inc.', '83589 Muir Street', 'Storage', 'Barangay 3', 'Building', '09523424231', '', 'December 13, 2018 8:00 pm', 'aespinosc', '8080', ' Melodie Brosenius', '5', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
-(17, 'FSIC', 'Jamaal Petkov', 'First Trust NASDAQ-100 Ex-Technology Sector Index ', '82272 Everett Point', 'Business-Office', 'Barangay 2', 'Building', '09523424231', '', 'December 13, 2018 10:25 pm', 'jpetkovrr', '8080', 'Jamaal Petkov ', '4', '180000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Unassessed', 'Dec', '2018'),
-(18, 'FSEC', 'Gabey Ruoss', 'Taylor Devices, Inc.', '138 Mariners Cove Hill', 'Assembly', 'Barangay 24', 'NA', '09523424231', '', 'December 13, 2018 10:27 pm', 'gruossrq', '8080', 'Gabey Ruoss', '4', '60000', 'Pending', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Dec', '2018'),
-(19, 'FSIC', 'Maria Umbert', 'CBAK Energy Technology, Inc.', '8 Hazelcrest Center', 'Small-Business', 'Barangay 4', 'Building', '09523424231', '', 'December 13, 2018 10:29 pm', 'clarkcan2018', '8080', ' Melodie Brosenius', '6', '180000', 'Pending', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Unassessed', 'Dec', '2018'),
-(20, 'FSIC', 'Constantia Armall', 'Templeton Global Income Fund, Inc.', '80 Hudson Hill', 'Assembly', 'Barangay 18', 'Building', '09523424231', '', 'December 13, 2018 10:29 pm', 'clarkcan2018', '8080', ' Irwinn Bushell', '4', '60000', 'Pending', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Unassessed', 'Dec', '2018'),
-(21, 'FSIC', 'Irwinn Bushell', 'Zoetis Inc.', '3860 Oriole Plaza', 'Business-Office', 'Barangay 29', 'Building', '09523424231', '', 'December 13, 2018 10:30 pm', 'clarkcan2018', '8080', ' Constantia Armall', '4', '60000', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Inspected', 'Dec', '2018'),
-(22, 'FSEC', 'Maeryger D. Gomez', 'Medical Clinic', 'Menlo 4', 'Business-Office', 'Barangay 18', 'NA', '09523424231', 'croname', 'January 5, 2019 3:39 pm', 'clarkcan2018', '8080', 'Maeryger D. Gomez', '3', '75', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Jan', '2019'),
-(23, 'FSEC', 'Juro Kazuhiko', 'Nigger Corp', 'Niggeria', 'Storage', 'Barangay 37 ', 'NA', '09085553776', 'Kenneth', 'January 10, 2019 6:07 pm', 'JRUKAZ', '8080', 'Juro', '6', '140000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Assessed', 'Jan', '2019'),
-(24, 'FSEC', 'Ignacio Branton', 'Zoetis Inc.', 'Niggeria', 'Mercantile', '', 'NA', '09085553776', 'Sergent', 'January 10, 2019 9:58 pm', 'iggy97', '8080', 'Ignacio', '5', '140000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Jan', '2019'),
-(25, 'FSEC', 'Cleveland Bartzen', 'Nba', '80 Hudson Hill', 'Assembly', 'Barangay 14', 'NA', '09085553776', 'Sergent', 'January 10, 2019 10:02 pm', 'clarkcan2018', '8080', 'Bart Simpson', '4', '180000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Jan', '2019'),
-(26, 'FSEC', 'Kellia Penniel', 'Taiga Inc', 'Tokyo', 'Mercantile', 'Barangay 4', 'NA', '09085553776', 'Kenneth', 'January 10, 2019 11:52 pm', 'kelpen', '8080', 'kelly', '6', '140000', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Jan', '2019');
+INSERT INTO `application` (`application_no`, `application_type`, `application_name`, `business_name`, `establishment_address`, `building_type`, `barangay_name`, `type_of_permit`, `cpnumb`, `croname`, `date_applied`, `owner_name`, `number_of_floors`, `lot_size`, `status`, `initial_requirements`, `assessment_status`, `month`, `year`, `date_created`) VALUES
+(1, 'FSEC', 'Kenneth Cayetano', 'Bay Bancorp, Inc.', 'San Enrique', 'Business-Office', 'Barangay 22', 'NA', '09474298815', 'Matt Murdockk', '2019-02-02', 'Kenneth Cayetano', '23', '12', 'Complete', 'IniReq1,IniReq2,IniReq4,', 'Unassessed', 'Feb', '2019', 'February 4, 2019 7:01 pm'),
+(2, 'FSIC', 'Justin Christian', 'Sears Canada Inc. ', 'San Enrique', 'Business-Office', 'Barangay 35', 'Occupancy', '09474298815', 'Matt Murdockk', '2019-02-02', 'Kenneth Cayetano', '53', '23', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,', 'Inspected', 'Feb', '2019', 'February 4, 2019 7:02 pm'),
+(3, 'FSEC', 'Billy Batson', 'Fawcett Comics', ' â€ŽC. C. Beckâ€Ž Street', 'Small-Business', 'Cabug', 'NA', '09474298815', 'Matt Murdockk', '2019-02-05', 'Billy Batson', '56', '23', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Evaluated', 'Feb', '2019', 'February 5, 2019 6:35 pm'),
+(4, 'FSIC', 'Jude Law', 'Game Tyrant', 'Kahndaq Â· â€ŽMehen', 'Assembly', 'Barangay 37 ', 'Occupancy', '09474298815', 'Matt Murdockk', '2019-02-05', 'Jude Law', '3', '2', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Issued NTCV', 'Feb', '2019', 'February 5, 2019 6:37 pm'),
+(5, 'FSEC', 'Kenneth Cayetano', 'Printing', 'Bacolod City', 'Assembly', 'Barangay 3', 'NA', '09474298815', 'Matt Murdockk', '2019-03-29', 'Kenneth Cayetano', '9', '12', 'Complete', 'No Initial Requirements', 'Unassessed', 'Feb', '2019', 'February 5, 2019 11:34 pm'),
+(6, 'FSEC', 'Matt Murdock', 'Attorney Firm', 'Bacolod City', 'Business-Office', 'Barangay 20', 'NA', '09474298815', 'Matt Murdockk', '2019-02-01', 'Matt Murdock', '9', '2', 'Complete', 'No Initial Requirements', 'Unassessed', 'Feb', '2019', 'February 5, 2019 11:37 pm'),
+(7, 'FSIC', 'asdsad', 'asdasd', 'asdasdas', 'Assembly', 'Barangay 21', 'Occupancy', '09474298815', 'Matt Murdockk', '2019-01-16', 'asdsad', '2', '2', 'Complete', 'No Initial Requirements', 'Unassessed', 'Feb', '2019', 'February 5, 2019 11:40 pm'),
+(8, 'FSEC', 'asdasd', 'asdad', 'asdassd', 'Assembly', 'Barangay 3', 'NA', '09474298815', 'Matt Murdockk', '2019-02-01', 'asdasd', '2', '1', 'Complete', 'IniReq1,IniReq2,IniReq4,', 'Unassessed', 'Feb', '2019', 'February 6, 2019 12:05 am'),
+(9, 'FSEC', 'asdasd', 'asdas', 'asdad', 'Assembly', 'Barangay 3', 'NA', '09474298815', 'Matt Murdockk', '2019-02-02', 'asdasd', '2', '3', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Feb', '2019', 'February 6, 2019 12:07 am'),
+(10, 'FSIC', 'Kenneth Cayetano', 'asd', 'asd', 'Business-Office', 'Barangay 17', 'Occupancy', '09474298815', 'Nathaniel Deguzman', '2019-02-02', 'Kenneth Cayetano', '2', '3', 'Complete', 'IniReq5,IniReq6,IniReq7,IniReq8,IniReq9,', 'Assessed', 'Feb', '2019', 'February 7, 2019 5:59 pm'),
+(11, 'FSEC', 'Jessica Jones', 'Printing', 'Bacolod City', 'Assembly', 'Barangay 1', 'NA', '09474298815', 'Nathaniel Deguzman', '2019-02-02', 'Kenneth Cayetano', '1', '1', 'Pending', 'IniReq1,IniReq2,', 'Unassessed', 'Feb', '2019', 'February 7, 2019 7:08 pm'),
+(12, 'FSEC', 'Kennet', 'DSasdad', 'asdddd', 'Business-Office', 'Barangay 4', 'NA', '09474298815', 'Matt Murdockk', '2019-02-02', 'Kennet', '1', '2', 'Complete', 'IniReq1,IniReq2,IniReq3,IniReq4,', 'Unassessed', 'Feb', '2019', 'February 8, 2019 2:54 pm');
 
 -- --------------------------------------------------------
 
@@ -109,30 +94,48 @@ CREATE TABLE `assessment` (
   `installation_clearance` varchar(100) NOT NULL,
   `other_clearance` varchar(100) NOT NULL,
   `total_amount` varchar(100) NOT NULL,
-  `payment` double NOT NULL,
+  `payment` varchar(100) NOT NULL,
   `changed` double NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
-  `date_applied` varchar(100) NOT NULL
+  `date_applied` varchar(100) NOT NULL,
+  `assessor_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `assessment`
 --
 
-INSERT INTO `assessment` (`ops_no`, `application_no`, `application_name`, `location`, `status`, `business_name`, `type_of_certificate`, `construction_tax`, `reality_tax`, `premium_tax`, `sales_tax`, `proceeds_tax`, `inspection_fee`, `storage_clearance`, `conveyance_clearance`, `installation_clearance`, `other_clearance`, `total_amount`, `payment`, `changed`, `month`, `year`, `date_applied`) VALUES
-(1, '1', 'Shamus Munks', '524 Sunbrook Pass', 'Complete', 'Renewable Energy Group, Inc.', 'FSEC', '70', '2', '6', '8', '1.2', '2.3000000000000003', '44', '55', '900', '10000', '11088.5', 11088.5, 0, 'Dec', '2018', 'December 13, 2018 11:22 pm'),
-(2, '12', 'Constantia Armall', '80 Hudson Hill', 'Complete', 'Northfield Bancorp, Inc.', 'FSIC', '50', '1.31', '10', '10', '12', '40', '555', '55', '66', '54', '853.31', 900, 46.690000000000055, 'Dec', '2018', 'December 14, 2018 1:57 pm'),
-(3, '13', 'Irwinn Bushell', '8 Hazelcrest Center', 'Complete', 'Ichor Holdings', 'FSIC', '80', '0.8', '12', '1.26', '10.700000000000001', '3.4000000000000004', '35352', '34', '23', '5', '35522.16', 60000, 24477.839999999997, 'Dec', '2018', 'December 14, 2018 2:14 pm'),
-(4, '2', 'Alexandre Calleja', '10514 Katie Alley', 'Complete', 'Bay Bancorp, Inc.', 'FSEC', '6.6000000000000005', '0.78', '1.96', '1.52', '19.72', '98.80000000000001', '8', '8', '678', '567', '1390.38', 1500, 109.61999999999989, 'Dec', '2018', 'December 14, 2018 3:18 pm'),
-(5, '3', 'Norris Maestro', '7 Fallview Point', 'Complete', 'Acacia Research Corporation', 'FSEC', '50', '4', '0.48', '1.1', '1.1', '32.5', '442', '34', '24', '2', '591.1800000000001', 600, 8.819999999999936, 'Dec', '2018', 'December 14, 2018 7:45 pm'),
-(6, '14', 'Bettye Tapping', '585 Cardinal Point', 'Complete', 'Zoetis Inc.', 'FSIC', '1.2000000000000002', '0.12', '0.24', '0.24', '0.24', '1.2000000000000002', '12', '12', '12', '12', '51.24', 1000, 948.76, 'Dec', '2018', 'December 19, 2018 3:53 pm'),
-(7, '4', 'Marylin Klampk', '546 Luster Circle', 'Complete', 'Allstate Corporation (The)', 'FSEC', '200', '2.33', '6.640000000000001', '46.26', '0.24', '2.3000000000000003', '65', '56', '54', '345', '777.77', 900, 122.23000000000002, 'Dec', '2018', 'December 31, 2018 11:09 pm'),
-(8, '15', 'Marrilee Cattini', '3860 Oriole Plaza', 'Complete', 'CBAK Energy Technology, Inc.', 'FSIC', '10', '2.2', '6.8', '0.42', '0.86', '35', '310', '22', '11', '1000', '1398.28', 1400, 1.7200000000000273, 'Dec', '2018', 'December 31, 2018 11:10 pm'),
-(9, '16', 'Ajay Espinos', '83589 Muir Street', 'Complete', 'NewStar Financial, Inc.', 'FSIC', '0.5', '0.34', '1.12', '0.9', '1.54', '55.6', '234', '2344', '25', '54', '2717', 3000, 283, 'Jan', '2019', 'January 3, 2019 11:17 am'),
-(10, '21', 'Irwinn Bushell', '3860 Oriole Plaza', 'Complete', 'Zoetis Inc.', 'FSIC', '50', '2', '2', '0.8', '8.08', '33.4', '66', '54', '234', '33', '483.28', 555, 71.72000000000003, 'Jan', '2019', 'January 3, 2019 7:35 pm'),
-(11, '5', 'Ives Tassell', '1249 Ludington Place', 'Pending', 'Chart Industries, Inc.', 'FSEC', '23.400000000000002', '23.41', '4.68', '2.68', '68.66', '23.400000000000002', '10', '23', '23', '333', '535.23', 699, 163.76999999999998, 'Jan', '2019', 'January 7, 2019 6:41 pm'),
-(12, '23', 'Juro Kazuhiko', 'Niggeria', 'Complete', 'Nigger Corp', 'FSEC', '56', '4', '7', '3', '2.96', '45.5', '34', '656', '700', '121', '1629.46', 2000, 0, 'Jan', '2019', 'January 10, 2019 6:08 pm');
+INSERT INTO `assessment` (`ops_no`, `application_no`, `application_name`, `location`, `status`, `business_name`, `type_of_certificate`, `construction_tax`, `reality_tax`, `premium_tax`, `sales_tax`, `proceeds_tax`, `inspection_fee`, `storage_clearance`, `conveyance_clearance`, `installation_clearance`, `other_clearance`, `total_amount`, `payment`, `changed`, `month`, `year`, `date_applied`, `assessor_name`) VALUES
+(1, '3', 'Billy Batson', ' â€ŽC. C. Beckâ€Ž Street', 'Complete', 'Fawcett Comics', 'FSEC', '0.778', '0.0342', '4.68', '4.68', '46.84', '46.800000000000004', '543', '66', '776', '43', '1531.81', '1600', 68.19, 'Feb', '2019', 'February 5, 2019 6:38 pm', 'Danny Rand'),
+(2, '4', 'Jude Law', 'Kahndaq Â· â€ŽMehen', 'Complete', 'Game Tyrant', 'FSIC', '0.5640000000000001', '0.056400000000000006', '11.28', '11.28', '11.28', '112.80000000000001', '564', '564', '564', '564', '2403.26', '2500', 96.74, 'Feb', '2019', 'February 5, 2019 6:39 pm', 'Danny Rand');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `backup`
+--
+
+CREATE TABLE `backup` (
+  `id` int(10) NOT NULL,
+  `user_id` varchar(10) NOT NULL,
+  `remarks` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `backup`
+--
+
+INSERT INTO `backup` (`id`, `user_id`, `remarks`, `date`) VALUES
+(1, '0', 'Successfully exported database', 'January 16, 2019, 10:47 pm'),
+(2, '', 'Successfully exported database', 'January 17, 2019, 6:04 pm'),
+(3, '', 'Successfully exported database', 'January 17, 2019, 6:04 pm'),
+(4, '', 'Successfully exported database', 'January 17, 2019, 6:04 pm'),
+(5, '13', 'Successfully imported database', 'January 17, 2019, 6:11 pm'),
+(6, '1', 'Successfully exported database', 'January 18, 2019, 6:43 pm'),
+(7, '4', 'Successfully imported database', 'January 20, 2019, 10:14 pm'),
+(8, '4', 'Successfully exported database', 'January 20, 2019, 10:30 pm');
 
 -- --------------------------------------------------------
 
@@ -210,7 +213,8 @@ INSERT INTO `barangay` (`barangay_id`, `barangay_name`) VALUES
 (58, 'Taculing'),
 (59, 'Tangub'),
 (60, 'Villamonte'),
-(61, 'Vista Alegre');
+(61, 'Vista Alegre'),
+(66, '');
 
 -- --------------------------------------------------------
 
@@ -241,7 +245,9 @@ CREATE TABLE `bldg_construct` (
 --
 
 INSERT INTO `bldg_construct` (`bc_no`, `ir_no`, `beams`, `columns`, `floor`, `exterior`, `corridor`, `partition_no`, `stair`, `windows`, `ceiling`, `door`, `trusses`, `roof`, `date_applied`) VALUES
-(1, 'IR-2018-12-1', '123', '23', '12312', '13', '123123', '123123', '13123', '12312331321', '1232132132', '3123', '3213123', '12312312', 'December 14, 2018 5:45 pm');
+(1, 'IR-2018-12-1', '123', '23', '12312', '13', '123123', '123123', '13123', '12312331321', '1232132132', '3123', '3213123', '12312312', 'December 14, 2018 5:45 pm'),
+(2, 'IR-2019-01-1', '500', '500', '330', '234', '3404', '234', '434', '23', '2123', '23432', '324', '3', 'January 15, 2019 9:48 pm'),
+(3, 'IR-2019-01-1', '123', '13', '3123123', '312312', '312312', '3123123123', '213213', '131321', '312313', '123123', '123213', '1231312', 'January 16, 2019 10:54 pm');
 
 -- --------------------------------------------------------
 
@@ -270,6 +276,12 @@ CREATE TABLE `compartmentation` (
 --
 
 INSERT INTO `compartmentation` (`checklist_id`, `description`) VALUES
+('Compartmentation_Req_1', 'Provide fire break up to the roof for ceiling areas.'),
+('Compartmentation_Req_2', 'Provide monitored and curtained roof of sheet metal or non-combustible material of a minimum of 1.82m (6 ft) high spaced not more than 76 m (250 ft) & curtained area limited to a minimum of 4, 630 m2 (50,000 ft2).'),
+('Compartmentation_Req_3', 'Provide smoke partition at enclosed areas of 2, 083 m2 (22, 500 ft2) or less with the length of 45.7m (150 ft) or less, with self-closing fire doors.'),
+('Compartmentation_Req_4', 'Provide  smoke  partition  of  two  (2)  hour  fire  resistance  from  floor  to underside of floor above.'),
+('Compartmentation_Req_5', 'Provide interior finish as follows; Exit; Class _________ Access to Exit; Class ___________ Other Spaces; Class _________'),
+('Compartmentation_Req_6', 'Provide fire stopping for all concealed spaces.'),
 ('Compartmentation_Req_1', 'Provide fire break up to the roof for ceiling areas.'),
 ('Compartmentation_Req_2', 'Provide monitored and curtained roof of sheet metal or non-combustible material of a minimum of 1.82m (6 ft) high spaced not more than 76 m (250 ft) & curtained area limited to a minimum of 4, 630 m2 (50,000 ft2).'),
 ('Compartmentation_Req_3', 'Provide smoke partition at enclosed areas of 2, 083 m2 (22, 500 ft2) or less with the length of 45.7m (150 ft) or less, with self-closing fire doors.'),
@@ -314,9 +326,49 @@ INSERT INTO `employee` (`id`, `officer_type`, `rank`, `officer_fname`, `officer_
 (10, 'CRO', 'F01', 'Agna', 'R.', 'Nottingam', 'anottingamh', '1234', '1234', '4', 'December 13, 2018 11:29 pm'),
 (11, 'Inspection-CRO', 'F04', 'Justin', 'Christian', 'Puatu', 'ken05cay', 'ken05', 'ken05', '5', 'December 14, 2018 6:52 pm'),
 (12, 'CRO', 'F01', 'Sergent', 'D.', 'Cecere', 'scecere0', 'ao68bc291xz', 'ao68bc291xz', '1', 'January 10, 2019 9:56 pm'),
-(13, 'Inspector', 'F04', 'Alvin', 'Go', 'Yanson', 'alvin2', 'alvin3', 'alvin3', '6', 'January 13, 2019 7:41 pm'),
-(14, 'Inspector', 'F04', 'Alvin', 'Go', 'Yanson', 'alvin2', 'alvin3', 'alvin3', '6', 'January 13, 2019 7:43 pm'),
-(15, 'Inspector', 'F04', 'Alvin', 'Go', 'Yanson', 'alvin2', 'alvin3', 'alvin3', '6', 'January 13, 2019 7:43 pm');
+(16, 'CRO', 'F01', 'Kenneth', 'De la Rosa', 'Cayetano', 'ken2', 'kenneth2', 'kenneth2', '1', 'January 16, 2019 1:26 pm'),
+(17, 'CRO', 'F01', 'Matt', 'Knuckle', 'Murdockk', 'Dare', '123devil', '123devil', '4', 'January 18, 2019 3:05 pm'),
+(18, 'CRO', 'F01', 'Matt', 'Knuckle', 'Murdockk', 'Dare', '123devil', '123devil', '4', 'January 18, 2019 3:06 pm'),
+(21, 'CRO', 'F01', 'Clark', 'KE', 'KE', 'admin1234', 'admin1234', 'admin1234', '5', 'January 21, 2019 11:56 pm'),
+(22, 'CRO', 'F01', 'Kenneth', 'De La Rosa', 'Cayeatano', 'Admin101', 'kenneth', 'kenneth', '5', 'January 22, 2019 7:46 pm'),
+(23, 'Assessor', 'F01', 'Joy', 'Ann', 'Villanueva', 'assessor101', 'Assessor101', 'Assessor101', '6', 'January 28, 2019 12:28 pm'),
+(24, 'Inspection-CRO', 'F01', 'Nathaniel', 'Owen', 'Deguzman', 'inspectioncro101', 'InspectionCro101', 'InspectionCro101', '6', 'January 28, 2019 6:34 pm'),
+(25, 'Evaluator', 'F03', 'Dennzel', 'Suarez', 'Busquets', 'eval101', 'eval0119', 'eval0119', '4', 'January 28, 2019 6:46 pm'),
+(26, 'Inspector', 'F03', 'Anthony', 'Laker', 'Davis', 'antdavis', 'Antdavis123', 'Antdavis123', '1', 'January 29, 2019 10:53 pm'),
+(27, 'Inspector', 'F01', 'Ed', 'Soho', 'Caluag', 'edcalu', 'Edcalu123', 'Edcalu123', '1', 'January 29, 2019 10:56 pm'),
+(28, 'Inspector', 'F01', 'Korina', 'Sanchez', 'Rojas', 'korina101', 'Korina101', 'Korina101', '1', 'January 29, 2019 10:57 pm'),
+(29, 'Inspector', 'F01', 'Manny', 'Pangilinan', 'Pacquiao', 'pacman101', 'Pacman101', 'Pacman101', '1', 'January 29, 2019 10:58 pm'),
+(30, 'Inspection-CRO', 'F03', 'Haime', 'Wakene', 'Hurrisa', 'wacky101', 'Wacky101', 'Wacky101', '1', 'January 29, 2019 11:02 pm'),
+(31, 'Inspector', 'F01', 'John', 'Mercado', 'Gamotin', 'john101', 'Johnrey101', 'Johnrey101', '1', 'January 29, 2019 11:07 pm'),
+(32, 'Inspector', 'F01', 'Brandon', 'Laker', 'Ingram', 'brand14', 'Brandon14', 'Brandon14', '1', 'January 29, 2019 11:20 pm'),
+(33, 'Inspector', 'F01', 'Kyle', 'Laker', 'Kuzma', 'kylekuz', 'Kylekuz101', 'Kylekuz101', '1', 'January 29, 2019 11:22 pm'),
+(34, 'Inspector', 'F01', 'Lonzo', 'Laker', 'Ball', 'lonzo101', 'Lonzo101', 'Lonzo101', '1', 'January 29, 2019 11:22 pm'),
+(35, 'Inspector', 'F01', 'Lance', 'Laker', 'Stephenson', 'lance101', 'Lance101', 'Lance101', '1', 'January 29, 2019 11:23 pm'),
+(36, 'Inspector', 'F01', 'Dwayne', 'Miami', 'Wade', 'dwayne101', 'Dwayne101', 'Dwayne101', '1', 'January 29, 2019 11:23 pm'),
+(37, 'Inspector', 'F01', 'Scottie', 'Bull', 'Pippen', 'scottie101', 'Scottie101', 'Scottie101', '1', 'January 29, 2019 11:24 pm'),
+(38, 'Inspector', 'F01', 'Junemar', 'Sanmig', 'Fajardo', 'junemar', 'Junemar101', 'Junemar101', '1', 'January 29, 2019 11:26 pm'),
+(39, 'Inspector', 'F01', 'Ronald', 'Sanmig', 'Tubid', 'ronald101', 'Ronald101', 'Ronald101', '1', 'January 29, 2019 11:27 pm'),
+(40, 'Inspector', 'F01', 'Japeth', 'Ginebra', 'Aguilar', 'japeth', 'Japeth101', 'Japeth101', '1', 'January 29, 2019 11:28 pm'),
+(41, 'Evaluator', 'F01', 'Izuku', 'Hero', 'Midoriya', 'izuku', 'Izuku101', 'Izuku101', '1', 'January 29, 2019 11:29 pm'),
+(42, 'Evaluator', 'F01', 'Charles', 'Suns', 'Barkley', 'charles101', 'Charles101', 'Charles101', '1', 'January 29, 2019 11:30 pm'),
+(43, 'Evaluator', 'F01', 'Kurt', 'Mayang', 'Barrioga', 'kurtlifers', 'kurtlifers101', 'kurtlifers101', '1', 'January 29, 2019 11:31 pm'),
+(44, 'Evaluator', 'F01', 'Allen', 'Sixer', 'Iverson', 'allenai', 'Allenai101', 'Allenai101', '1', 'January 29, 2019 11:32 pm'),
+(45, 'Evaluator', 'F01', 'Rajon', 'Laker', 'Rondo', 'rajon09', 'Rajonrondo09', 'Rajonrondo09', '1', 'January 29, 2019 11:33 pm'),
+(46, 'Inspector', 'F01', 'Royal ', 'D.', 'Bee', 'beeznuts', 'Casiof91w', 'Casiof91w', '6', 'January 30, 2019 11:14 pm'),
+(47, 'Inspector', 'F01', 'Angie ', 'D.', 'Wildgoose', 'awildgoose', 'Casiof91w', 'Casiof91w', '3', 'January 30, 2019 11:15 pm'),
+(48, 'CRO', 'F01', 'Ives', 'R.', 'Toddhunter', 'itoddhunter', 'Casiof91w', 'Casiof91w', '2', 'January 30, 2019 11:16 pm'),
+(49, 'Inspector', 'F04', 'Roze', 'M.', 'Manthorpe', 'rmanthorpe', 'Casiof91w', 'Casiof91w', '1', 'January 30, 2019 11:17 pm'),
+(50, 'Inspector', 'F02', 'Clementine', 'S.', 'Sail', 'csail', 'Casiof91w', 'Casiof91w', '4', 'January 30, 2019 11:17 pm'),
+(51, 'Inspector', 'F04', 'Alma ', 'E.', 'Ethridge', 'aethridge', 'Casiof91w', 'Casiof91w', '2', 'January 30, 2019 11:18 pm'),
+(52, 'CRO', 'F01', 'Bartholemew', 'S.', 'Sowter', 'bsowter', 'Casiof91w', 'Casiof91w', '1', 'January 30, 2019 11:19 pm'),
+(53, 'CRO', 'F01', 'Beau', 'A.', 'Schirok', 'bschirok', 'Casiof91w', 'Casiof91w', '3', 'January 30, 2019 11:20 pm'),
+(54, 'Inspector', 'F03', 'Devon ', 'G. ', 'Gusney', 'dgusney', 'Casiof91w', 'Casiof91w', '5', 'January 30, 2019 11:21 pm'),
+(55, 'Inspector', 'F03', 'Cherida', 'T.', 'Teppet', 'cteppet', 'Casiof91w', 'Casiof91w', '5', 'January 30, 2019 11:22 pm'),
+(56, 'CRO', 'F01', 'Danna', 'C.', 'Corzon', 'dcorzon', 'Casiof91w', 'Casiof91w', '1', 'January 30, 2019 11:22 pm'),
+(57, 'Inspector', 'F01', 'Leoline', 'T.', 'Tregust', 'ltregust', 'Casiof91w', 'Casiof91w', '1', 'January 30, 2019 11:23 pm'),
+(58, 'Inspector', 'F01', 'Haley ', 'C.', 'Clac', 'hclac', 'Casiof91w', 'Casiof91w', '1', 'January 30, 2019 11:24 pm'),
+(59, 'Inspector', 'F01', 'Michael', 'Jackson', 'Callejas', 'inspector001', 'Inspector001', 'Inspector001', '5', 'February 4, 2019 6:36 pm'),
+(60, 'Assessor', 'F04', 'Danny', 'Neilson', 'Rand', 'ironfist12', 'Ironfist12', 'Ironfist12', '6', 'February 5, 2019 6:32 pm');
 
 -- --------------------------------------------------------
 
@@ -342,19 +394,184 @@ CREATE TABLE `evaluation_checklist` (
   `miscellaneous` varchar(1000) NOT NULL,
   `month` varchar(50) NOT NULL,
   `year` varchar(50) NOT NULL,
-  `status_of_checklist` varchar(50) NOT NULL
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `evaluation_checklist`
 --
 
-INSERT INTO `evaluation_checklist` (`checklist_no`, `application_no`, `plan_evaluator`, `owner_name`, `business_name`, `project_title`, `location`, `occupancy_classification`, `date_received`, `means_of_egrees`, `walls`, `compartmentation`, `warning_systems`, `fire_protection`, `miscellaneous`, `month`, `year`, `status_of_checklist`) VALUES
-(1, '2018-12-2', 'Sir Cartagena', 'Alexandre Calleja', 'Bay Bancorp, Inc.', 'Nanotech', 'Mansilingan', '2', '2018-12-25', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_2,Warning_Req_4,Warning_Req_5,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_2,Miscellaneous_Req_3,Miscellaneous_Req_4,', 'Dec', '2018', ''),
-(2, '2018-12-3', 'Sir Cartagena', 'Norris Maestro', 'Acacia Research Corporation', 'Nanotech', 'Mansilingan', 'Residential', '2018-12-14', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,', 'Walls_Req_4,', 'Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,', 'Fire_Protection_Req_2,', 'Miscellaneous_Req_2,', 'Dec', '2018', ''),
-(3, '2018-12-4', 'Sir Cartagena', 'Marylin Klampk', 'Allstate Corporation (The)', 'Nexmo ', 'Mansilingan', 'Business', '2019-01-05', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means', 'Walls_Req_1,Walls_Req_2,Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_4,Compartmentation_Req_5,Compartmentation_Req_6,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_4,Warning_Req_5,Warning_Req_7,Warning_Req_8,Wa', 'Fire_Protection_Req_1,Fire_Protection_Req_3,Fire_Protection_Req_4,Fire_Protection_Req_5,Fire_Protect', 'Miscellaneous_Req_1,Miscellaneous_Req_3,Miscellaneous_Req_4,Miscellaneous_Req_5,Miscellaneous_Req_6,', 'Jan', '2019', ''),
-(4, '2018-12-5', 'Cartajena', 'Ives Tassell', 'Chart Industries, Inc.', 'Sacrilige', 'Bacolod', 'Sanctuary', '2019-01-15', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means_Egrees_Req_6,Means_Egrees_Req_7,Means_Egrees_Req_8,Means_Egrees_Req_9,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_7,Warning_Req_8,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_6,Miscellaneous_Req_7,', 'Jan', '2019', ''),
-(5, '', 'Cartajena', 'Ives Tassell', 'Chart Industries, Inc.', 'Sacrilige', 'Bacolod', 'Sanctuary', '2019-01-15', 'Means_Egrees_Req_1,Means_Egrees_Req_2,Means_Egrees_Req_3,Means_Egrees_Req_4,Means_Egrees_Req_5,Means_Egrees_Req_6,Means_Egrees_Req_7,Means_Egrees_Req_8,Means_Egrees_Req_9,', 'Walls_Req_3,Walls_Req_4,', 'Compartmentation_Req_2,Compartmentation_Req_3,', 'Warning_Req_1,Warning_Req_2,Warning_Req_3,Warning_Req_7,Warning_Req_8,', 'Fire_Protection_Req_1,Fire_Protection_Req_2,', 'Miscellaneous_Req_6,Miscellaneous_Req_7,', 'Jan', '2019', '');
+INSERT INTO `evaluation_checklist` (`checklist_no`, `application_no`, `plan_evaluator`, `owner_name`, `business_name`, `project_title`, `location`, `occupancy_classification`, `date_received`, `means_of_egrees`, `walls`, `compartmentation`, `warning_systems`, `fire_protection`, `miscellaneous`, `month`, `year`, `status`) VALUES
+(1, '2019-02-3', 'Dennzel Busquets', 'Billy Batson', 'Fawcett Comics', 'Nanotech', 'Mansilingan', 'Business', '2019-02-26', 'Means_Egrees_Req_1,', 'No Walls', 'No Compartmentation', 'Warning_Req_1,', 'No Fire Protection', 'No Miscellaneous', 'Feb', '2019', 'On Progress');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fire_incident`
+--
+
+CREATE TABLE `fire_incident` (
+  `id` int(50) NOT NULL,
+  `dateofincident` varchar(100) NOT NULL,
+  `structures` varchar(100) NOT NULL,
+  `areatype` varchar(100) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `time` varchar(100) NOT NULL,
+  `casualties` varchar(100) NOT NULL,
+  `barangay` varchar(100) NOT NULL,
+  `civilianinjured` varchar(100) NOT NULL,
+  `date_created` varchar(100) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  `croname` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fire_incident`
+--
+
+INSERT INTO `fire_incident` (`id`, `dateofincident`, `structures`, `areatype`, `location`, `time`, `casualties`, `barangay`, `civilianinjured`, `date_created`, `month`, `year`, `croname`) VALUES
+(1, '2019-01-22', '123', 'Slump', 'San Enrique', '14:44', '400', 'Montevista', '201', 'January 31, 2019 10:04 pm', 'Feb', '2019', 'Matt Murdockk'),
+(2, '2019-02-13', '400', 'Slump', 'San Enrique', '12:11', '10', 'Singcang-Airport', '4444', 'February 3, 2019 1:00 am', 'Feb', '2019', 'Nathaniel Deguzman'),
+(3, '2019-02-28', '700', 'Squatter', 'Lizares St. ', '02:31', '277', 'Singcang-Airport', '899', 'February 3, 2019 8:40 pm', 'Feb', '2019', 'Matt Murdockk'),
+(4, '1/1/2019', '1002', 'Slum', 'Bacolod City', '0:02', '789', 'Barangay 23', '500', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(5, '1/2/2019', '1003', 'Slum', 'Bacolod City', '1:00', '790', 'Barangay 24', '501', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(6, '1/3/2019', '1004', 'Slum', 'Bacolod City', '2:00', '791', 'Barangay 25', '502', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(7, '1/4/2019', '1005', 'Slum', 'Bacolod City', '3:00', '792', 'Barangay 26', '503', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(8, '1/5/2019', '1006', 'Slum', 'Bacolod City', '4:00', '793', 'Barangay 27', '504', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(9, '1/6/2019', '1007', 'Slum', 'Bacolod City', '5:00', '794', 'Barangay 28', '505', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(10, '1/7/2019', '1008', 'Slum', 'Bacolod City', '6:00', '795', 'Barangay 29', '506', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(11, '1/8/2019', '1009', 'Slum', 'Bacolod City', '7:00', '789', 'Barangay 30', '507', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(12, '1/9/2019', '1010', 'Slum', 'Bacolod City', '8:00', '789', 'Barangay 31', '508', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(13, '1/10/2019', '1011', 'Slum', 'Bacolod City', '9:00', '789', 'Barangay 32', '509', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(14, '1/11/2019', '1012', 'Slum', 'Bacolod City', '10:00', '789', 'Barangay 33', '510', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(15, '1/12/2019', '1013', 'Townhouse', 'Bacolod City', '11:00', '789', 'Barangay 34', '511', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(16, '1/13/2019', '1014', 'Townhouse', 'Bacolod City', '12:00', '789', 'Barangay 35', '512', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(17, '1/14/2019', '1015', 'Townhouse', 'Bacolod City', '13:00', '789', 'Barangay 36', '513', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(18, '1/15/2019', '1016', 'Townhouse', 'Bacolod City', '14:00', '789', 'Barangay 18', '514', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(19, '1/16/2019', '1017', 'Townhouse', 'Bacolod City', '15:00', '789', 'Barangay 19', '515', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(20, '1/17/2019', '1018', 'Townhouse', 'Bacolod City', '16:00', '790', 'Barangay 20', '516', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(21, '1/18/2019', '1019', 'Townhouse', 'Bacolod City', '17:00', '791', 'Barangay 21', '517', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(22, '1/19/2019', '1020', 'Townhouse', 'Bacolod City', '18:00', '792', 'Barangay 22', '518', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(23, '1/20/2019', '1021', 'Townhouse', 'Bacolod City', '19:00', '793', 'Barangay 23', '519', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(24, '1/21/2019', '1022', 'Townhouse', 'Bacolod City', '20:00', '794', 'Barangay 24', '520', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(25, '1/22/2019', '1023', 'Townhouse', 'Bacolod City', '21:00', '795', 'Barangay 25', '521', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(26, '1/23/2019', '1024', 'Townhouse', 'Bacolod City', '22:00', '796', 'Barangay 26', '522', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(27, '1/24/2019', '1025', 'Townhouse', 'Bacolod City', '4:00', '797', 'Barangay 27', '523', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(28, '1/1/2019', '1026', 'Townhouse', 'Bacolod City', '5:00', '798', 'Barangay 28', '524', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(29, '1/2/2019', '1027', 'Townhouse', 'Bacolod City', '6:00', '799', 'Barangay 30', '525', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(30, '1/3/2019', '1028', 'Townhouse', 'Bacolod City', '7:00', '800', 'Barangay 31', '526', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(31, '1/4/2019', '1029', 'Townhouse', 'Bacolod City', '8:00', '801', 'Barangay 32', '527', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(32, '1/5/2019', '1030', 'Townhouse', 'Bacolod City', '9:00', '802', 'Barangay 33', '528', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(33, '1/6/2019', '1031', 'Townhouse', 'Bacolod City', '10:00', '803', 'Barangay 34', '529', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(34, '1/7/2019', '1032', 'Townhouse', 'Bacolod City', '11:00', '804', 'Barangay 35', '530', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(35, '1/8/2019', '1033', 'Townhouse', 'Bacolod City', '12:00', '805', 'Barangay 36', '531', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(36, '1/9/2019', '1034', 'Townhouse', 'Bacolod City', '13:00', '806', 'Barangay 37', '532', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(37, '1/10/2019', '1035', 'Townhouse', 'Bacolod City', '14:00', '807', 'Barangay 38', '533', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(38, '12/8/2018', '700', 'Squatter', 'Bacolod City', '1:00', '789', 'Barangay 28', '600', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(39, '12/9/2018', '701', 'Squatter', 'Bacolod City', '2:00', '790', 'Barangay 29', '601', '2/4/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(40, '12/10/2018', '702', 'Squatter', 'Bacolod City', '3:00', '791', 'Barangay 30', '602', '2/5/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(41, '12/11/2018', '703', 'Squatter', 'Bacolod City', '4:00', '792', 'Barangay 31', '603', '2/6/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(42, '12/12/2018', '704', 'Squatter', 'Bacolod City', '5:00', '793', 'Barangay 32', '604', '2/7/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(43, '12/13/2018', '705', 'Squatter', 'Bacolod City', '6:00', '794', 'Barangay 33', '605', '2/8/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(44, '12/14/2018', '706', 'Squatter', 'Bacolod City', '7:00', '795', 'Barangay 34', '606', '2/9/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(45, '12/15/2018', '707', 'Squatter', 'Bacolod City', '8:00', '796', 'Barangay 35', '607', '2/10/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(46, '12/16/2018', '708', 'Squatter', 'Bacolod City', '9:00', '797', 'Barangay 36', '608', '2/11/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(47, '12/17/2018', '709', 'Squatter', 'Bacolod City', '10:00', '798', 'Barangay 37', '609', '2/12/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(48, '12/18/2018', '700', 'Squatter', 'Bacolod City', '11:00', '799', 'Barangay 38', '610', '2/13/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(49, '12/19/2018', '701', 'Squatter', 'Bacolod City', '12:00', '800', 'Barangay 39', '611', '2/14/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(50, '12/20/2018', '702', 'Squatter', 'Bacolod City', '10:00', '801', 'Barangay 40', '612', '2/15/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(51, '12/21/2018', '703', 'Squatter', 'Bacolod City', '11:00', '802', 'Alangilan', '613', '2/16/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(52, '12/22/2018', '704', 'Squatter', 'Bacolod City', '12:00', '803', 'Alangilan', '614', '2/17/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(53, '12/23/2018', '705', 'Squatter', 'Bacolod City', '13:00', '804', 'Alangilan', '615', '2/18/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(54, '12/24/2018', '706', 'Squatter', 'Bacolod City', '14:00', '805', 'Alangilan', '616', '2/19/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(55, '12/25/2018', '707', 'Squatter', 'Bacolod City', '15:00', '806', 'Alangilan', '617', '2/20/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(56, '12/26/2018', '708', 'Squatter', 'Bacolod City', '16:00', '807', 'Alangilan', '618', '2/21/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(57, '12/27/2018', '709', 'Squatter', 'Bacolod City', '17:00', '802', 'Alangilan', '619', '2/22/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(58, '12/28/2018', '710', 'Squatter', 'Bacolod City', '18:00', '803', 'Alangilan', '620', '2/23/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(59, '12/29/2018', '711', 'Townhouse', 'Bacolod City', '19:00', '804', 'Alangilan', '621', '2/24/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(60, '12/30/2018', '712', 'Townhouse', 'Bacolod City', '20:00', '805', 'Alangilan', '622', '2/25/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(61, '12/31/2018', '713', 'Townhouse', 'Bacolod City', '21:00', '806', 'Alangilan', '623', '2/26/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(62, '1/1/2019', '714', 'Townhouse', 'Bacolod City', '22:00', '807', 'Alangilan', '624', '2/27/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(63, '1/2/2019', '715', 'Townhouse', 'Bacolod City', '17:00', '808', 'Alangilan', '625', '2/28/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(64, '1/3/2019', '716', 'Townhouse', 'Bacolod City', '18:00', '809', 'Alangilan', '626', '3/1/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(65, '1/4/2019', '717', 'Townhouse', 'Bacolod City', '19:00', '810', 'Alijis', '627', '3/2/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(66, '1/5/2019', '718', 'Townhouse', 'Bacolod City', '20:00', '811', 'Alijis', '628', '3/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(67, '1/6/2019', '719', 'Townhouse', 'Bacolod City', '21:00', '812', 'Alijis', '629', '3/4/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(68, '1/7/2019', '720', 'Townhouse', 'Bacolod City', '22:00', '813', 'Alijis', '630', '3/5/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(69, '1/8/2019', '721', 'Townhouse', 'Bacolod City', '23:00', '814', 'Alijis', '631', '3/6/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(70, '1/9/2019', '722', 'Townhouse', 'Bacolod City', '0:00', '815', 'Alijis', '632', '3/7/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(71, '1/10/2019', '723', 'Townhouse', 'Bacolod City', '1:00', '816', 'Alijis', '633', '3/8/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(72, '1/11/2019', '724', 'Townhouse', 'Bacolod City', '2:00', '817', 'Alijis', '634', '3/9/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(73, '1/1/2019', '300', 'Slum', 'Bacolod City', '0:02', '600', 'Banago', '200', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(74, '1/2/2019', '301', 'Slum', 'Bacolod City', '1:00', '601', 'Banago', '201', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(75, '1/3/2019', '302', 'Slum', 'Bacolod City', '2:00', '602', 'Banago', '202', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(76, '1/4/2019', '303', 'Slum', 'Bacolod City', '3:00', '603', 'Banago', '203', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(77, '1/5/2019', '304', 'Slum', 'Bacolod City', '4:00', '604', 'Banago', '204', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(78, '1/6/2019', '305', 'Slum', 'Bacolod City', '5:00', '605', 'Banago', '205', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(79, '1/7/2019', '306', 'Slum', 'Bacolod City', '6:00', '606', 'Banago', '206', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(80, '1/8/2019', '307', 'Slum', 'Bacolod City', '7:00', '607', 'Banago', '207', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(81, '1/9/2019', '308', 'Slum', 'Bacolod City', '8:00', '608', 'Banago', '208', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(82, '1/10/2019', '309', 'Slum', 'Bacolod City', '9:00', '609', 'Barangay 1', '209', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(83, '1/11/2019', '310', 'Slum', 'Bacolod City', '10:00', '610', 'Barangay 2', '210', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(84, '1/12/2019', '311', 'Townhouse', 'Bacolod City', '11:00', '611', 'Barangay 3', '211', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(85, '1/13/2019', '312', 'Townhouse', 'Bacolod City', '12:00', '612', 'Barangay 4', '212', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(86, '1/14/2019', '313', 'Townhouse', 'Bacolod City', '13:00', '613', 'Barangay 5', '213', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(87, '1/15/2019', '314', 'Townhouse', 'Bacolod City', '14:00', '614', 'Barangay 6', '214', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(88, '1/16/2019', '315', 'Townhouse', 'Bacolod City', '15:00', '700', 'Barangay 7', '215', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(89, '1/17/2019', '316', 'Townhouse', 'Bacolod City', '16:00', '701', 'Barangay 3', '216', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(90, '1/18/2019', '317', 'Townhouse', 'Bacolod City', '17:00', '702', 'Barangay 4', '217', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(91, '1/19/2019', '318', 'Townhouse', 'Bacolod City', '18:00', '703', 'Barangay 5', '218', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(92, '1/20/2019', '319', 'Townhouse', 'Bacolod City', '19:00', '704', 'Barangay 6', '219', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(93, '1/21/2019', '320', 'Townhouse', 'Bacolod City', '20:00', '705', 'Barangay 7', '220', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(94, '1/22/2019', '200', 'Townhouse', 'Bacolod City', '21:00', '706', 'Barangay 8', '221', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(95, '1/23/2019', '201', 'Townhouse', 'Bacolod City', '22:00', '707', 'Barangay 8', '222', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(96, '1/24/2019', '202', 'Townhouse', 'Bacolod City', '4:00', '708', 'Barangay 9', '223', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(97, '1/1/2019', '203', 'Townhouse', 'Bacolod City', '5:00', '100', 'Barangay 10', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(98, '1/2/2019', '204', 'Townhouse', 'Bacolod City', '6:00', '101', 'Barangay 11', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(99, '1/3/2019', '205', 'Townhouse', 'Bacolod City', '7:00', '102', 'Barangay 12', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(100, '1/4/2019', '206', 'Townhouse', 'Bacolod City', '8:00', '103', 'Barangay 13', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(101, '1/5/2019', '207', 'Townhouse', 'Bacolod City', '9:00', '104', 'Barangay 14', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(102, '1/6/2019', '208', 'Townhouse', 'Bacolod City', '10:00', '105', 'Barangay 1', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(103, '1/7/2019', '209', 'Townhouse', 'Bacolod City', '11:00', '106', 'Barangay 2', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(104, '1/8/2019', '210', 'Townhouse', 'Bacolod City', '12:00', '107', 'Barangay 3', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(105, '1/9/2019', '211', 'Townhouse', 'Bacolod City', '13:00', '108', 'Barangay 4', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(106, '1/10/2019', '212', 'Townhouse', 'Bacolod City', '14:00', '230', 'Barangay 5', '0', '2/3/2019 1:00', 'Jan', '2019', 'Nathaniel Deguzman'),
+(107, '12/8/2018', '213', 'Squatter', 'Bacolod City', '1:00', '231', 'Barangay 6', '0', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(108, '12/9/2018', '214', 'Squatter', 'Bacolod City', '2:00', '232', 'Bata', '0', '2/4/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(109, '12/10/2018', '215', 'Squatter', 'Bacolod City', '3:00', '233', 'Bata', '0', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(110, '12/11/2018', '600', 'Squatter', 'Bacolod City', '4:00', '234', 'Bata', '0', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(111, '12/12/2018', '601', 'Squatter', 'Bacolod City', '5:00', '235', 'Bata', '0', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(112, '12/13/2018', '602', 'Squatter', 'Bacolod City', '6:00', '236', 'Bata', '0', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(113, '12/14/2018', '603', 'Squatter', 'Bacolod City', '7:00', '237', 'Cabug', '0', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(114, '12/15/2018', '604', 'Squatter', 'Bacolod City', '8:00', '238', 'Cabug', '210', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(115, '12/16/2018', '605', 'Squatter', 'Bacolod City', '9:00', '239', 'Cabug', '211', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(116, '12/17/2018', '606', 'Squatter', 'Bacolod City', '10:00', '240', 'Cabug', '212', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(117, '12/18/2018', '607', 'Squatter', 'Bacolod City', '11:00', '241', 'Cabug', '213', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(118, '12/19/2018', '608', 'Squatter', 'Bacolod City', '12:00', '242', 'Handumanan', '214', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(119, '12/20/2018', '609', 'Squatter', 'Bacolod City', '10:00', '243', 'Handumanan', '215', '2/3/2019 1:00', 'Feb', '2019', 'Nathaniel Deguzman'),
+(120, '12/21/2018', '610', 'Squatter', 'Bacolod City', '11:00', '244', 'Handumanan', '216', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(121, '12/22/2018', '611', 'Squatter', 'Bacolod City', '12:00', '245', 'Handumanan', '217', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(122, '12/23/2018', '612', 'Squatter', 'Bacolod City', '13:00', '246', 'Taculing', '218', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(123, '12/24/2018', '613', 'Squatter', 'Bacolod City', '14:00', '247', 'Taculing', '219', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(124, '12/25/2018', '614', 'Squatter', 'Bacolod City', '15:00', '248', 'Taculing', '220', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(125, '12/26/2018', '615', 'Squatter', 'Bacolod City', '16:00', '249', 'Taculing', '219', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(126, '12/27/2018', '616', 'Squatter', 'Bacolod City', '17:00', '250', 'Taculing', '220', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(127, '12/28/2018', '617', 'Squatter', 'Bacolod City', '18:00', '251', 'Taculing', '221', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(128, '12/29/2018', '618', 'Slum', 'Bacolod City', '19:00', '252', 'Villamonte', '222', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(129, '12/30/2018', '619', 'Slum', 'Bacolod City', '20:00', '253', 'Villamonte', '223', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(130, '12/31/2018', '620', 'Slum', 'Bacolod City', '21:00', '254', 'Villamonte', '224', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(131, '1/1/2019', '621', 'Slum', 'Bacolod City', '22:00', '707', 'Villamonte', '225', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(132, '1/2/2019', '622', 'Slum', 'Bacolod City', '17:00', '708', 'Villamonte', '226', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(133, '1/3/2019', '623', 'Slum', 'Bacolod City', '18:00', '709', 'Villamonte', '227', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(134, '1/4/2019', '624', 'Slum', 'Bacolod City', '19:00', '710', 'Villamonte', '228', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(135, '1/5/2019', '625', 'Slum', 'Bacolod City', '20:00', '711', 'Vista Alegre', '229', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(136, '1/6/2019', '626', 'Slum', 'Bacolod City', '21:00', '712', 'Vista Alegre', '230', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(137, '1/7/2019', '627', 'Slum', 'Bacolod City', '22:00', '713', 'Vista Alegre', '231', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(138, '1/8/2019', '628', 'Slum', 'Bacolod City', '23:00', '714', 'Vista Alegre', '232', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(139, '1/9/2019', '629', 'Slum', 'Bacolod City', '0:00', '715', 'Vista Alegre', '233', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(140, '1/10/2019', '630', 'Slum', 'Bacolod City', '1:00', '716', 'Vista Alegre', '234', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk'),
+(141, '1/11/2019', '631', 'Slum', 'Bacolod City', '2:00', '717', 'Vista Alegre', '235', '2/3/2019 1:00', 'Feb', '2019', 'Matt Murdockk');
 
 -- --------------------------------------------------------
 
@@ -378,6 +595,30 @@ INSERT INTO `fire_protection` (`checklist_id`, `description`) VALUES
 ('Fire_Protection_Req_5', 'Provide automatic chemical extinguishing system on all areas where electronic/electrical equipment are located.'),
 ('Fire_Protection_Req_1', 'Provide approved type portable fire extinguisher (dry chemical) ABC type,	_________ lbs. capacity for every 278 m2. (3000 ft2) of floor area or\r\n                                                        22.8 m (75 ft) travel distance on every floor level.'),
 ('Fire_Protection_Req_6', 'Provide   approved-type automatic fire extinguishing system in\r\n                                                        accordance with NFPA 13.  Approval of system plan is required prior to installation.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fire_station`
+--
+
+CREATE TABLE `fire_station` (
+  `id` int(100) NOT NULL,
+  `fire_station_no` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fire_station`
+--
+
+INSERT INTO `fire_station` (`id`, `fire_station_no`) VALUES
+(1, '1'),
+(2, '2'),
+(3, '3'),
+(4, '4'),
+(5, '5'),
+(6, '6'),
+(7, '7');
 
 -- --------------------------------------------------------
 
@@ -444,20 +685,17 @@ CREATE TABLE `inspection_report` (
   `checklist_protection` varchar(100) NOT NULL,
   `checklist_equipments` varchar(100) NOT NULL,
   `checklist_hazardous` varchar(100) NOT NULL,
-  `checklist_operating` varchar(100) NOT NULL
+  `checklist_operating` varchar(100) NOT NULL,
+  `status_of_checklist` varchar(100) NOT NULL,
+  `inspection_cro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inspection_report`
 --
 
-INSERT INTO `inspection_report` (`ir_no`, `io_no`, `application_no`, `owner_name`, `owner_address`, `business_name`, `establishment_address`, `bldg_height`, `lot_size`, `number_of_floors`, `date_applied`, `month`, `year`, `inspection_status`, `recommendation`, `checklist_classification`, `checklist_exit`, `checklist_lightings`, `checklist_protection`, `checklist_equipments`, `checklist_hazardous`, `checklist_operating`) VALUES
-(1, 'IO-2018-12-1', '2018-12-12', ' Constantia Armall', 'Blck 16, North East Village', 'Northfield Bancorp, Inc.', '80 Hudson Hill', '78', '60000', '6', 'December 31, 2018 3:53 pm', 'Dec', '2018', 'Inspection Report', 'Recommend', '', '', '', '', '', '', ''),
-(2, 'IO-2018-12-2', '2018-12-13', ' Irwinn Bushell', 'Blck 16, North East Village', 'Ichor Holdings', '8 Hazelcrest Center', '22', '60000', '6', 'December 31, 2018 3:50 pm', 'Dec', '2018', 'Inspection Report', '', '', '', '', '', '', '', ''),
-(3, 'IO-2018-12-3', '2018-12-14', ' Bettye Tapping', 'Blck 16, North East Village', 'Zoetis Inc.', '585 Cardinal Point', '66', '60000', '5', 'December 31, 2018 3:57 pm', 'Dec', '2018', 'Inspection Report', 'Work', '', '', '', '', '', '', ''),
-(4, 'IO-2018-12-4', '2018-12-15', ' Bettye Tapping', 'San Luis', 'CBAK Energy Technology, Inc.', '3860 Oriole Plaza', '10', '60000', '6', 'December 31, 2018 11:11 pm', 'Dec', '2018', 'Inspection Report', 'Refrained', '', '', '', '', '', '', ''),
-(5, 'IO-2019-01-5', '2018-12-16', ' Melodie Brosenius', 'San Enrique', 'NewStar Financial, Inc.', '83589 Muir Street', '312313', '60000', '5', '19-01-03', 'January 3, 2019 11:36 amJan', '2019', 'Inspection Report', 'Many', '', '', '', '', '', '', ''),
-(6, 'IO-2019-01-6', '2018-12-21', ' Constantia Armall', 'Blck 16, North East Village', 'Zoetis Inc.', '3860 Oriole Plaza', '89', '60000', '4', 'Jan-11-2019', 'Jan', '2019', 'Inspection Report', 'List of Scurvy', 'Kwashiorkor', 'Marasmus', 'Tetany', 'Goiter', 'Keshan disease', 'Beriberi', 'Pellagra');
+INSERT INTO `inspection_report` (`ir_no`, `io_no`, `application_no`, `owner_name`, `owner_address`, `business_name`, `establishment_address`, `bldg_height`, `lot_size`, `number_of_floors`, `date_applied`, `month`, `year`, `inspection_status`, `recommendation`, `checklist_classification`, `checklist_exit`, `checklist_lightings`, `checklist_protection`, `checklist_equipments`, `checklist_hazardous`, `checklist_operating`, `status_of_checklist`, `inspection_cro`) VALUES
+(4, 'IO-2019-02-1', '4', 'Jude Law', 'Blck 16, North East Village', 'Game Tyrant', 'Kahndaq Â· â€ŽMehen', '13131', '2', '3', 'Feb-05-2019', 'Feb', '2019', 'Inspection Report', 'Borrow Hello World', 'Hello World', 'NA', 'Borrow', 'Hello World', 'Borrow', 'Borrow', 'NA', 'issued NTC', 'Nathaniel Deguzman');
 
 -- --------------------------------------------------------
 
@@ -482,7 +720,35 @@ CREATE TABLE `inspection_schedule` (
 --
 
 INSERT INTO `inspection_schedule` (`io_schedule`, `io_no`, `inspectors`, `inspection_date`, `inspection_time`, `date_applied`, `month`, `year`, `status`) VALUES
-(1, 'IO-2018-12-1', 'Cardo', '2018-12-04', '13:50', 'December 26, 2018 - 11:03 pm', 'Dec', '2018', 'Complete');
+(1, 'IO-2019-02-1', 'Haley ', 'February 04, 2019', '15:00', 'February 4, 2019 - 11:58 am', 'Feb', '2019', 'Pending'),
+(2, 'IO-2019-02-2', 'Haley ', 'February 04, 2019', '16:00', 'February 4, 2019 - 12:31 pm', 'Feb', '2019', 'Pending'),
+(3, 'IO-2019-02-4', 'Angie  Wildgoose', 'February 13, 2019', '15:02', 'February 4, 2019 - 4:26 pm', 'Feb', '2019', 'Pending'),
+(4, 'IO-2019-02-1', 'Michael Callejas', 'February 06, 2019', '14:31', 'February 5, 2019 - 6:41 pm', 'Feb', '2019', 'Pending'),
+(5, 'IO-2019-02-1', 'Michael Callejas', 'February 06, 2019', '16:21', 'February 5, 2019 - 6:46 pm', 'Feb', '2019', 'Pending'),
+(6, 'IO-2019-02-5', 'Alma  Ethridge', 'February 07, 2019', '14:31', 'February 7, 2019 - 6:02 pm', 'Feb', '2019', 'Pending'),
+(7, 'IO-2019-02-5', 'Alma  Ethridge', 'February 08, 2019', '15:02', 'February 7, 2019 - 6:03 pm', 'Feb', '2019', 'Pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `inspectors`
+--
+
+CREATE TABLE `inspectors` (
+  `id` int(11) NOT NULL,
+  `inspectors` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `inspectors`
+--
+
+INSERT INTO `inspectors` (`id`, `inspectors`) VALUES
+(1, 'Cardo'),
+(2, 'Dalisay'),
+(3, 'Vincent'),
+(4, 'Elmer'),
+(5, 'John');
 
 -- --------------------------------------------------------
 
@@ -497,7 +763,6 @@ CREATE TABLE `issue_notice` (
   `owner_name` varchar(100) NOT NULL,
   `inspector_name` varchar(100) NOT NULL,
   `business_name` varchar(100) NOT NULL,
-  `deficiency` varchar(100) NOT NULL,
   `date_issued` varchar(100) NOT NULL,
   `IR_date_applied` varchar(100) NOT NULL,
   `application_no` varchar(100) NOT NULL,
@@ -506,15 +771,16 @@ CREATE TABLE `issue_notice` (
   `grace_period_from` varchar(100) NOT NULL,
   `grace_period_to` varchar(100) NOT NULL,
   `month` varchar(100) NOT NULL,
-  `year` varchar(100) NOT NULL
+  `year` varchar(100) NOT NULL,
+  `deficiency_checklist` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `issue_notice`
 --
 
-INSERT INTO `issue_notice` (`issue_notice_no`, `type_of_notice`, `amount`, `owner_name`, `inspector_name`, `business_name`, `deficiency`, `date_issued`, `IR_date_applied`, `application_no`, `inspection_order`, `business_address`, `grace_period_from`, `grace_period_to`, `month`, `year`) VALUES
-(2, 'Comply', '5000', ' Melodie Brosenius', 'Inspector Poe', 'NewStar Financial, Inc.', 'many', '2019-01-02', 'IR-2019-01-5', '16', 'IO-2019-01-5', 'san sebastian street', '2019-02-08', '2019-01-29', 'Jan', '2019');
+INSERT INTO `issue_notice` (`issue_notice_no`, `type_of_notice`, `amount`, `owner_name`, `inspector_name`, `business_name`, `date_issued`, `IR_date_applied`, `application_no`, `inspection_order`, `business_address`, `grace_period_from`, `grace_period_to`, `month`, `year`, `deficiency_checklist`) VALUES
+(1, 'Correct Violation', '4000', 'Jude Law', 'Alma  Ethridge', 'Game Tyrant', '2019-02-11', 'IO-2019-02-4', '4', 'IO-2019-02-1', 'Kahndaq Â· â€ŽMehen', '2019-02-19', '2019-02-04', 'Feb', '2019', 'checklist1,checklist2,checklist3,checklist4,');
 
 -- --------------------------------------------------------
 
@@ -574,57 +840,201 @@ INSERT INTO `means_of_egress` (`checklist_id`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `misc`
+-- Table structure for table `messages`
 --
 
-CREATE TABLE `misc` (
-  `checklist_id` varchar(50) NOT NULL,
-  `description` varchar(1000) NOT NULL
+CREATE TABLE `messages` (
+  `id` int(50) NOT NULL,
+  `application_no` varchar(50) NOT NULL,
+  `owner_name` varchar(50) NOT NULL,
+  `number` varchar(500) NOT NULL,
+  `text_message` varchar(500) NOT NULL,
+  `transaction` varchar(500) NOT NULL,
+  `date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `misc`
+-- Dumping data for table `messages`
 --
 
-INSERT INTO `misc` (`checklist_id`, `description`) VALUES
-('Miscellaneous_Req_1', 'Provide outside window opening on bedrooms with a clear opening of not less than fifty six (56) cm in least dimension and forty five- hundredths (0.45) m2 in area. The bottom of the window shall be not more than one hundred twenty two (122) cm above the floor.'),
-('Miscellaneous_Req_2', 'All  liquefied  petroleum  gas  equipment  including  such  equipment installed at utility gas plants shall be installed in accordance with the provisions of NFPA 59.'),
-('Miscellaneous_Req_3', 'No  grills  or  any  obstruction  shall  be  installed  on  window  openings and/or fire exits.'),
-('Miscellaneous_Req_4', 'Provide emergency lighting facilities with automatic transfer switch to AC/DC power source.'),
-('Miscellaneous_Req_5', 'Air conditioning ducts must be provided with approved fire dampers.'),
-('Miscellaneous_Req_6', ' Roof covering must be of non-combustible materials. Combustible roof covering must have fire retardant treatment.'),
-('Miscellaneous_Req_7', 'Provide fire escape ladder/s.'),
-('Miscellaneous_Req_8', 'Provide fire escape stair/s.'),
-('Miscellaneous_Req_9', 'All unit partition wall shall be extended up to upper floor slab and/or one (1) meter above the roofline.'),
-('Miscellaneous_Req_10', 'Provide effective means of smoke ventilation such as access panels, movable windows.'),
-('Miscellaneous_Req_11', 'Project  activity  shall  not  affect  the  effectivity  of  the  existing  fire protection facilities.');
+INSERT INTO `messages` (`id`, `application_no`, `owner_name`, `number`, `text_message`, `transaction`, `date`) VALUES
+(1, '25', 'James Good', '09474298815', 'Good Day! Mr/Ms Ignacio your file has already been assessed!', 'Assessment', 'January 17, 2019 10:50 pm'),
+(2, '24', 'Courtney House', '09085553776', 'Good Day! Mr/Ms kelly your file has already been assessed!', 'Assessment', 'January 17, 2019 10:50 pm'),
+(3, '23', 'Matthew Ben', '09281615797', 'Good Day! Mr/Ms Prince Ledesma your file has already been assessed!', 'Assessment', 'January 17, 2019 10:50 pm'),
+(4, '26', 'Casey Rapid', '09281615797', 'Good Day! Mr/Ms Gay Barnet you have passed the inspection and your file is ready for certification', 'Evaluation', 'January 17, 2019 10:50 pm'),
+(5, '27', 'Casey Rappa', '09085553776', 'Good Day! Mr/Ms Casey Rappa your file has already been assessed!', 'Assessment', 'January 17, 2019 10:50 pm'),
+(6, '57', 'Prince Ledesma', '09474298815', '', 'Assessment', 'January 18, 2019 3:51 am'),
+(7, '7', 'Alain Palluschek', '09956471293', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  Alain Palluschek you have passed the evaluation and your application is ready for clearance.', 'Assessment', 'January 18, 2019 2:29 pm'),
+(8, '7', 'jan2', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  jan2 you have passed the inspection and your application is ready for clearance.', 'Issue Notice', 'January 18, 2019 6:12 pm'),
+(9, '2019-01-7', 'jan2', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>89</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  jan2 you have passed the inspection and your application is ready for clearance.', 'Issue Notice', 'January 18, 2019 6:41 pm'),
+(10, '40', ' Sanni', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Sannithat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Inspection', 'January 18, 2019 7:07 pm'),
+(11, '38', ' Claudia Jelk', 'cpnumb', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Claudia Jelkthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'January 18, 2019 7:10 pm'),
+(12, '3', ' Octavius', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you   Octavius you have passed the inspection and your application is ready for clearance.', 'Issue Notice', 'January 18, 2019 7:13 pm'),
+(13, '2019-01-38', ' Claudia Jelk', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>89</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Claudia Jelkthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'January 18, 2019 7:14 pm'),
+(14, '4', ' Sanni', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Sannithat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'January 18, 2019 7:14 pm'),
+(15, '28', 'Mark', '09085553776', 'Mr/Ms Markyour assessment was successfully verified.', 'Assessment', 'January 20, 2019 11:08 pm'),
+(16, '', '', '', '', 'Assessment', 'January 20, 2019 11:23 pm'),
+(17, '', '', '', '', 'Assessment', 'January 20, 2019 11:24 pm'),
+(18, '24', 'Ignacio', '09474298815', 'Mr/Ms Ignacioyour assessment was successfully verified.', 'Assessment', 'January 20, 2019 11:32 pm'),
+(19, '55', ' Elmer', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Elmerthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Inspection', 'January 20, 2019 11:35 pm'),
+(20, '54', 'LJEE', 'cpnumb', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  LJEE you have passed the inspection and your application is ready for clearance.', 'Inspection', 'January 20, 2019 11:42 pm'),
+(21, '153', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetanoyour assessment was put on hold because you have not fully paid the required amount for your application.', 'Assessment', 'January 23, 2019 12:55 am'),
+(22, '153', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified.', 'Assessment', 'January 23, 2019 12:57 am'),
+(23, '109', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified.', 'Assessment', 'January 23, 2019 1:31 am'),
+(24, '109', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified.', 'Assessment', 'January 23, 2019 1:38 am'),
+(25, '109', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified.', 'Assessment', 'January 23, 2019 1:39 am'),
+(26, '109', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified.', 'Assessment', 'January 23, 2019 1:40 am'),
+(27, '109', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified.', 'Assessment', 'January 23, 2019 1:41 am'),
+(28, '53', ' Kenny', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Kennythat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Inspection', 'January 23, 2019 3:13 am'),
+(29, '2019-01-38', ' Claudia Jelk', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>89</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms  Claudia Jelkthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'January 24, 2019 1:16 am'),
+(30, '1', 'Kenneth Cayetano', '09474298815', 'Mr/Ms Kenneth Cayetano your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 12:59 am'),
+(31, '10', 'Adams Steven', '09275757024', 'Mr/Ms Adams Steven your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:01 am'),
+(32, '100', 'Margit Collomosse', '9275757024', 'Mr/Ms Margit Collomosse your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:05 am'),
+(33, '101', 'Mercedes Fenelon', '9275757024', 'Mr/Ms Mercedes Fenelon your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:05 am'),
+(34, '102', 'Tove Straffon', '9275757024', 'Mr/Ms Tove Straffon your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:08 am'),
+(35, '103', 'Milt Meiningen', '9275757024', 'Mr/Ms Milt Meiningen your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:08 am'),
+(36, '104', 'Esdras Chaize', '9275757024', 'Mr/Ms Esdras Chaize your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:09 am'),
+(37, '105', 'Rolfe Seabrooke', '9275757024', 'Mr/Ms Rolfe Seabrooke your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:26 am'),
+(38, '106', 'Ezra Alexandersen', '9275757024', 'Mr/Ms Ezra Alexandersen your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:29 am'),
+(39, '11', 'Adebayo Bam', '09275757024', 'Mr/Ms Adebayo Bam your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:40 am'),
+(40, '107', 'Ronny See', '09275757024', 'Mr/Ms Ronny See your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:40 am'),
+(41, '108', 'Ximenes Stain', '09275757024', 'Mr/Ms Ximenes Stain your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:41 am'),
+(42, '109', 'Britney Ambrosi', '09275757024', 'Mr/Ms Britney Ambrosi your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:48 am'),
+(43, '110', 'Ivy Gaynor', '09275757024', 'Mr/Ms Ivy Gaynor your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:50 am'),
+(44, '111', 'Corene Ellis', '09275757024', 'Mr/Ms Corene Ellis your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 1:56 am'),
+(45, '112', 'Giorgi Deener', '09275757024', 'Mr/Ms Giorgi Deener your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 2:01 am'),
+(46, '113', 'Kingsly Stolberg', '09275757024', 'Mr/Ms Kingsly Stolberg your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 2:01 am'),
+(47, '114', 'Georgeanna Donaghie', '09275757024', 'Mr/Ms Georgeanna Donaghie your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 2:02 am'),
+(48, '117', 'Maribel Beverage', '09275757024', 'Mr/Ms Maribel Beverage your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:27 am'),
+(49, '118', 'Nonie Bagshaw', '09275757024', 'Mr/Ms Nonie Bagshaw your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:27 am'),
+(50, '119', 'Roley Flux', '09275757024', 'Mr/Ms Roley Flux your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:28 am'),
+(51, '12', 'Adel Deng', '09275757024', 'Mr/Ms Adel Deng your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:28 am'),
+(52, '120', 'Hulda Pockett', '09275757024', 'Mr/Ms Hulda Pockett your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:29 am'),
+(53, '121', 'Laetitia Pound', '09275757024', 'Mr/Ms Laetitia Pound your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:29 am'),
+(54, '115', 'Nat Astupenas', '09275757024', 'Mr/Ms Nat Astupenas your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:30 am'),
+(55, '116', 'Augusto Kristiansen', '09275757024', 'Mr/Ms Augusto Kristiansen your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:30 am'),
+(56, '122', 'Faith Wychard', '09275757024', 'Mr/Ms Faith Wychard your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:43 am'),
+(57, '214', 'Allen Raxworthy', '09085553776', 'Mr/Ms Allen Raxworthy your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:49 am'),
+(58, '256', 'Nicolis Gillmor', '09085553776', 'Mr/Ms Nicolis Gillmor your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:50 am'),
+(59, '266', 'Else Loveday', '09085553776', 'Mr/Ms Else Loveday your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:50 am'),
+(60, '228', 'Fields Ranshaw', '09085553776', 'Mr/Ms Fields Ranshaw your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:51 am'),
+(61, '274', 'Rosamond Jerrold', '09085553776', 'Mr/Ms Rosamond Jerrold your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:51 am'),
+(62, '264', 'Berget Kindley', '09085553776', 'Mr/Ms Berget Kindley your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:52 am'),
+(63, '270', 'Ailis Sabater', '09085553776', 'Mr/Ms Ailis Sabater your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:53 am'),
+(64, '224', 'Manda Surgener', '09085553776', 'Mr/Ms Manda Surgener your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:53 am'),
+(65, '272', 'Nickola Borrington', '09085553776', 'Mr/Ms Nickola Borrington your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:54 am'),
+(66, '254', 'Roarke Lenthall', '09085553776', 'Mr/Ms Roarke Lenthall your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:54 am'),
+(67, '262', 'Adelbert Glendining', '09085553776', 'Mr/Ms Adelbert Glendining your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:55 am'),
+(68, '290', 'Patience Selwyne', '09085553776', 'Mr/Ms Patience Selwyne your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:55 am'),
+(69, '234', 'Annecorinne Gasnoll', '09085553776', 'Mr/Ms Annecorinne Gasnoll your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:56 am'),
+(70, '246', 'Jere Greatex', '09085553776', 'Mr/Ms Jere Greatex your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 11:57 am'),
+(71, '214', 'Allen Raxworthy', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Allen Raxworthythat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 12:03 pm'),
+(72, '212', 'Keslie Handasyde', '09085553776', 'Mr/Ms Keslie Handasyde your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 12:24 pm'),
+(73, '226', 'Arabele Konertz', '09085553776', 'Mr/Ms Arabele Konertz your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 12:26 pm'),
+(74, '240', 'Constantine Crips', '09085553776', 'Mr/Ms Constantine Crips your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 12:28 pm'),
+(75, '242', 'Louis Hardbattle', '09085553776', 'Mr/Ms Louis Hardbattle your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 4, 2019 12:28 pm'),
+(76, '214', 'Allen Raxworthy', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Allen Raxworthythat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 12:30 pm'),
+(77, '214', 'Allen Raxworthy', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  Allen Raxworthy you have passed the inspection and your application is ready for clearance.  In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 12:34 pm'),
+(78, '8', 'Allen Raxworthy', '09275757024', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Allen Raxworthythat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.  In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Issue Notice', 'February 4, 2019 12:51 pm'),
+(79, '', 'Allen Raxworthy', '', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Allen Raxworthythat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.  In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Issue Notice', 'February 4, 2019 12:53 pm'),
+(80, '', 'Allen Raxworthy', '', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Allen Raxworthythat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.  In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Issue Notice', 'February 4, 2019 12:54 pm'),
+(81, '256', 'Nicolis Gillmor', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 3:55 pm'),
+(82, '256', 'Nicolis Gillmor', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 4:27 pm'),
+(83, '256', 'Nicolis Gillmor', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 4:33 pm'),
+(84, '256', 'Nicolis Gillmor', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 4:44 pm'),
+(85, '256', 'Nicolis Gillmor', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.  In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Issue Notice', 'February 4, 2019 4:44 pm'),
+(86, '256', 'Nicolis Gillmor', '09085553776', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 4, 2019 4:51 pm'),
+(87, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:13 pm'),
+(88, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  Nicolis Gillmor you have passed the inspection and your application is ready for clearance.', 'Issue Notice', 'February 4, 2019 6:14 pm'),
+(89, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:17 pm'),
+(90, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:22 pm'),
+(91, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:24 pm'),
+(92, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:25 pm'),
+(93, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:25 pm'),
+(94, '256', 'Nicolis Gillmor', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>91</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Nicolis Gillmorthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 4, 2019 6:26 pm'),
+(95, '3', 'Billy Batson', '09474298815', 'Mr/Ms Billy Batson your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 5, 2019 6:38 pm'),
+(96, '4', 'Jude Law', '09474298815', 'Mr/Ms Jude Law your assessment was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 5, 2019 6:39 pm'),
+(97, '4', 'Jude Law', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Jude Lawthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 5, 2019 6:42 pm'),
+(98, '4', 'Jude Law', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Jude Lawthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 5, 2019 6:46 pm'),
+(99, '4', 'Jude Law', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Jude Lawthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 5, 2019 6:50 pm'),
+(100, '4', 'Jude Law', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Jude Lawthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Inspection', 'February 5, 2019 6:55 pm'),
+(101, '4', 'Jude Law', '<br />\r\n<b>Notice</b>:  Undefined index: cpnumb in <b>C:xampphtdocsupdated-thesisfp-bcmismodalsViewIssueNotice.php</b> on line <b>95</b><br />\r\n', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you Mr/Ms Jude Lawthat your application did not pass the inspection, we issue notice to comply and we will message you for further notice.', 'Issue Notice', 'February 5, 2019 7:11 pm'),
+(102, '3', 'Billy Batson', '09474298815', 'We are the Bureau of Fire Protection - Bacolod City and we would like to inform you  Billy Batson you have passed the evaluation and your application is ready for clearance. In case of Emergency please contact 117 or 434-5022 or 434-5023. ', 'Assessment', 'February 5, 2019 7:19 pm');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `officer`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `officer` (
+  `1` int(10) NOT NULL,
+  `officer_type` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `officer`
+--
+
+INSERT INTO `officer` (`1`, `officer_type`) VALUES
+(1, 'CRO'),
+(2, 'Assessor'),
+(3, 'Inspector'),
+(4, 'Evaluator'),
+(5, 'Inspection-CRO');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rank`
+--
+
+CREATE TABLE `rank` (
+  `id` int(10) NOT NULL,
+  `rank_code` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rank`
+--
+
+INSERT INTO `rank` (`id`, `rank_code`) VALUES
+(1, 'F01'),
+(2, 'F02'),
+(3, 'F03'),
+(4, 'F04'),
+(5, 'SF01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
-  `login` varchar(100) NOT NULL
+  `login` varchar(100) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `user` (`id`, `name`, `password`, `fname`, `lname`, `login`) VALUES
-(7, 'assessor1', 'assessor1', '', '', ''),
-(9, 'user2', 'cooluser2', '', '', ''),
-(10, 'user3', 'cooluser3', '', '', ''),
-(11, 'ken05cay', 'ken05', '', '', 'January 13, 2019, 5:03 pm'),
-(12, 'scecere0', 'ao68bc291xz', '', '', ''),
-(13, 'alvin2', 'alvin3', 'Alvin', 'Yanson', 'January 13, 2019, 7:44 pm');
+INSERT INTO `users` (`id`, `name`, `password`, `fname`, `lname`, `login`, `type`, `status`) VALUES
+(1, 'cro101', 'CROadmin101', 'Matt', 'Murdockk', 'February 8, 2019, 2:53 pm', 'CRO', 'Active'),
+(4, 'admin101', 'admin101', 'Kenneth', 'Canlog', 'January 27, 2019, 12:04 am', 'employee', 'Active'),
+(5, 'admin1234', 'admin1234', 'Clark', 'KE', 'January 29, 2019, 10:40 pm', 'Assessor', 'Active'),
+(6, 'assessor101', 'Assessor101', 'Joy', 'Villanueva', 'February 7, 2019, 10:30 pm', 'Assessor', 'Active'),
+(7, 'inspectioncro101', 'InspectionCro101', 'Nathaniel', 'Deguzman', 'February 8, 2019, 1:20 am', 'Inspection-CRO', 'Active'),
+(8, 'eval101', 'eval0119', 'Dennzel', 'Busquets', 'February 5, 2019, 7:13 pm', 'Evaluator', 'Active'),
+(9, 'inspector001', 'Inspector001', 'Michael', 'Callejas', 'February 5, 2019, 6:40 pm', 'Inspector', 'Active'),
+(10, 'ironfist12', 'Ironfist12', 'Danny', 'Rand', 'February 5, 2019, 6:37 pm', 'Assessor', 'Active');
 
 -- --------------------------------------------------------
 
@@ -701,6 +1111,12 @@ ALTER TABLE `assessment`
   ADD PRIMARY KEY (`ops_no`);
 
 --
+-- Indexes for table `backup`
+--
+ALTER TABLE `backup`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `barangay`
 --
 ALTER TABLE `barangay`
@@ -723,6 +1139,18 @@ ALTER TABLE `employee`
 --
 ALTER TABLE `evaluation_checklist`
   ADD PRIMARY KEY (`checklist_no`);
+
+--
+-- Indexes for table `fire_incident`
+--
+ALTER TABLE `fire_incident`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `fire_station`
+--
+ALTER TABLE `fire_station`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `inspection`
@@ -749,15 +1177,39 @@ ALTER TABLE `inspection_schedule`
   ADD PRIMARY KEY (`io_schedule`);
 
 --
+-- Indexes for table `inspectors`
+--
+ALTER TABLE `inspectors`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `issue_notice`
 --
 ALTER TABLE `issue_notice`
   ADD PRIMARY KEY (`issue_notice_no`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `messages`
 --
-ALTER TABLE `user`
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `officer`
+--
+ALTER TABLE `officer`
+  ADD PRIMARY KEY (`1`);
+
+--
+-- Indexes for table `rank`
+--
+ALTER TABLE `rank`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
@@ -769,37 +1221,55 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `application_no` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `application_no` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `assessment`
 --
 ALTER TABLE `assessment`
-  MODIFY `ops_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ops_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `backup`
+--
+ALTER TABLE `backup`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `barangay`
 --
 ALTER TABLE `barangay`
-  MODIFY `barangay_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `barangay_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `bldg_construct`
 --
 ALTER TABLE `bldg_construct`
-  MODIFY `bc_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `bc_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `evaluation_checklist`
 --
 ALTER TABLE `evaluation_checklist`
-  MODIFY `checklist_no` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `checklist_no` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `fire_incident`
+--
+ALTER TABLE `fire_incident`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+
+--
+-- AUTO_INCREMENT for table `fire_station`
+--
+ALTER TABLE `fire_station`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `inspection`
@@ -817,25 +1287,43 @@ ALTER TABLE `inspection_order`
 -- AUTO_INCREMENT for table `inspection_report`
 --
 ALTER TABLE `inspection_report`
-  MODIFY `ir_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ir_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `inspection_schedule`
 --
 ALTER TABLE `inspection_schedule`
-  MODIFY `io_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `io_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `inspectors`
+--
+ALTER TABLE `inspectors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `issue_notice`
 --
 ALTER TABLE `issue_notice`
-  MODIFY `issue_notice_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `issue_notice_no` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `messages`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `messages`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
+--
+-- AUTO_INCREMENT for table `officer`
+--
+ALTER TABLE `officer`
+  MODIFY `1` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

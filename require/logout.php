@@ -8,7 +8,7 @@
             </div>
             <div class="mb-footer">
                 <div class="pull-right">
-                    <a href="logout.php" class="btn btn-danger btn-lg">Yes</a>
+                    <a href="index.php" class="btn btn-danger btn-lg">Yes</a>
                     <button class="btn btn-default btn-lg mb-control-close">No</button>
                 </div>
             </div>

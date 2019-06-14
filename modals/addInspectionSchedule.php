@@ -2,12 +2,12 @@
 <!--Start Modal Add Schedule-->
 <?php
 require 'require/databaseconnection.php';
-$query2 = $conn->query("SELECT * FROM `inspection_report`") or die(mysqli_error());
-$fetch2 = $query->fetch_array();
+$query2 = $conn->query("SELECT * FROM `inspection_order` order by io_no DESC limit 1") or die(mysqli_error());
+$fetch2 = $query2->fetch_array();
+$io_no = $fetch2['io_no'] + 1;
 
 $month = date("m");
 $year = date('Y');
-$io_no = $fetch2['io_no'] + 1;
 ?>
 <!--Start Modal Add Schedule-->
 <div class="modal fade add_inspection" id="add_inspection" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
@@ -27,20 +27,18 @@ $io_no = $fetch2['io_no'] + 1;
                     <div class="row">
                         <div class="col-md-6">
                             <input type="hidden" name="application_number" value="<?php echo $fetch['application_no']?>"/>
-                            <input type="hidden" class="form-control" id="io_no" name="io_no" value="<?php echo 'IO' . '-' . $year . '-' . $month . '-' . $io_no ?>"/>
+                            <input type="hidden" class="form-control" id="io_no" name="io_no" value="<?php echo 'IO' . '-' . $year . '-' . $month . '-' . $io_no  ?>"/>
                             <div class="form-group">
                                 <label for="bldg-code" class="col-sm-5 control-label">Inspector&emsp;</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control select" id="inspectors_drop" name="inspectors_drop">
+                                    <select class="form-control select" id="inspector_name" name="inspector_name" data-live-search="true">
                                         <option disabled selected="selected">Select Inspector</option>
-
-
                                         <?php
-    $sql = "SELECT * FROM inspectors group by inspectors";
+    $sql = "SELECT * FROM employee where officer_type = 'Inspector' group by officer_fname";
                                    $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
                                    while( $rows = mysqli_fetch_assoc($resultset) ) {
                                         ?>
-                                        <option value="<?php echo $rows["inspectors"]; ?>"><?php echo $rows["inspectors"]; ?></option>
+                                        <option value="<?php echo $rows["fullname"]?>"> <?php echo $rows["officer_fname"]. ' ' .$rows["officer_lname"]; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -62,19 +60,18 @@ $io_no = $fetch2['io_no'] + 1;
                         </div>
                         <div class="col-lg-12">
                             <br>
-                            <div id="display">
-                                <div class="row" id="heading" style="display:none;"><h3>
-                                    <div class="col-sm-4"><strong>Inspector Name</strong></div>
-                                    <div class="col-sm-4"><strong>Inspection Date</strong></div><div class="col-sm-4">
-                                    <strong>Inspection Time</strong></div></h3>
-                                </div><br>			
-                                <div class="row" id="records">
-                                    <div class="col-sm-4" id="inspector"></div>
-                                    <div class="col-sm-4" id="inspector_date"></div>
-                                    <div class="col-sm-4" id="inspector_time"></div>
-                                </div>			
-                                <div class="row" id="no_records"><div class="col-sm-4">Plese select Inspector to view details</div></div>
-                            </div>
+								<table id="employee" class="table table-condensed" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Inspector Name</th>
+                                                <th>Inspection Date</th>
+                                                <th>Inspection Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
                             <hr>
 
 

@@ -3,7 +3,7 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                              <h3 class="modal-title">Pending List(Evaluation Checklist)</h3>
+                                                              <h3 class="modal-title">Evaluation Checklist Pending List</h3>
                                                     </div>
 
                                                     <div class="modal-body">
@@ -16,7 +16,7 @@
                                                         </div>
                                                         <br>
                                                         <br>
-                                                               <table class="table table-hover">
+                                                               <table class="table datatable">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>Application No.</th>
@@ -28,7 +28,7 @@
                                                                 <tbody>
                                                                 <?php
 require 'require/databaseconnection.php';
-$query = $conn->query("select * from `application` where assessment_status = 'Assessed' && 	application_type = 'FSEC' ") or die(mysqli_error());
+$query = $conn->query("select * from `application` where assessment_status = 'Assessed' && 	application_type = 'FSEC' && year = '$year'") or die(mysqli_error());
 while ($fetch = $query->fetch_array()) {
     $month = date("m", strtotime($fetch['month']));
     ?>

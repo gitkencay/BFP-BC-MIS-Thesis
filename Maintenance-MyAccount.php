@@ -10,7 +10,7 @@ require_once 'require/logincheck.php';
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->      
@@ -22,7 +22,7 @@ require_once 'require/logincheck.php';
     <!-- START PAGE CONTAINER -->
         <div class="page-container">
             <!-- START PAGE SIDEBAR -->
-                <?php require 'require/sidebar.php'?>
+                <?php require 'require/sidebar-CRO.php'?>
                 <!-- END PAGE SIDEBAR -->
         <div class="page-content">
         <!-- START X-NAVIGATION VERTICAL -->
@@ -44,10 +44,10 @@ require_once 'require/logincheck.php';
                         <?php
 	        require 'require/databaseconnection.php';
 			$id = $_SESSION['id'];
-			$query = $conn->query("SELECT * FROM `user` where `id` = '$id'") or die(mysqli_error());
+			$query = $conn->query("SELECT * FROM `users` where `id` = '$id'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
 							?>
-                            <form id="user" class="form-horizontal" action="actions/update_profile.php" method="post" onsubmit="return confirm('Are you sure you want to update your profile?');">
+                            <form id="user" class="form-horizontal" action="actions/update_profile.php" method="post">
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h3 class="panel-title"><strong> Update My Account</strong></h3>
@@ -75,13 +75,13 @@ require_once 'require/logincheck.php';
 										<h5 class="push-up-1">New Password</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input type="password" class="form-control" id="password" name="password" />
+												<input type="password" class="form-control" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{,}" title="Must contain at least one number and one uppercase and lowercase letter." required />
 											</div>
 										</div>
 										<h5 class="push-up-1">Confirm Password</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input type="password" class="form-control" id="confirm_password" name="confirm_password"/>
+												<input type="password" class="form-control" id="confirm_password" name="confirm_password" required/>
 											</div>
                                             <div class="col-md-6 col-xs-6" >
                                                 <strong> <span id="divCheckPasswordMatch" style="display: none;"> </span> </strong>
@@ -91,13 +91,39 @@ require_once 'require/logincheck.php';
 										<h5 class="push-up-1">Old Password</h5>
 										<div class="form-group ">
 											<div class="col-md-12 col-xs-12">
-												<input type="text" class="form-control" name="passwordold" id="passwordold" required/>
+												<input type="password" class="form-control" name="passwordold" id="passwordold" required/>
                                                 <div id ="old_response" ></div>
 											</div>
 										</div>
 									</div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <!-- <ul class="panel-controls"> -->
+                                                        <label for="confirm" style="display: none; font-size: 24px;text-align: center;" id="myaccount"  class="col-sm-12 control-label">
+                                                        Are you sure you want to edit this account?
+                                                        </label>
+                                                        <div class="col-sm-4">
+                                                                &nbsp;
+                                                        </div>
+                                                        <div id="confirmedyes2">
+                                                            <div class="col-sm-2">
+                                                                <button type="submit" style="display:none;" class="btn btn-info" id="myaccount1" name="save"><span class="fa fa-check"></span>Yes</button>
+                                                            </div>
+                                                        </div>
+                                                        <div id="confirmedno2">
+                                                            <div class="col-sm-2">
+                                                                <button type="button" style="display:none;" class="btn btn-danger" id="myaccount2" ><span class="fa fa-times"></span>No</button>
+                                                            </div>
+                                                        </div>    
+                                                    <!-- </ul>-->
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
 									<div class="panel-footer">
-										<button type="submit" id="save" name="save" class="btn btn-info pull-right">Update Profile</button>
+										<a class="btn btn-info pull-right" onclick="myFunctionMyaccount()">Update Profile</a>
 									</div>
 								</div>
 							</form>
@@ -147,22 +173,29 @@ require_once 'require/logincheck.php';
         <script type="text/javascript" src="js/settings.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>        
         <script type="text/javascript" src="js/actions.js"></script>
-<script>
+        <script>
             $("#user").validate({
                 ignore: [],
                 rules: {
                     password: {
-                        minlength: 6,
-                        maxlength: 10
+                        minlength: 8,
+                        maxlength: 16
                     },
                     'confirm_password': {
-                        minlength: 6,
-                        maxlength: 10,
+                        minlength: 8,
+                        maxlength: 16,
                         equalTo: "#password"
                     }
                 }
             });
         </script>
+        <script>
+                function myFunctionMyaccount() {
+                document.getElementById("myaccount").style.display = "block";
+                document.getElementById("myaccount1").style.display = "inline";
+                document.getElementById("myaccount2").style.display = "inline";
+            }
+    </script>
 
                   
         <!-- END SCRIPTS -->        

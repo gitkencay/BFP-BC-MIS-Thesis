@@ -35,72 +35,283 @@
 	margin-top: 30px;
 }
 
+#feeBody{
+	margin-left: 100px;
+}
+
+
+/*start fire code construction tax*/
 #Ini_FC_Constr{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#construction_tax{
+    color: black;
+    text-align: right;
+    direction: rtl;
+}
+
+/* end fire code construction tax*/
+
 #Com_FC_Constr{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
+/* start fire code reality tax*/
 #Ini_FC_RT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+ #reality_tax{
+    color: black;
+    text-align: right;
+    direction: rtl;
+}
+
+/* end fire code reality tax*/
+
 #Com_FC_RT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
 #Ini_FC_PT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
 #Com_FC_PT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
 #Ini_FC_ST{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
 #Com_FC_ST{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
+
+/* start premium tax*/
 #Ini_FC_PreT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#premium_tax{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* end premium tax*/
 #Com_FC_ProT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
+
+/* start inspection fee*/
 #Ini_FS_InspFee{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#inspection_fee{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* end inspection fee*/
 #Com_FS_InspFee{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
+
+/* start storage clearance*/
 #Ini_StorClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#storage_clearance{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* start storage clearance*/
+
+/* start sales tax*/
 #Ini_FC_ST{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#sales_tax{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* end premium tax*/
+
 #Com_StorClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
+/* start conveyance clearance*/
 #Ini_ConvClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#conveyance_clearance{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* end conveyance clearance*/
 #Com_ConvClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
+/* start Installation Clearance*/
 #Ini_InstClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#installation_clearance{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* end Installation Clearance*/
 #Com_InstClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
-#Ini_OtherClear{
+
+/* fire code proceed tax*/
+#Ini_FC_ProT{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
 }
+#proceeds_tax{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+/* fire code proceed tax*/
 #Com_OtherClear{
 	margin-bottom: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
 }
-#totalamt{
-	margin-bottom: 40px;
+
+/* start other clearance*/
+#Ini_OtherClear{
+	margin-top: 10px;
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	direction: rtl;
+}
+#other_clearance{
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+
+/* end other clearance*/
+#other_clearance{
+	margin-top: 10px;
+	color: black;
+	text-align: right;
+	
+}
+
+#totalbtn{
+	margin-left: 60px;
+}
+
+
+
+#changed{
+	margin-bottom: 30px;
+	margin-top: 10px;
+	color: black;
+    text-align: right;
+    direction: rtl;
+}
+
+#changebtn{
+	margin-bottom: 30px;
+	
+	margin-top: 10px;
+}
+
+#payment{
+	margin-left: 20px;
+	color: black;
+	text-align: right;
+	color: black;
+    direction: rtl;
+}
+#paymentview{
+
+	color: black;
+	text-align: right;
+	color: black;
+    direction: rtl;
+}
+
+#total_amount{
+	margin-bottom: 25px;
 	margin-top: 20px;
+	color: black;
+    text-align: right;
+    direction: rtl;
 }
 
 .AppRecOverView{

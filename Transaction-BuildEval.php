@@ -1,3 +1,7 @@
+<?php
+require_once 'require/logincheck.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -6,8 +10,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->      
@@ -20,7 +23,7 @@
         <div class="page-container">
 
             <!-- START PAGE SIDEBAR -->
-            <?php require 'require/sidebar.php'?>
+            <?php require 'require/sidebar-evaluator.php'?>
             <!-- END PAGE SIDEBAR -->
 
             <!-- PAGE CONTENT -->
@@ -46,7 +49,27 @@
 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
+                <div class="panel-heading">
+                    <div class="btn-group pull-right">
+                        <div class="form-group">
+                            <select class="form-control select input-sm" data-style="btn-primary" id="pyear">
+                                <option selected disabled>Select Year</option>
+                                <?php
+require 'require/databaseconnection.php';
+$query = $conn->query("SELECT * FROM `application` group by year") or die(mysqli_error());
 
+while ($fetch = $query->fetch_array()) {
+    ?>
+                                <option value="<?php echo $fetch['year']; ?>">
+                                    <?php echo $fetch['year'] ?>
+                                </option>
+                                <?php
+}
+?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                      <div class="row">
                         <div class="col-md-12">
 
@@ -66,14 +89,20 @@
                                                                 <th>Evaluator</th>
                                                                 <th>Business Name</th>
                                                                 <th>Location</th>
-                                                                <th>Date</th>
+                                                                <th>Date Received</th>
+                                                                <th>Date Updated</th>
+                                                                <th>Status</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                         <?php
 require 'require/databaseconnection.php';
-$query = $conn->query("select * from `evaluation_checklist` ") or die(mysqli_error());
+$year = date('Y');
+if (isset($_GET['year'])) {
+    $year = $_GET['year'];
+}
+$query = $conn->query("select * from `evaluation_checklist` where year = '$year'") or die(mysqli_error());
 while ($fetch = $query->fetch_array()) {
     $month = date("m", strtotime($fetch['month']));
     $checklist_no = $fetch['checklist_no'];
@@ -84,7 +113,27 @@ while ($fetch = $query->fetch_array()) {
                                                             <td><?php echo $fetch['plan_evaluator'] ?></td>
                                                             <td><?php echo $fetch['business_name'] ?></td>
                                                             <td><?php echo $fetch['location'] ?></td>
-                                                            <td><?php echo $fetch['date_received'] ?></td>
+                                                            <td><?php echo $fetch['date_received']?></td>
+                                                            <td>
+                                                                <?php if ($fetch['date_updated'] == 'Pending') {
+        echo "<span class='badge badge-danger'>Pending</span>";
+    }else{
+        echo "<span class='badge badge-success'>".$fetch['date_updated']."</span>";
+    }
+    ?>
+
+                                                            </td>
+                                                            <td><?php if ($fetch['status'] == 'Ready for Certification') {
+        echo "<span class='badge badge-success'>Ready for Certification</span>";
+        $ViewStat = 'Transaction-ViewAssessment';
+    }
+
+    if ($fetch['status'] == 'On Progress') {
+        echo "<span class='badge badge-danger'> On Progress </span>";
+        $ViewStat = 'Transaction-ViewPendingAssessment';
+    }
+    
+    ?></td>
                                                             <td>
                                                                 <a href="Transaction-ViewChecklist.php?checklist_no=<?php echo $fetch['checklist_no'] ?>" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a>
                                                             </td>
@@ -135,7 +184,7 @@ $conn->close();
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                            <a href="index.php" class="btn btn-success btn-lg">Yes</a>
                             <button class="btn btn-default btn-lg mb-control-close">No</button>
                         </div>
                     </div>
@@ -153,7 +202,8 @@ $conn->close();
         <!-- START PLUGINS -->
         <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>        
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>  
+        <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>      
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->        
@@ -169,6 +219,16 @@ $conn->close();
                       $('#dataTables-example').dataTable();
                   });
              </script>
+             
+            <script>
+            $(document).ready(function () {
+                $("#pyear").on('change', function () {
+                    var year = $(this).val();
+                    window.location = 'Transaction-BuildEval.php?year=' + year;
+                });
+            });
+        </script>
+
 
         <!-- END THIS PAGE PLUGINS-->        
 

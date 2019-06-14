@@ -3,6 +3,7 @@ require '../require/databaseconnection.php';
 if(isset($_POST['edit_new_employ'])){
     $officer_type = $_POST['officer_type'];
     $rank = $_POST['rank'];
+    $id = $_POST['id'];
     $officer_fname = $_POST['officer_fname'];
     $officer_mname = $_POST['officer_mname'];
     $officer_lname = $_POST['officer_lname'];

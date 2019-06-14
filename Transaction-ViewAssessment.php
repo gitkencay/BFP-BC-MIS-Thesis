@@ -1,4 +1,13 @@
+<?php
+require_once 'require/logincheck.php';
+$id = $_SESSION['id'];
+require 'require/databaseconnection.php';
+$query2 = $conn->query("SELECT * from `users` WHERE `id` = '$id'") or die(mysqli_error());
+$fetch2 = $query2->fetch_array();
 
+$officername = $fetch2['fname'] . ' '. $fetch2['lname'];
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +17,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->
@@ -20,7 +28,7 @@
     <body>
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
-            <?php require 'require/sidebar.php'?>
+            <?php require 'require/sidebar-Assessor.php'?>
             <div class="page-content">
                 <?php require 'require/header.php'?>
 
@@ -35,6 +43,7 @@
                 <div class="page-content-wrap">
                     <div class="AssessForm">
                         <div class="panel panel-default">
+                            <form method="post" action="actions/editAssessment.php">
                             <div class="panel-body">
                                 <table>
                                     <thead>
@@ -46,65 +55,70 @@ $fetch = $query->fetch_array();
 $month2 = date("m", strtotime($fetch['month']));
 
 $ops_no = $fetch['ops_no'];
+$applicatiion = $fetch['application_no'];
 
+$textid = 'OPS' . '-' . $fetch['year'] . '-' . $month . '-' . $ops_no;
 ?>
                                          <th>
-                                                <label for="location" class="col-md-8 control-label"><br>OPS No. &nbsp;&nbsp;</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="ops_no"  value="<?php echo 'OPS' . '-' . $fetch['year'] . '-' . $month2 . '-' . $ops_no ?>" readonly>
+                                                <label for="location" class="col-md-12 control-label">OPS No. &nbsp;&nbsp;</label>
+                                                <div class="col-sm-8">
+                                                    
+                                                    <h4><strong>&nbsp;&nbsp;&nbsp;<?php echo 'OPS' . '-' . $fetch['year'] . '-' . $month2 . '-' . $ops_no ?><hr></strong></h4>
+                                                    <input type="hidden" class="form-control" id="opsnumber" name="opsnumber"  value="<?php echo $ops_no ?>" readonly>
                                                 </div>
                                             </th>
                                             <th>
-                                                <label for="cert" class="col-md-8 control-label"><br>Status&nbsp;&nbsp;</label>
+                                                <label for="cert" class="col-md-12 control-label">Certificate Applying For&nbsp;&nbsp;</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control select" id="status" name="status">
-                                                    <option value="<?php echo $fetch['status']?>"><?php echo $fetch['status']?></option>
-                                                    <option value="Pending">Pending</option>
-                                                    <option value="Complete">Complete</option>
-                                                    </select>
+                                                    
+                                                    <h4><strong>&nbsp;&nbsp;&nbsp;<?php echo $fetch['type_of_certificate'] ?><hr></strong></h4>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <label for="location" class="col-md-8 control-label">Assessor Name </label>
+                                                <div class="col-sm-10">
+                                                    <h4><strong>&nbsp;&nbsp;&nbsp;<?php echo $officername; ?><hr></strong></h4>
+                                                    <input type="hidden" class="form-control" id="assessor" name="assessor" value="<?php echo $officername; ?>" required>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <label for="bus-name" class="col-sm-12 control-label">Business Name&nbsp;&nbsp;</label>
+                                                <div class="col-sm-10">
+                                                    
+                                                    <h4><strong>&nbsp;&nbsp;&nbsp;<?php echo $fetch['business_name'] ?><hr></strong></h4>
                                                 </div>
                                             </th>
                                         </tr>
                                         <tr>
                                         <th>
                                         <input type="hidden" class="form-control" id="application_no" name="application_no"  value="<?php echo $fetch['application_no'] ?>">
-                                        <label for="app-name" class="col-sm-5 control-label"><br>Applicant Name&nbsp;&nbsp;</label>
+                                        <label for="app-name" class="col-sm-8 control-label">Applicant Name&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="applicant_name" name="application_name" value="<?php echo $fetch['application_name'] ?>" readonly>
+                                                
+                                                 <h4><strong>&nbsp;&nbsp;&nbsp;<?php echo $fetch['application_name'] ?><hr></strong></h4>
                                             </div>
                                         </th>
-                                            <th>
-                                                <label for="bus-name" class="col-sm-5 control-label"><br>Business Name&nbsp;&nbsp;</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="business_name" name="business_name" value="<?php echo $fetch['business_name'] ?>" readonly>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <label for="location" class="col-md-8 control-label"><br>Location&nbsp;&nbsp;</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="location" name="location" value="<?php echo $fetch['location'] ?>" readonly>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <label for="cert" class="col-md-8 control-label"><br>Certificate Applying For&nbsp;&nbsp;</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="application_type" name="application_type" value="<?php echo $fetch['type_of_certificate'] ?>" readonly>
-                                                </div>
-                                            </th>
+                                            
                                         </tr>
                                     </thead>
                                     <script type="text/javascript" src="js/jquery.min.js"></script>
-                                    <tbody>
+                                    <input type="hidden" name="status" id="status">
+                                    </table>
+
+                                    <div class="feeBodyView">
+                                    <table>
+                                        <tbody>
                                         <tr>
-                                            <th><h5><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicable Fees</h5></th>
+                                            <th>
+                                            <h5><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Applicable Fees</h5></th>
                                             <th><h5><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount to be Paid</h5></th>
                                         </tr>
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Construction Tax</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $construction_tax = number_format($fetch['construction_tax'], 2, '.', ',');
                                                         ?>
@@ -118,7 +132,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Reality Tax</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $reality_tax = number_format($fetch['reality_tax'], 2, '.', ',');
                                                         ?>
@@ -132,7 +146,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Premium Tax</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $premium_tax = number_format($fetch['premium_tax'], 2, '.', ',');
                                                         ?>
@@ -146,7 +160,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Sales Tax</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $sales_tax = number_format($fetch['sales_tax'], 2, '.', ',');
                                                         ?>
@@ -160,7 +174,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Code Proceeds Tax</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $proceeds_tax = number_format($fetch['proceeds_tax'], 2, '.', ',');
                                                         ?>
@@ -174,11 +188,11 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fire Safety Inspection Fee</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
-                                                            $inspection_fee = number_format($fetch['inspection_fee'], 2, '.', ',');
+                                                            $inspection_fee = number_format($fetch['inspection_fee'], 2, '.', '');
                                                         ?>
-                                                    <input type="number" class="form-control" id="inspection_fee" name="inspection_fee" readonly value="<?php echo $inspection_fee?>">
+                                                    <input type="number" class="form-control" id="inspection_fee" name="inspection_fee" readonly value="<?php echo $inspection_fee;?>">
                                                 </div>
                                             </td>
                                         </tr>
@@ -188,7 +202,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Storage Clearance</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $storage_clearance = number_format($fetch['storage_clearance'], 2, '.', ',');
                                                         ?>
@@ -202,7 +216,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conveyance Clearance</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $conveyance_clearance = number_format($fetch['conveyance_clearance'], 2, '.', ',');
                                                         ?>
@@ -216,7 +230,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Installation Clearance</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $installation_clearance = number_format($fetch['installation_clearance'], 2, '.', ',');
                                                         ?>
@@ -230,7 +244,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other Clearance Fee</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $other_clearance = number_format($fetch['other_clearance'], 2, '.', ',');
                                                         ?>
@@ -244,7 +258,7 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount of Fire Code Fees</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $total = number_format($fetch['total_amount'], 2, '.', ',');
                                                         ?>
@@ -258,11 +272,11 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                         <?php 
                                                             $payment = number_format($fetch['payment'], 2, '.', ',');
                                                         ?>
-                                                    <input type="text" class="form-control" id="payment" name="payment" readonly value="<?php echo $payment?>" >
+                                                    <input type="text" class="form-control" id="paymentview" name="paymentview" readonly value="<?php echo $payment?>" >
                                                 </div>
                                             </td>
                                         </tr>
@@ -272,18 +286,67 @@ $ops_no = $fetch['ops_no'];
                                         <tr>
                                             <td><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change</label></td>
                                             <td>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-7">
                                                     <input type="text" class="form-control" id="changed" name="changed" readonly value="<?php echo $fetch['changed']?>">
                                                 </div>
                                             </td>
                                         </tr>
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                
                                     <br>
                                     <div class="panel-footer">
-                                        <a href="Transaction-Assessment.php"><button type="submit" class="btn btn-danger" name="save_inspection"><span class="fa fa-close"></span>Exit</button></a>        
+                                         <?php 
+                                         require 'require/databaseconnection.php';
+
+                                         $query2 = $conn->query("SELECT * FROM `application` WHERE application_no = '$applicatiion'") or die(mysqli_error());
+                                         $fetch2 = $query2->fetch_array();
+                                         
+                                         ?>
+                                        <input type="hidden" class="form-control" id="number" name="number"  value="<?php echo $fetch2['cpnumb'] ?>">
+                                        <input type="hidden" class="form-control" id="nameofowner" name="nameofowner"  value="<?php echo $fetch2['owner_name'] ?>">
+                                        <input type="hidden" class="form-control" id="appnum" name="appnum"  value="<?php echo $fetch2['application_no'] ?>">
+                                        <input type="hidden" class="form-control" id="message" name="message"  value="<?php echo "Mr/Ms " . $fetch2['owner_name'] . " your ASSESSMENT with the transaction ID of ". $textid ." was successfully verified. In case of Emergency please contact 117 or 434-5022 or 434-5023. " ?>">
+                                        <input type="hidden" class="form-control" id="message2" name="message2"  value="<?php echo "Mr/Ms " . $fetch2['owner_name'] . " your ASSESSMENT with the transaction ID of ". $textid ." was put on hold because you have not fully paid the required amount for your application. In case of Emergency please contact 117 or 434-5022 or 434-5023. " ?>">
+                                        <div class="form-group">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <!-- <ul class="panel-controls"> -->
+                                            <label for="confirm" style="display: none; font-size: 24px;text-align: center;"
+                                                id="addassessment" class="col-sm-12 control-label">
+                                                Are you sure you want to add this Assessment?
+                                            </label>
+                                            <div class="col-sm-3">
+                                                &nbsp;
+                                            </div>
+                                            <div>
+                                                <div class="col-sm-4">
+                                                    <button type="submit" style="display:none;" class="btn btn-info" id="addassessment1"
+                                                        name="submit"><span class="fa fa-check"></span>Yes</button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="col-sm-2">
+                                                    <button type="button" style="display:none;" class="btn btn-danger"
+                                                        id="addassessment2" data-dismiss="modal"><span class="fa fa-times"></span>No</button>
+                                                </div>
+                                            </div>
+                                            <!-- </ul>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                        <div class="col-sm-6">
+                                        <p class="text-danger"><small>*If you don't save, your changes will be lost.&emsp;&emsp;&emsp;&nbsp;&nbsp;</small></p>
+                                        </div>
+                                        <a class="btn btn-info" onclick="myFunctionassessed()"><span class="fa fa-check"></span>Save
+                                        Changes</a>
+                                        <a href="Transaction-Assessment.php" class="btn btn-danger"><span class="fa fa-close"></span>Exit</button></a>        
                                     </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -304,7 +367,7 @@ $ops_no = $fetch['ops_no'];
                             </div>
                             <div class="mb-footer">
                                 <div class="pull-right">
-                                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                                    <a href="index.php" class="btn btn-success btn-lg">Yes</a>
                                     <button class="btn btn-default btn-lg mb-control-close">No</button>
                                 </div>
                             </div>
@@ -338,6 +401,13 @@ $ops_no = $fetch['ops_no'];
                         $('#dataTables-example').dataTable();
                     });
                 </script>
+                            <script>
+                function myFunctionassessed() {
+                    document.getElementById("addassessment").style.display = "block";
+                    document.getElementById("addassessment1").style.display = "inline";
+                    document.getElementById("addassessment2").style.display = "inline";
+                }
+            </script>
                 <!-- END THIS PAGE PLUGINS-->
 
                 <!-- START TEMPLATE -->

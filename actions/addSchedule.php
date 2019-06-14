@@ -2,7 +2,7 @@
 
 if(isset($_POST['add'])){
     $io_no = $_POST['io_no'];
-    $inspectors_drop = $_POST['inspectors_drop'];
+    $inspector_name = $_POST['inspector_name'];
     $inspection_date = $_POST['inspection_date'];
     $inspection_time = $_POST['inspection_time'];
 
@@ -14,7 +14,7 @@ if(isset($_POST['add'])){
 
     require '../require/databaseconnection.php';
 
-    $conn->query("INSERT INTO `inspection_schedule` VALUES('', '$io_no', '$inspectors_drop', '$inspection_date', '$inspection_time', '$date_applied', '$month', '$year', 'Pending')") or die(mysqli_error());
+    $conn->query("INSERT INTO `inspection_schedule` VALUES('', '$io_no', '$inspector_name', '$inspection_date', '$inspection_time', '$date_applied', '$month', '$year', 'Pending', '0', 'Pending')") or die(mysqli_error());
 
 }
 ?>

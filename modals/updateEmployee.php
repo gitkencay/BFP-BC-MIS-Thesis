@@ -46,37 +46,37 @@ while ($fetch = $query->fetch_array()) {
                         <div class="form-group">
                         <label for="officer" class="col-sm-6 control-label">First Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="officer_fname" name="officer_fname" value="<?php echo $fetch['officer_fname'] ?>">
+                            <input data-toggle="tooltip" data-placement="right" title="*Required, Employee First Name" type="text" class="form-control" id="officer_fname" name="officer_fname" value="<?php echo $fetch['officer_fname'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="officer" class="col-sm-6 control-label">Middle Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="officer_mname" name="officer_mname" value="<?php echo $fetch['officer_mname'] ?>">
+                            <input data-toggle="tooltip" data-placement="right" title="*Required, Employee Middle Name" type="text" class="form-control" id="officer_mname" name="officer_mname" value="<?php echo $fetch['officer_mname'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="officer" class="col-sm-6 control-label">Last Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="officer_lname" name="officer_lname" value="<?php echo $fetch['officer_lname'] ?>">
+                            <input data-toggle="tooltip" data-placement="right" title="*Required, Employee Last Name" type="text" class="form-control" id="officer_lname" name="officer_lname" value="<?php echo $fetch['officer_lname'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-sm-6 control-label">Username</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="username" name="username" value="<?php echo $fetch['username'] ?>">
+                            <input data-toggle="tooltip" data-placement="right" title="*Required, Employee User Name" type="text" class="form-control" id="username" name="username" value="<?php echo $fetch['username'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-sm-6 control-label">Password</label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control" id="password" name="password" value="<?php echo $fetch['password'] ?>">
+                            <input data-toggle="tooltip" data-placement="right" title="*Required, Employee Password" type="password" class="form-control" id="password" name="password" value="<?php echo $fetch['password'] ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-sm-6 control-label">Confirm Password</label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" value="<?php echo $fetch['confirm_password'] ?>">
+                            <input data-toggle="tooltip" data-placement="right" title="*Required, Confirm Password" type="password" class="form-control" id="confirm_password" name="confirm_password" value="<?php echo $fetch['confirm_password'] ?>">
                         </div>
                     </div>
                         <div class="form-group">

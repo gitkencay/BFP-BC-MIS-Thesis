@@ -1,186 +1,177 @@
+<html>
 
-<!DOCTYPE html>
-<html lang="en">
+    <head>
+    <title>Simple invoice in PHP</title>
+        <style type="text/css">
+			@media print{
+				body, page[size="A5"] {
+                  }
+			}
 
-<head>
-<!-- META SECTION -->
-<title>BFP BACOLOD MIS</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+			#print{
+				width: 80%;
+				margin: auto;
+            }
+            
+            div.invoice {
+            border:1px solid #ccc;
+            padding:10px;
+            height:445pt;
+            width:435pt;
+            font-family: times;
+            font-size: 14;
+            }
 
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
-<!-- END META SECTION -->
-    <style>
-        #invoice-POS{
-                    box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
-                    padding:2mm;
-                    margin: 0 auto;
-                    width: 80mm;
-                    background: #FFF;
-                    border: 5px double black;
-                    
-                    
-                    ::selection {background: #f31544; color: #FFF;}
-                    ::moz-selection {background: #f31544; color: #FFF;}
-                    
-                    .h1{
-                    font-size: 1.5em;
-                    color: #222;
-                    }
-                    .h2{font-size: .9em;}
-                    .h3{
-                    font-size: 1.2em;
-                    font-weight: 300;
-                    line-height: 2em;
-                    }
-                    .p{
-                    font-size: .7em;
-                    color: #666;
-                    line-height: 1.2em;
-                    }
-                    
-                    #top, #mid,#bot{ /* Targets all id with 'col-' */
-                    border-bottom: 1px solid #EEE;
-                    }
+            .left-1{
+                position: relative;
+                top: 72px;
+                left: 200px;
+            }
 
-                    #top{min-height: 100px;}
-                    #mid{min-height: 80px;} 
-                    #bot{ min-height: 50px;}
+            div.company-address {
+                float:left;
+                width:200pt;
+            }
 
-                    #top .logo{
-                    //float: left;
-                        height: 60px;
-                        width: 60px;
-                        background: url(http://michaeltruong.ca/images/logo1.png) no-repeat;
-                        background-size: 60px 60px;
-                    }
-                    .clientlogo{
-                    float: left;
-                        height: 60px;
-                        width: 60px;
-                        background: url(http://michaeltruong.ca/images/client.jpg) no-repeat;
-                        background-size: 60px 60px;
-                    border-radius: 50px;
-                    }
-                    .info{
-                    display: block;
-                    //float:left;
-                    margin-left: 0;
-                    }
-                    .title{
-                    float: right;
-                    }
-                    .title p{text-align: right;} 
-                    table{
-                    width: 100%;
-                    border-collapse: collapse;
-                    }
-                    .td{
-                    //padding: 5px 0 5px 15px;
-                    //border: 1px solid #EEE
-                    }
-                    .tabletitle{
-                    //padding: 5px;
-                    font-size: .5em;
-                    background: #EEE;
-                    }
-                    .service{border-bottom: 1px solid #EEE;}
-                    .item{width: 24mm;}
-                    .itemtext{font-size: .5em;}
-
-                    #legalcopy{
-                    margin-top: 5mm;
-                    }
-
-                    
-                    }
-    </style>
-</head>
-<body>
-  <div id="invoice-POS">
-    
-    <center id="top">
-      <div class="logo"></div>
-      <div class="info"> 
-        <h2>SBISTechs Inc</h2>
-      </div><!--End Info-->
-    </center><!--End InvoiceTop-->
-    
-    <div id="mid">
-      <div class="info">
-        <h2>Contact Info</h2>
-        <p> 
-            Address : street city, state 0000</br>
-            Email   : JohnDoe@gmail.com</br>
-            Phone   : 555-555-5555</br>
-        </p>
-      </div>
-    </div><!--End Invoice Mid-->
-    
-    <div id="bot">
-
-					<div id="table">
-						<table>
-							<tr class="tabletitle">
-								<td class="item"><h2>Item</h2></td>
-								<td class="Hours"><h2>Qty</h2></td>
-								<td class="Rate"><h2>Sub Total</h2></td>
-							</tr>
-
-							<tr class="service">
-								<td class="tableitem"><p class="itemtext">Communication</p></td>
-								<td class="tableitem"><p class="itemtext">5</p></td>
-								<td class="tableitem"><p class="itemtext">$375.00</p></td>
-							</tr>
-
-							<tr class="service">
-								<td class="tableitem"><p class="itemtext">Asset Gathering</p></td>
-								<td class="tableitem"><p class="itemtext">3</p></td>
-								<td class="tableitem"><p class="itemtext">$225.00</p></td>
-							</tr>
-
-							<tr class="service">
-								<td class="tableitem"><p class="itemtext">Design Development</p></td>
-								<td class="tableitem"><p class="itemtext">5</p></td>
-								<td class="tableitem"><p class="itemtext">$375.00</p></td>
-							</tr>
-
-							<tr class="service">
-								<td class="tableitem"><p class="itemtext">Animation</p></td>
-								<td class="tableitem"><p class="itemtext">20</p></td>
-								<td class="tableitem"><p class="itemtext">$1500.00</p></td>
-							</tr>
-
-							<tr class="service">
-								<td class="tableitem"><p class="itemtext">Animation Revisions</p></td>
-								<td class="tableitem"><p class="itemtext">10</p></td>
-								<td class="tableitem"><p class="itemtext">$750.00</p></td>
-							</tr>
+            div.invoice-details {
+                float:right;
+                width:150pt;
+            }
 
 
-							<tr class="tabletitle">
-								<td></td>
-								<td class="Rate"><h2>tax</h2></td>
-								<td class="payment"><h2>$419.25</h2></td>
-							</tr>
+            div.clear-fix {
+                clear:both;
+                float:none;
+            }
 
-							<tr class="tabletitle">
-								<td></td>
-								<td class="Rate"><h2>Total</h2></td>
-								<td class="payment"><h2>$3,644.25</h2></td>
-							</tr>
+            table {
+                width:60%;
+            }
 
-						</table>
-					</div><!--End Table-->
+            th {
+                text-align: left;
+            }
 
-					<div id="legalcopy">
-						<p class="legal"><strong>Thank you for your business!</strong>  Payment is expected within 31 days; please process this invoice within that time. There will be a 5% interest charge per month on late invoices. 
-						</p>
-					</div>
+            td {
+            }
 
-				</div><!--End InvoiceBot-->
-  </div><!--End Invoice-->
-  
-</body>
+            .text-left {
+                text-align:left;
+            }
+
+            .text-center {
+                text-align: right;
+            }
+
+            .text-right {
+                text-align:right;
+            }
+
+        </style>
+    </head>
+
+    <body>
+    <div class="pull-left">
+									<button class="btn btn-default btn-sm" onclick="printContent('print')">Print</button>
+									<a href="../Transaction-Assessment.php" class="btn btn-default btn-sm">Back</a>
+								</div>
+    <?php
+require '../require/databaseconnection.php';
+$query = $conn->query("SELECT * FROM `assessment` WHERE ops_no = '$_GET[id]'") or die(mysqli_error());
+$fetch = $query->fetch_array();
+?>
+<div id="print">
+    <div class="invoice">
+        <div class="company-address">
+            Accountable Form No. 51-C
+            <br />
+            Revised January, 1992
+            <!-- <?php echo $fetch['ops_no'];?> -->
+        </div>
+
+        <div class="invoice-details">
+            (ORIGINAL)
+            <br />
+        </div>
+
+
+        <div class="clear-fix"></div>
+        <table id="two" border ='1' cellspacing='0'>
+            <tr>
+                <th>Official Receipt<br> of the<br> Philippines</th>
+                <img class="left-1" style="height:50px;width:60px;" src="../assets/images/coat_of_arms.png"> <br> <br>
+            </tr>
+        <tr>
+        <th>Agency : BFP- Bacolod City</th>
+        <th>Fund</th>
+        </tr>
+        <tr>
+        <th>Payor : <?php echo $fetch['application_name'];?></th>
+        
+        </tr>
+        </table>
+            <table id="one" border='1' cellspacing='0'>
+                <tr>
+                    <th width=100>Nature of Collection</th>
+                    <th width=100>Amount</th>
+                </tr>
+
+
+            <?php
+$construction = $fetch['construction_tax'];
+$reality = $fetch['reality_tax'];
+$premium = $fetch['premium_tax'];
+$sales = $fetch['sales_tax'];
+$proceeds = $fetch['proceeds_tax'];
+$inspection = $fetch['inspection_fee'];
+$storage = $fetch['storage_clearance'];
+$conveyance = $fetch['conveyance_clearance'];
+$installation = $fetch['installation_clearance'];
+$other = $fetch['other_clearance'];
+$number = $fetch['total_amount'];
+$totalamount = number_format($number, 2);
+
+$total = 0;
+$vat = 21;
+
+$articles = array(
+    array("Construction Tax", "Reality Tax", "Premium Tax", "Sales Tax", "Proceeds Tax", "Inspection fee", "Storage Clearance", "Conveyance Clearance", "Installation Clearance", "Other Clearance"),
+    array($construction, $reality, $premium, $sales, $proceeds, $inspection, $storage, $conveyance, $installation, $other),
+);
+
+for ($a = 0; $a < 10; $a++) {
+    $description = $articles[0][$a];
+    $amount = $articles[1][$a];
+    $formattedtotal = number_format($amount, 2); 
+    echo ("<tr>");
+    echo ("<td>$description</td>");
+    echo ("<td class='text-center'>$formattedtotal</td>");
+    echo ("</tr>");
+}
+
+echo ("<tr>");
+echo ("<td colspan='1' class='text-right'><b>TOTAL</b></td>");
+echo ("<td class='text-right'><b>₱ ". $totalamount . " </b></td>");
+echo ("</tr>");
+?>
+                <table id="two" border ='1' cellspacing='0'>
+                    <tr><th><br></th></tr>
+
+                </table>
+            </table>
+        </div>
+        </div>
+
+        <script>
+			function printContent(el){
+				var restorepage = document.body.innerHTML;
+				var printcontent = document.getElementById(el).innerHTML;
+				document.body.innerHTML = printcontent;
+				window.print();
+				document.body.innerHTML = restorepage;
+			}
+		</script>
+
+    </body>
+
 </html>

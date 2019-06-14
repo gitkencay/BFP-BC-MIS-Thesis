@@ -1,3 +1,64 @@
+<?php
+require_once 'require/logincheck.php';
+require 'loader.php';
+
+$message = '';
+
+if(isset($_POST['import']))
+{
+	if($_FILES['database']['name'] != '')
+	{
+		$array = explode(".", $_FILES['database']['name']);
+		$extension = end($array);
+		if($extension == 'sql'){
+			$connect = mysqli_connect("localhost", "root", "", "bfp-bcmis");
+			$output = '';
+			$count = 0;
+			$file_data = file($_FILES['database']['tmp_name']);
+			foreach($file_data as $row){
+				$start_character = substr(trim($row), 0, 2);
+				if($start_character != '--' || $start_character != '/*'
+				   || $start_character != '//' || $row != ''){
+					$output = $output . $row;
+					$end_character = substr(trim($row), -1, 1);
+					if($end_character == ';'){
+						if(!mysqli_query($connect, $output)){
+							$count++;
+						}
+						$output = '';
+					}
+				}
+			}
+			if($count > 0) {
+				$message = 'Error occurred';
+			}
+			else {
+				$message = 'Successful';
+				date_default_timezone_set('Asia/Manila');
+				$date=date("F j, Y, g:i a");
+
+				$id=$_SESSION['id'];
+
+                require 'require/databaseconnection.php';
+				$conn->query("INSERT INTO `backup` VALUES('', '$id','Successfully imported database', '$date')") or die(mysqli_error());
+				$conn->close();
+				echo "<script>alert('Successfully imported database!')</script>";
+				echo "<script>document.location='Maintenance-SystemBackUp.php'</script>";  
+			}
+		}
+		else {
+			echo "<script type='text/javascript'>alert('You must upload SQL file only!');</script>";
+			echo "<script>document.location='download_database.php'</script>";
+		}
+	}
+	else {
+		$message = 'Select SQL File.';
+	}
+
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -7,100 +68,36 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->      
         <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->                                    
+        <!-- EOF CSS INCLUDE -->      
+
+                                   
     </head>
-    <body>
+    <script type="text/javascript">
+          function hideLoad(){$('.loader-wrapper').hide();}
+</script>
+    <body onload="hideLoad()">
+        
     <!-- START PAGE CONTAINER -->
         <div class="page-container">
             <!-- START PAGE SIDEBAR -->
-                <div class="page-sidebar">
-                    <!-- START X-NAVIGATION -->
-                    <ul class="x-navigation">
-                        <li class="xn-logo">
-                            <a href="index.html"><strong>BFP-BC MIS</strong></a>
-                            <a href="#" class="x-navigation-control"></a>
-                        </li>              
-                        <div class="profile">
-                            <div class="profile-image">
-                                <img src="img/fireman2.png"/>
-                            </div>
-                                <div class="profile-data">
-                                    <div class="profile-data-name">John Doe</div>
-                                        <div class="profile-data-title">Customer Relations Officer</div>
-                                            </div>
-                        </div>
-                            <ul id="navSid">                                                                            
-                                <li>
-                                    <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
-                                        </li>                    
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Master File</span></a>
-                                                <ul>
-                                                    <li class="active"><a href="DataEntry-EmpProf.html"><span class="fa fa-user"></span> Employee Profiling</a></li>
-                                                    <li><a href="DataEntry-AppReg.html"><span class="fa fa-user"></span> Applicant Registration</a></li>                          
-                                                </ul>
-                                            </li>
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Transaction</span></a>
-                                                <ul>
-                                                    <li><a href="Transaction-Assessment.html"> Assessments & Payments</a></li>
-                                                    <li><a href="Transaction-Inspection.html"> Inspection & Compliance</a></li>
-                                                    <li><a href="Transaction-BuildEval.html">Building Evaluation</a></li>
-                                                    <li><a href="#">Issuance Of Certificates</a></li>
-                                                    <li><a href="#">Status Monitoring</a></li>
-                                                    <li><a href="#">Scheduling</a></li>                            
-                                                </ul>
-                                            </li>
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">Reports</span></a>                        
-                                                <ul>
-                                                    <li><a href="Report-Certification.html"><span class=""></span> Certification</a></li>                            
-                                                    <li><a href="Report-MasterFile.html"><span class=""></span> Master File Record Report</a></li>
-                                                    <li><a href="Report-TransactionRecord.html"><span class=""></span> Transaction Record Report</a></li>
-                                                    <li><a href="Report-DistressCall.html"><span class=""></span> Distress Call Report</a></li>                            
-                                                    <li><a href="Report-RiskandFire.html"><span class=""></span> Risk & Fire Frequency</a></li>
-                                                </ul>
-                                            </li>                    
-                                            <li class="xn-openable">
-                                                <a href="#"><span class="fa fa-warning"></span> <span class="xn-text">Distress Call</span></a>
-                                                <ul>
-                            <li><a href="Distress-FireRespondents.html"><span class="fa fa-align-justify"></span> Fire Stations Respondents</a></li>
-                            <li><a href="Distress-SMSandCall.html"><span class="fa fa-th-large"></span> SMS & Call Logs</a></li>
-                        </ul>
-                                            </li>
-                                            <li class="active">
-                                                <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Maintenance</span></a>
-                                                <ul>                            
-                                                    <li><a href="Maintenance-MyAccount.html"><span class="fa fa-align-justify"></span> My Account</a></li>
-                                                    <li><a href="Maintenance-UserManage.html"><span class="fa fa-sort-alpha-desc"></span> User Management</a></li>
-                                                    <li class="active"><a href="Maintenance-SystemBackUp.html"><span class="fa fa-download"></span> System Back Up</a></li>                            
-                                                </ul>
-                                            </li>                                       
-                            </ul>
+            <?php require 'require/sidebar-CRO.php'?>
                             <!-- END X-NAVIGATION -->
-                </div>
                 <!-- END PAGE SIDEBAR -->
         <div class="page-content">
         <!-- START X-NAVIGATION VERTICAL -->
-            <ul id="hozironNav" class="x-navigation x-navigation-horizontal x-navigation-panel">
-            <!-- SIGN OUT -->
-                <li class="xn-icon-button pull-right">
-                    <a href="pages-login.html" class="mb-control" data-box="#mb-signout"><span class="glyphicon glyphicon-off"></span></a>
-                </li> 
-            <!-- END SIGN OUT -->
-            </ul>
+            <?php require 'require/header.php'?>
             <!-- END X-NAVIGATION VERTICAL -->                     
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Maintenance</a></li>                    
-                <li class="active"><a href="Maintenance-SystemBackUp.html">System Back Up</a></li>
+                <li class="active"><a href="Maintenance-SystemBackUp.php">System Back Up</a></li>
             </ul>
             <!-- END BREADCRUMB --> 
 
@@ -129,7 +126,7 @@
                                         </div>
                                     <div class="mb-footer">
                                         <div class="pull-right">
-                                            <a href="export/export.php" class="btn btn-danger btn-lg pull-right">Export Anyway</a>
+                                            <a href="database/export.php" class="btn btn-danger btn-lg pull-right">Export Anyway</a>
                                             <button class="btn btn-default btn-lg mb-control-close">Close</button>
                                         </div>
                                     </div>
@@ -145,18 +142,65 @@
                                         <h4 class="modal-title" id="defModalHead"><strong>Upload SQL File</strong></h4>
                                     </div>
                                     <form method="post" enctype="multipart/form-data">
-                                        <div class="modal-body">
-                                            <h5>Select from files</h5>
-                                            <input type="file" name="database">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-info" name="import">Upload</button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </form>
+                                    <div class="modal-body">
+                                        <h5>Select from files</h5>
+                                        <input type="file" name="database">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-info" name="import">Upload</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                        </form>
                                 </div>
                             </div>
                         </div>
+
+
+                                                    <!-- START DEFAULT DATATABLE -->
+                                <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <table class="table datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Admin Name</th>
+                                                <th>Remarks</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+require 'require/databaseconnection.php';
+$query = $conn->query("select * from `backup` ") or die(mysqli_error());
+while ($fetch = $query->fetch_array()) {
+    $id = $fetch['user_id'];
+
+    $query4 = $conn->query("select * from `users` where id = '$id' ") or die(mysqli_error());
+    $fetch4 = $query4->fetch_array()
+
+    ?>
+                                            <tr>
+                                                <td><?php echo $fetch4['name']?></td>
+                                                <td>
+                                                <?php if ($fetch['remarks'] == 'Successfully exported database') {
+        echo "<span class='badge badge-success'>Successfully exported database</span>";
+    }
+
+    if ($fetch['remarks'] == 'Successfully imported database') {
+        echo "<span class='badge badge-info'>Successfully imported database</span>";
+    }
+    ?>
+    </td>
+                                                <td><?php echo $fetch["date"]?></td>
+                                            </tr>
+                                            <?php
+}
+$conn->close();
+?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END DEFAULT DATATABLE -->
                     </div>
                 </div>
             </div>

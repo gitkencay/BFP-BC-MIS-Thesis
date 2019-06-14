@@ -201,6 +201,18 @@
 							right: 117px;
 							bottom: 333px;
 						}
+
+						.businesspermit{
+							text-align: right;
+							position: relative;
+							right: 380px;
+							bottom: 604px;
+						}
+
+						#businessn{
+							font-size: 26px;
+						}
+
 </style>
 <!-- EOF CSS INCLUDE -->
 </head>
@@ -269,8 +281,8 @@ $orno = $fetch2['ops_no'];
 								</br>
 								<center>
 								<p class="text-justify">
-									By virtue of the provisions of RA 9514 otherwise known as the Fire Code of the Philippines of 2008, the application for <strong> FIRE SAFETY INSPECTION CERTIFICATE </strong> of
-									<strong> <?php echo $fetch['business_name'] ?> </strong> owned and managed by <strong> <?php echo $fetch['owner_name'] ?> </strong> with postal address at <?php echo $fetch['establishment_address']?>
+									By virtue of the provisions of RA 9514 otherwise known as the Fire Code of the Philippines of 2008, the application for <strong id="businessn"> FIRE SAFETY INSPECTION CERTIFICATE </strong> of
+									<strong id="businessn"> <?php echo $fetch['business_name'] ?> </strong> owned and managed by <strong id="businessn"> <?php echo $fetch['owner_name'] ?> </strong> with postal address at <strong id="businessn"> <?php echo $fetch['establishment_address']?> </strong>
 									is hereby <strong>GRANTED</strong> after said building structure or facility has been duly inspected with the findings that it has be fully complied with the fire safety and protection
                                     requirements of the Fire Code of the Philippines of 2008 and its Implementing Rules and Regulations.
 								</p>
@@ -317,6 +329,10 @@ $orno = $fetch2['ops_no'];
 
 								<p class="line-2">______________________________</p>
 								<p class="line-3">______________________________</p>
+
+								<p class="businesspermit">
+									<strong>  OCCUPANCY PERMIT </strong> 
+								</p>
 
 						</div>
 					</div>

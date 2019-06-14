@@ -1,3 +1,6 @@
+<?php
+require_once 'require/logincheck.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -6,34 +9,49 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/images/cropped-bfp-new-logo-1.png">
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->      
         <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->                                    
-    </head>
-    <body>
+        <!-- EOF CSS INCLUDE -->     
 
+        <link rel="stylesheet" href="css/loader.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+    
+                 
+    </head>
+    <script type="text/javascript">
+//paste this code under the head tag or in a separate js file.
+    // Wait for window load
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".load-Nav").fadeOut("slow");;
+    });
+</script>
+
+    <body>
+        <div class="load-Nav" id="load-Nav-id"></div>
         <div class="page-container">
-            <?php require 'require/sidebar.php'?>
+            <?php require 'require/sidebar-CRO.php'?>
             <div class="page-content">
                 <?php require 'require/header.php'?>
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li>Data Entry</li>
-                    <li class="active"><strong><mark>Add New Employee</mark></strong></li>
+                    <li class="active"><strong><mark>Employee</mark></strong></li>
                 </ul>
                 <div class="page-content-wrap">
                     <div class="row">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-
                                 <ul class="panel-controls">
                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Employee-Reg"><i class="fa fa-plus"></i>Add Employee</button>
-                                    </div>
+                                </ul>
+                            </div>
                             </div>
                             <div class="col-md-12">
                                 <table class="table datatable" id="dataTables-example-emp">
@@ -78,7 +96,9 @@
         </div>
         <!--Start MODAL-->
         <?php require 'modals/addemployee.php'; ?>
+        <?php require 'modals/updateEmployee.php'; ?>
         <?php require 'require/logout.php'?>
+        
         <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
         <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
@@ -101,16 +121,23 @@
                 ignore: [],
                 rules: {
                     password: {
-                        minlength: 6,
-                        maxlength: 10
+                        minlength: 8,
+                        maxlength: 16
                     },
                     'confirm_password': {
-                        minlength: 6,
-                        maxlength: 10,
+                        minlength: 8,
+                        maxlength: 16,
                         equalTo: "#password"
                     }
                 }
             });
+        </script>
+        <script>
+            function myFunction() {
+                document.getElementById("confirmation").style.display = "block";
+                document.getElementById("confirmyes").style.display = "inline";
+                document.getElementById("confirmno").style.display = "inline";
+            }
         </script>
     </body>
 </html>
